@@ -1,0 +1,73 @@
+.interactive-form-section {
+  background-color: #FDF0E6;
+  padding: 4rem 2rem;
+  color: #000;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.interactive-form-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0B0D63;
+}
+
+.interactive-form-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #0B0D63;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-row span {
+  color: #0B0D63;
+}
+
+.form-row select {
+  background-color: transparent;
+  border: 1px solid #FD5E53;
+  color: #0B0D63;
+  padding: 0.5rem;
+  border-radius: 5px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230B0D63' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  padding-right: 1.5rem;
+}
+
+.form-row select:focus {
+  outline: none;
+  border-color: #0B0D63;
+}
+
+.submit-button {
+  background-color: #FD5E53;
+  color: #FDF0E6;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.1s;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #0B0D63;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}

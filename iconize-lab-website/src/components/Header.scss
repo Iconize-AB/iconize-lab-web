@@ -1,0 +1,234 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000000;
+  color: #ffffff;
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #ffffff;
+
+    img {
+      height: 40px; // Adjust this value to match your desired logo size
+      width: auto;
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-right: 1.5rem;
+        position: relative;
+
+        a {
+          text-decoration: none;
+          color: #ffffff;
+          font-weight: 500;
+          font-size: 0.9rem;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: #FD5E53; // Assuming this is your brand's accent color
+          }
+        }
+
+        &.services-dropdown {
+          .services-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000000;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            display: flex;
+            width: 600px;
+            padding: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            z-index: 1000;
+
+            .menu-category {
+              flex: 1;
+              padding: 0 1rem;
+
+              h3 {
+                font-size: 0.9rem;
+                margin-bottom: 0.75rem;
+                color: #FD5E53;
+                font-weight: 600;
+                text-transform: uppercase;
+              }
+
+              ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                  font-size: 0.85rem;
+                  margin-bottom: 0.5rem;
+                  color: #ffffff;
+                  cursor: pointer;
+                  transition: color 0.2s ease;
+
+                  &:hover {
+                    color: #FD5E53;
+                  }
+                }
+              }
+            }
+          }
+
+          &:hover {
+            .services-menu {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+
+    .language {
+      margin-right: 1rem;
+      font-size: 0.85rem;
+      color: #ffffff;
+    }
+
+    .search-btn, .menu-btn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-left: 0.5rem;
+      color: #ffffff;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #FD5E53;
+      }
+    }
+  }
+
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+
+    span {
+      width: 100%;
+      height: 3px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    &.open {
+      span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+
+  .full-screen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menu-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      width: 90%;
+      animation: fadeIn 0.5s ease;
+
+      .menu-category {
+        h3 {
+          font-size: 1.5rem;
+          color: #FD5E53;
+          margin-bottom: 1rem;
+        }
+
+        ul {
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease forwards;
+
+            @for $i from 1 through 10 {
+              &:nth-child(#{$i}) {
+                animation-delay: #{$i * 0.1}s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Add this to your global styles or App.scss
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
