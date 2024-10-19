@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faFacebookF, faLinkedinIn, faWeixin } from '@fortawesome/free-brands-svg-icons';
 import './Footer.scss';
 
 function Footer() {
@@ -9,11 +11,9 @@ function Footer() {
         <div className="social-media">
           <h3>SOCIAL MEDIA</h3>
           <div className="social-icons">
-            <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Threads"><i className="fab fa-threads"></i></a>
-            <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="WeChat"><i className="fab fa-weixin"></i></a>
+            <a href="#" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} /></a>
+            <a href="#" aria-label="Facebook"><FontAwesomeIcon icon={faFacebookF} /></a>
+            <a href="https://www.linkedin.com/company/iconize-lab" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedinIn} /></a>
           </div>
         </div>
 

@@ -1,23 +1,43 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.scss';
 import logo from '../resources/iconize.png'; // Adjust the path as needed
 
 function Header() {
   const [showServicesMenu, setShowServicesMenu] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const menuItems = [
-    { title: 'About', items: ['Leadership', 'Careers', 'Prophet Culture', 'Prophet Impact', 'News & Press'] },
-    { title: 'Services', items: ['Industries'] },
+    { title: 'About', items: ['Careers', "Iconize Lab's Culture", "Iconize Lab's impact"] },
+    { 
+      title: 'Services', 
+      items: [
+        { name: 'Industries', path: '/industries' },
+        { name: 'App Development', path: '/services/app-development' }
+      ] 
+    },
     { title: 'Work', items: ['Case Studies', 'Testimonials'] },
-    { title: 'Thinking', items: ['Prophet Thinking', 'Aaker on Brands', 'Brand Relevance Index®', 'CMO Community', 'Uncommon Growth Community'] },
-    { title: 'Connect', items: ['Subscribe'] }
+    { 
+      title: 'Areas of focus', 
+      items: [
+        'Magento', 'Saleor', 'WooCommerce', 'E-commerce', 'Shopify', 
+        { name: 'App Development', path: '/services/app-development' },
+        'Web Development', 'Marketing', 'Integrations'
+      ] 
+    },
   ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
+  };
+
+  const handleMenuItemClick = (path) => {
+    if (path) {
+      navigate(path);
+      toggleMenu();
+    }
   };
 
   return (
@@ -30,7 +50,7 @@ function Header() {
       <nav>
         <ul>
           {menuItems.map((item, index) => (
-            <li key={index}><Link to={`/${item.title.toLowerCase()}`}>{item.title}</Link></li>
+            <li key={index}><Link to={`/${item.title.toLowerCase().replace(' ', '-')}`}>{item.title}</Link></li>
           ))}
         </ul>
       </nav>
@@ -50,7 +70,9 @@ function Header() {
               <h3>{category.title}</h3>
               <ul>
                 {category.items.map((item, itemIndex) => (
-                  <li key={itemIndex}>{item}</li>
+                  <li key={itemIndex} onClick={() => handleMenuItemClick(typeof item === 'object' ? item.path : null)}>
+                    {typeof item === 'object' ? item.name : item}
+                  </li>
                 ))}
               </ul>
             </div>

@@ -67,21 +67,21 @@ function ServicesPage() {
             <svg viewBox="0 0 400 400" width="400" height="400">
               <defs>
                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style={{stopColor:'#00ffff',stopOpacity:1}} />
-                  <stop offset="100%" style={{stopColor:'#0000ff',stopOpacity:1}} />
+                  <stop offset="0%" style={{stopColor:'#FD5E53',stopOpacity:1}} />
+                  <stop offset="100%" style={{stopColor:'#26E594',stopOpacity:1}} />
                 </linearGradient>
                 <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style={{stopColor:'#0000ff',stopOpacity:1}} />
-                  <stop offset="100%" style={{stopColor:'#ff00ff',stopOpacity:1}} />
+                  <stop offset="0%" style={{stopColor:'#FD5E53',stopOpacity:1}} />
+                  <stop offset="100%" style={{stopColor:'#26E594',stopOpacity:1}} />
                 </linearGradient>
                 <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style={{stopColor:'#00ffff',stopOpacity:1}} />
-                  <stop offset="100%" style={{stopColor:'#0000ff',stopOpacity:1}} />
+                  <stop offset="0%" style={{stopColor:'#FD5E53',stopOpacity:1}} />
+                  <stop offset="100%" style={{stopColor:'#26E594',stopOpacity:1}} />
                 </linearGradient>
               </defs>
-              <circle cx="200" cy="100" r="99" stroke="url(#grad1)" strokeWidth="2" fill="transparent" />
-              <circle cx="100" cy="300" r="99" stroke="url(#grad3)" strokeWidth="2" fill="transparent" />
-              <circle cx="300" cy="300" r="99" stroke="url(#grad2)" strokeWidth="2" fill="transparent" />
+              <circle className="animated-circle" cx="200" cy="100" r="99" stroke="url(#grad1)" strokeWidth="2" fill="transparent" />
+              <circle className="animated-circle" cx="100" cy="300" r="99" stroke="url(#grad3)" strokeWidth="2" fill="transparent" />
+              <circle className="animated-circle" cx="300" cy="300" r="99" stroke="url(#grad2)" strokeWidth="2" fill="transparent" />
               <circle cx="200" cy="1" r="3" fill="#00ffff" />
               <circle cx="1" cy="300" r="3" fill="#00ffff" />
               <circle cx="399" cy="300" r="3" fill="#ff00ff" />
@@ -101,15 +101,14 @@ function ServicesPage() {
             ))}
           </div>
         </div>
-        
-        <div className="detailed-services">
+        <div id="detailed-services" className="detailed-services">
           <h2>SERVICES</h2>
           <p>Iconize Lab brings an integrated portfolio of consulting, experience and creative expertise to every client engagement.</p>
           <div className="services-grid">
             {detailedServices.map((service, index) => (
               <div key={index} className="service-item">
                 <div className="service-icon">{service.icon}</div>
-                <h3>{service.title}</h3>
+                <h3>{service.title} →</h3>
                 <p>{service.description}</p>
                 <button 
                   className="capabilities-btn" 
@@ -126,6 +125,26 @@ function ServicesPage() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+
+        <div id="industries" className="industries-section">
+          <div className="industries-content">
+            <h2>Industries</h2>
+            <p>
+              Our solutions are unique to every client, but our industry experts who know your unique set of 
+              challenges and understand your situation inside and out are crucial to helping you achieve your 
+              growth goals.
+            </p>
+            <Link to="/industries" className="industries-link">INDUSTRIES WE SERVE →</Link>
+          </div>
+          <div className="industries-illustration">
+            <svg viewBox="0 0 200 100" width="200" height="100">
+              <rect x="0" y="60" width="40" height="40" fill="#1E3A8A" />
+              <rect x="50" y="40" width="40" height="60" fill="#1E3A8A" />
+              <rect x="100" y="20" width="40" height="80" fill="#1E3A8A" />
+              <circle cx="180" cy="50" r="20" fill="#1E3A8A" />
+            </svg>
           </div>
         </div>
       </div>

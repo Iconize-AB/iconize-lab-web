@@ -5,15 +5,23 @@ import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import ServicesPage from './components/ServicesPage';
 import Footer from './components/Footer';
+import About from './pages/About';
+import Industries from './pages/Industries';
+import SubscriptionPopup from './components/SubscriptionPopup';
+import AppDevelopment from './pages/AppDevelopment';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Header />
+        <SubscriptionPopup />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/app-development" element={<AppDevelopment />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/industries" element={<Industries />} />
         </Routes>
         <Footer />
       </div>
