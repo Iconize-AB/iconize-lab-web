@@ -17,37 +17,43 @@ function ServicesPage() {
       icon: '🛒', 
       title: 'E-commerce', 
       description: 'We develop robust e-commerce solutions to help businesses thrive in the digital marketplace.',
-      capabilities: ['Magento', 'Adobe Commerce', 'Saleor']
+      capabilities: ['Magento', 'Adobe Commerce', 'Saleor'],
+      link: '/services/ecommerce'
     },
     { 
       icon: '📱', 
       title: 'App Development', 
       description: 'We create innovative mobile applications that engage users and drive business growth.',
-      capabilities: ['iOS', 'Android', 'React Native']
+      capabilities: ['iOS', 'Android', 'React Native'],
+      link: '/services/app-development'
     },
     { 
       icon: '💻', 
       title: 'Web Development', 
       description: 'We build responsive, user-friendly websites that deliver exceptional digital experiences.',
-      capabilities: ['Node.js', 'Python', 'React', 'Vue.js']
+      capabilities: ['Node.js', 'Python', 'React', 'Vue.js'],
+      link: '/services/web-development'
     },
     { 
       icon: '🎨', 
       title: 'Reimagine Brands', 
       description: 'We help businesses reinvent their brand identity to stay relevant and impactful in evolving markets.',
-      capabilities: ['Brand Strategy', 'Visual Identity', 'Brand Guidelines']
+      capabilities: ['Brand Strategy', 'Visual Identity', 'Brand Guidelines'],
+      link: '/services/brand-reimagination'
     },
     { 
       icon: '📈', 
       title: 'Marketing', 
       description: 'We develop comprehensive marketing strategies to boost visibility and drive customer acquisition.',
-      capabilities: ['Digital Marketing', 'Content Strategy', 'SEO/SEM']
+      capabilities: ['Digital Marketing', 'Content Strategy', 'SEO/SEM'],
+      link: '/services/marketing'
     },
     { 
       icon: '🔗', 
       title: 'Integrations', 
       description: 'We seamlessly integrate various systems and platforms to optimize business operations and efficiency.',
-      capabilities: ['API Development', 'Middleware Solutions', 'Data Migration']
+      capabilities: ['API Development', 'Middleware Solutions', 'Data Migration'],
+      link: '/services/integrations'
     }
   ];
 
@@ -108,7 +114,9 @@ function ServicesPage() {
             {detailedServices.map((service, index) => (
               <div key={index} className="service-item">
                 <div className="service-icon">{service.icon}</div>
-                <h3>{service.title} →</h3>
+                <Link to={service.link}>
+                  <h3>{service.title} →</h3>
+                </Link>
                 <p>{service.description}</p>
                 <button 
                   className="capabilities-btn" 
