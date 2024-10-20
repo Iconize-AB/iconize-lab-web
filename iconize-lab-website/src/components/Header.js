@@ -21,11 +21,13 @@ function Header() {
     { 
       title: 'Areas of focus', 
       items: [
-        'Magento', 'Saleor', 'WooCommerce', 'E-commerce', 'Shopify', 
+        'Saleor', 'WooCommerce', 'E-commerce', 'Shopify',
         { name: 'App Development', path: '/services/app-development' },
         { name: 'Web Development', path: '/services/web-development' },
         { name: 'Marketing', path: '/services/marketing' },
-        'Integrations'
+        { name: 'Magento', path: '/services/magento' },
+        { name: 'WooCommerce', path: '/services/woocommerce' },
+        { name: 'Integrations', path: '/services/integration' },
       ] 
     },
   ];
