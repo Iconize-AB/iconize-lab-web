@@ -1,138 +1,137 @@
 .industries-page {
   background-color: #000;
-  color: #fff;
-  padding: 2rem;
+  color: #FDF0E6;
   min-height: 100vh;
+  padding: 2rem;
 
-  h1 {
-    margin-left: 10rem;
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .breadcrumb {
     font-size: 0.9rem;
     margin-bottom: 2rem;
-    margin-left: 5rem;
+
+    a {
+      color: #FDF0E6;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
 
     span {
-      &.current {
-        color: #FD5E53;
-      }
+      color: #FD5E53;
     }
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    font-weight: 300;
     margin-bottom: 2rem;
+    color: #26E594;
   }
 
   .industry-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    padding: 2rem 10rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 
     .description {
-      flex: 1;
-      max-width: 60%;
-    }
-
-    .circle-animation {
-      position: relative;
-      width: 200px;
-      height: 200px;
-
-      .dot {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-
-        &.active {
-          opacity: 1;
-        }
-
-        @for $i from 0 through 8 {
-          $angle: $i * 40deg;
-          &:nth-child(#{$i + 1}) {
-            top: calc(50% + (90px * #{sin($angle)}));
-            left: calc(50% + (90px * #{cos($angle)}));
-          }
-        }
-
-        &:nth-child(3n + 1) { background-color: #8a2be2; }
-        &:nth-child(3n + 2) { background-color: #fff; }
-        &:nth-child(3n) { background-color: #FD5E53; }
-      }
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 800px;
     }
   }
 
-  .industries-list {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
-    padding: 2rem 0;
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
 
-    .column {
-      flex: 1;
+    .industry-item {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, background-color 0.3s ease;
 
-      .industry {
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
+      &:hover {
+        transform: translateY(-5px);
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      span {
+        font-size: 1rem;
+        font-weight: 500;
       }
     }
   }
 
   .featured-industries {
-    margin-top: 4rem;
-    padding: 0 10rem;
-
     h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      color: #26E594;
     }
 
-    p {
-      max-width: 60%;
-      margin-bottom: 2rem;
+    .featured-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin-bottom: 3rem;
     }
 
     .featured-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
 
       .featured-item {
-        position: relative;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
         overflow: hidden;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
 
         img {
           width: 100%;
-          height: auto;
-          transition: transform 0.3s ease;
+          height: 200px;
+          object-fit: cover;
         }
 
-        a {
-          position: absolute;
-          bottom: 1rem;
-          left: 1rem;
-          color: #fff;
-          text-decoration: none;
-          font-weight: bold;
-          font-size: 1.2rem;
-          transition: opacity 0.3s ease;
+        .featured-content {
+          padding: 1.5rem;
 
-          &:hover {
-            opacity: 0.8;
+          h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #FD5E53;
           }
-        }
 
-        &:hover img {
-          transform: scale(1.05);
+          p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+          }
+
+          .learn-more {
+            display: inline-block;
+            color: #26E594;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #FD5E53;
+            }
+          }
         }
       }
     }

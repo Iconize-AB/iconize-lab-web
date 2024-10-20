@@ -1,0 +1,202 @@
+.woocommerce-page {
+  background-color: #000;
+  color: #FDF0E6;
+  min-height: 100vh;
+  padding: 2rem;
+
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+
+    a {
+      color: #FDF0E6;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      color: #FD5E53;
+    }
+  }
+
+  .woocommerce-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .woocommerce-logo {
+      width: 200px;
+      height: auto;
+      margin-right: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 300;
+    }
+  }
+
+  .intro-text {
+    font-size: 1.2rem;
+    max-width: 70%;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: #26E594;
+    margin-bottom: 1.5rem;
+  }
+
+  .woocommerce-services, .woocommerce-features, .woocommerce-process, .faq {
+    margin-bottom: 4rem;
+  }
+
+  .services-grid, .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-item, .feature-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-name, h3 {
+      font-size: 1rem;
+    }
+  }
+
+  .feature-item {
+    cursor: pointer;
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+
+    .step {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 1.5rem;
+      position: relative;
+
+      .step-number {
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        background-color: #FD5E53;
+        color: #000;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  .faq-item {
+    margin-bottom: 1rem;
+
+    h3 {
+      font-size: 1.1rem;
+      cursor: pointer;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      &.active {
+        background-color: #26E594;
+        color: #000;
+      }
+    }
+
+    p {
+      font-size: 0.9rem;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.02);
+      border-radius: 0 0 4px 4px;
+    }
+  }
+
+  .cta-section {
+    text-align: center;
+    margin-top: 4rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      background-color: #FD5E53;
+      color: #000;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #ff7f75;
+      }
+    }
+  }
+}

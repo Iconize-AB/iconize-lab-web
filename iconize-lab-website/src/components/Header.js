@@ -23,7 +23,9 @@ function Header() {
       items: [
         'Magento', 'Saleor', 'WooCommerce', 'E-commerce', 'Shopify', 
         { name: 'App Development', path: '/services/app-development' },
-        'Web Development', 'Marketing', 'Integrations'
+        { name: 'Web Development', path: '/services/web-development' },
+        { name: 'Marketing', path: '/services/marketing' },
+        'Integrations'
       ] 
     },
   ];

@@ -6,6 +6,7 @@ const SubscriptionPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [country, setCountry] = useState('');
+  const [countries, setCountries] = useState([]);
 
   useEffect(() => {
     const hasSubmitted = Cookies.get('subscriptionSubmitted');
@@ -13,6 +14,22 @@ const SubscriptionPopup = () => {
       const timer = setTimeout(() => setIsVisible(true), 5000); // Show popup after 5 seconds
       return () => clearTimeout(timer);
     }
+  }, []);
+
+  useEffect(() => {
+    // Fetch countries from API
+    fetch('https://restcountries.com/v3.1/all')
+      .then(response => response.json())
+      .then(data => {
+        const sortedCountries = data
+          .map(country => ({
+            code: country.cca2,
+            name: country.name.common
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name));
+        setCountries(sortedCountries);
+      })
+      .catch(error => console.error('Error fetching countries:', error));
   }, []);
 
   const handleSubmit = (e) => {
@@ -38,9 +55,11 @@ const SubscriptionPopup = () => {
         <form onSubmit={handleSubmit}>
           <select value={country} onChange={(e) => setCountry(e.target.value)} required>
             <option value="">Country*</option>
-            <option value="US">United States</option>
-            <option value="UK">United Kingdom</option>
-            {/* Add more countries as needed */}
+            {countries.map(country => (
+              <option key={country.code} value={country.code}>
+                {country.name}
+              </option>
+            ))}
           </select>
           <input
             type="email"

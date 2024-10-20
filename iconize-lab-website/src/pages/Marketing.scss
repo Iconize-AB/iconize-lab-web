@@ -1,4 +1,4 @@
-.web-development-page {
+.marketing-page {
   background-color: #000;
   color: #FDF0E6;
   min-height: 100vh;
@@ -45,16 +45,16 @@
     margin-bottom: 1.5rem;
   }
 
-  .technologies {
+  .services {
     margin-bottom: 4rem;
 
-    .tech-grid {
+    .service-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 1.5rem;
     }
 
-    .tech-item {
+    .service-item {
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 8px;
       padding: 1rem;
@@ -65,19 +65,40 @@
         transform: translateY(-5px);
       }
 
-      .tech-icon {
+      .service-icon {
         font-size: 2rem;
         display: block;
         margin-bottom: 0.5rem;
       }
 
-      .tech-name {
+      .service-name {
         font-size: 1rem;
       }
     }
   }
 
-  .web-development-process {
+  .seo-services {
+    margin-bottom: 4rem;
+
+    .seo-list {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+
+  .marketing-process {
     margin-bottom: 4rem;
 
     .process-steps {
@@ -150,4 +171,3 @@
     }
   }
 }
-

@@ -1,97 +1,74 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Industries.scss';
 
 const Industries = () => {
-  const [activeDots, setActiveDots] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveDots(prev => {
-        if (prev < 8) return prev + 1;
-        clearInterval(interval);
-        return prev;
-      });
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, []);
-
   const industries = [
-    ['Aerospace', 'Education', 'Financial Services', 'Retail'],
-    ['B2B', 'Energy / Utilities', 'Healthcare', 'Technology, Media & Telecom'],
-    ['Consumer Goods', 'Entertainment', 'Industrial Products', 'Travel / Hospitality']
+    'Aerospace', 'Education', 'Financial Services', 'Retail',
+    'B2B', 'Energy / Utilities', 'Healthcare', 'Technology, Media & Telecom',
+    'Consumer Goods', 'Entertainment', 'Industrial Products', 'Travel / Hospitality'
   ];
 
   const featuredIndustries = [
     {
-      name: 'FINANCIAL SERVICES',
-      image: 'path_to_financial_services_image.jpg'
+      name: 'Financial Services',
+      image: 'path_to_financial_services_image.jpg',
+      description: 'Innovative solutions for banks, insurers, and fintech companies.'
     },
     {
-      name: 'HEALTHCARE',
-      image: 'path_to_healthcare_image.jpg'
+      name: 'Retail',
+      image: 'path_to_retail_image.jpg',
+      description: 'Omnichannel experiences for modern retailers and e-commerce businesses.'
     },
     {
-      name: 'RETAIL',
-      image: 'path_to_retail_image.jpg'
-    },
-    {
-      name: 'TECHNOLOGY, MEDIA & TELECOM',
-      image: 'path_to_tech_media_telecom_image.jpg'
+      name: 'Technology',
+      image: 'path_to_tech_image.jpg',
+      description: 'Cutting-edge solutions for tech companies and startups.'
     }
   ];
 
   return (
     <div className="industries-page">
-      <div className="breadcrumb">
-        <span>Home</span> › <span>Services</span> › <span className="current">Industries</span>
-      </div>
-      
-      <h1>Industries We Serve</h1>
-      
-      <div className="industry-content">
-        <div className="description">
-          <p>
-            Prophet helps companies from dozens of industries find uncommon growth as they fend off new
-            entrants. Our multidisciplinary teams work closely with key stakeholders, creating pragmatic, high-
-            impact solutions that outpace the competition.
+      <div className="content-wrapper">
+        <div className="breadcrumb">
+          <Link to="/">Home</Link> &gt; <span>Industries</span>
+        </div>
+        
+        <h1>Industries We Serve</h1>
+        
+        <div className="industry-content">
+          <p className="description">
+            At Iconize Lab, we partner with companies across various industries to drive digital transformation and foster innovation. Our multidisciplinary teams create tailored, high-impact solutions that help businesses stay ahead in rapidly evolving markets.
           </p>
         </div>
         
-        <div className="circle-animation">
-          {[...Array(9)].map((_, index) => (
-            <div key={index} className={`dot ${index <= activeDots ? 'active' : ''}`} />
-          ))}
-        </div>
-      </div>
-      
-      <div className="industries-list">
-        {industries.map((column, columnIndex) => (
-          <div key={columnIndex} className="column">
-            {column.map((industry, industryIndex) => (
-              <div key={industryIndex} className="industry">{industry}</div>
-            ))}
-          </div>
-        ))}
-      </div>
-
-      <div className="featured-industries">
-        <h2>Featured Industries</h2>
-        <p>
-          Healthcare, financial services, retail and technology, media & telecom are among the industries most 
-          affected by recent upheavals in customer expectations, digital disruptors and government regulation. 
-          Learn how we are guiding organizations to extraordinary growth.
-        </p>
-        <div className="featured-grid">
-          {featuredIndustries.map((industry, index) => (
-            <div key={index} className="featured-item">
-              <img src={industry.image} alt={industry.name} />
-              <Link to={`/industries/${industry.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                {industry.name} →
-              </Link>
+        <div className="industries-grid">
+          {industries.map((industry, index) => (
+            <div key={index} className="industry-item">
+              <span>{industry}</span>
             </div>
           ))}
+        </div>
+
+        <div className="featured-industries">
+          <h2>Featured Industries</h2>
+          <p className="featured-description">
+            We have extensive experience in sectors that are at the forefront of digital innovation. Explore how we're helping organizations in these key industries achieve extraordinary growth and digital excellence.
+          </p>
+          <div className="featured-grid">
+            {featuredIndustries.map((industry, index) => (
+              <div key={index} className="featured-item">
+                <img src={industry.image} alt={industry.name} />
+                <div className="featured-content">
+                  <h3>{industry.name}</h3>
+                  <p>{industry.description}</p>
+                  <Link to={`/industries/${industry.name.toLowerCase().replace(/\s+/g, '-')}`} className="learn-more">
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
