@@ -31,15 +31,13 @@ function LandingPage() {
     <main className="landing-page">
       <section className="hero-section">
         <div className="content">
-          <h1>We are a growth and transformation firm.</h1>
+          <h1>Iconize Lab</h1>
           <p>
-            Iconize Lab is dedicated to helping you unlock uncommon growth—growth that is anchored in purpose, is
-            transformative and sustainable over time. We partner with you to manage disruption, bringing the rigor and
-            expertise required to uncover and realize transformative opportunities.
+            En digital byrå som erbjuder expertis inom UX-design, webb- och applikationsutveckling, integrationer, varumärkesstrategi och e-handel. Våra erfarna konsulter har lång erfarenhet av att stötta små och medelstora företag i deras digitala utveckling.
           </p>
           <div className="cta-buttons">
-            <a href="#about" className="cta-button">ABOUT ICONIZE LAB →</a>
-            <a href="#services" className="cta-button">OUR SERVICES →</a>
+            <a href="/about" className="cta-button">ABOUT ICONIZE LAB →</a>
+            <a href="/services" className="cta-button">OUR SERVICES →</a>
           </div>
         </div>
         <div className="decorative-elements">
