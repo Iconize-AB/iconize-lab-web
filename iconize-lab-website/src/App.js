@@ -16,6 +16,8 @@ import CompanyCulture from './pages/CompanyCulture';
 import IntegrationPage from './pages/IntegrationPage';
 import MagentoPage from './pages/MagentoPage';
 import WooCommercePage from './pages/WooCommercePage';
+import ContactPage from './pages/ConnectPage';
+import ConnectPage from './pages/ConnectPage';
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/about/company-culture" element={<CompanyCulture />} />
           <Route path="/industries" element={<Industries />} />
+          <Route path="/connect" element={<ConnectPage />} />
         </Routes>
         <Footer />
       </div>

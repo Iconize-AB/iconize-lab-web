@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebookF, faLinkedinIn, faWeixin } from '@fortawesome/free-brands-svg-icons';
+import SubscriptionPopup from './SubscriptionPopup';
 import './Footer.scss';
 
 function Footer() {
+  const [showSubscriptionPopup, setShowSubscriptionPopup] = useState(false);
+
+  const handleSubscribeClick = () => {
+    setShowSubscriptionPopup(true);
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -23,7 +30,7 @@ function Footer() {
             <div className="newsletter">
               <h4>Newsletter</h4>
               <p>Stay in the loop. Get the latest insights on growth and transformation.</p>
-              <button className="subscribe-btn">SUBSCRIBE</button>
+              <button className="subscribe-btn" onClick={handleSubscribeClick}>SUBSCRIBE</button>
             </div>
             <div className="contact-us">
               <h4>Contact Us</h4>
@@ -31,10 +38,6 @@ function Footer() {
               <button className="connect-btn">CONNECT</button>
             </div>
           </div>
-        </div>
-
-        <div className="copyright">
-          <p>© PROPHET 2024</p>
         </div>
 
         <div className="footer-links">
@@ -51,9 +54,11 @@ function Footer() {
           <div className="link-column">
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/terms-of-use">Terms of Use</Link>
+            <a href="#" id="open_preferences_center">Update cookies preferences</a>
           </div>
         </div>
       </div>
+      {showSubscriptionPopup && <SubscriptionPopup showSubscriptionPopup={showSubscriptionPopup} onClose={() => setShowSubscriptionPopup(false)} />}
     </footer>
   );
 }

@@ -25,11 +25,11 @@ function EcommercePage() {
 
   return (
     <div className="ecommerce-page">
-      <div className="content-wrapper">
+      <div className="content-wrapper-ecommerce">
         <div className="breadcrumb">
           <Link to="/">Home</Link> &gt; <Link to="/services">Services</Link> &gt; <span>E-commerce</span>
         </div>
-        <div className="section-content">
+        <div className="section-content-ecommerce">
           <h1>Transform Your Business with Our E-commerce Solutions</h1>
           <p>We develop robust and scalable e-commerce platforms tailored to your unique business needs.</p>
         </div>
@@ -49,20 +49,28 @@ function EcommercePage() {
             ))}
           </div>
         </div>
-        <div className="ecommerce-platforms">
+      </div>
+      <div className="ecommerce-platforms">
+        <div className="content-wrapper-ecommerce">
           <h2>Platforms We Work With</h2>
           <div className="platforms-list">
             {platforms.map((platform, index) => (
               <div key={index} className="platform-item">
                 <img src={platform.logo} alt={`${platform.name} logo`} />
+                <h3>{platform.name}</h3>
+                <p>{platform.description}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="cta-section">
-          <h2>Ready to Launch Your E-commerce Store?</h2>
-          <p>Let's discuss how we can help you create a powerful online presence and drive sales.</p>
-          <button className="cta-button">Get Started</button>
+      </div>
+      <div className="cta-section-wrapper">
+        <div className="content-wrapper-ecommerce">
+          <div className="cta-section">
+            <h2>Ready to Launch Your E-commerce Store?</h2>
+            <p>Let's discuss how we can help you create a powerful online presence and drive sales.</p>
+            <button className="cta-button">Get Started</button>
+          </div>
         </div>
       </div>
     </div>

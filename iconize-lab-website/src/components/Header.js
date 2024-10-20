@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Header.scss';
-import logo from '../resources/iconize.png'; // Adjust the path as needed
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Header.scss";
+import logo from "../resources/iconize.png"; // Adjust the path as needed
 
 function Header() {
   const [showServicesMenu, setShowServicesMenu] = useState(false);
@@ -9,32 +9,38 @@ function Header() {
   const navigate = useNavigate();
 
   const menuItems = [
-    { title: 'About', items: ['Careers', "Iconize Lab's Culture", "Iconize Lab's impact"] },
-    { 
-      title: 'Services', 
-      items: [
-        { name: 'Industries', path: '/industries' },
-        { name: 'App Development', path: '/services/app-development' }
-      ] 
+    {
+      title: "About",
+      items: ["Careers", "Iconize Lab's Culture", "Iconize Lab's impact"],
     },
-    { title: 'Work', items: ['Case Studies', 'Testimonials'] },
-    { 
-      title: 'Areas of focus', 
+    {
+      title: "Services",
       items: [
-        'Saleor', 'WooCommerce', 'E-commerce', 'Shopify',
-        { name: 'App Development', path: '/services/app-development' },
-        { name: 'Web Development', path: '/services/web-development' },
-        { name: 'Marketing', path: '/services/marketing' },
-        { name: 'Magento', path: '/services/magento' },
-        { name: 'WooCommerce', path: '/services/woocommerce' },
-        { name: 'Integrations', path: '/services/integration' },
-      ] 
+        { name: "Industries", path: "/industries" },
+        { name: "App Development", path: "/services/app-development" },
+      ],
+    },
+    { title: "Connect" },
+    {
+      title: "Areas of focus",
+      items: [
+        "Saleor",
+        "WooCommerce",
+        "Shopify",
+        { name: "E-commerce", path: "/services/ecommerce" },
+        { name: "App Development", path: "/services/app-development" },
+        { name: "Web Development", path: "/services/web-development" },
+        { name: "Marketing", path: "/services/marketing" },
+        { name: "Magento", path: "/services/magento" },
+        { name: "WooCommerce", path: "/services/woocommerce" },
+        { name: "Integrations", path: "/services/integration" },
+      ],
     },
   ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
+    document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
   };
 
   const handleMenuItemClick = (path) => {
@@ -54,28 +60,41 @@ function Header() {
       <nav>
         <ul>
           {menuItems.map((item, index) => (
-            <li key={index}><Link to={`/${item.title.toLowerCase().replace(' ', '-')}`}>{item.title}</Link></li>
+            <li key={index}>
+              <Link to={`/${item.title.toLowerCase().replace(" ", "-")}`}>
+                {item.title}
+              </Link>
+            </li>
           ))}
         </ul>
       </nav>
       <div className="right-section">
         <span className="language">English</span>
-        <button className="search-btn">🔍</button>
-        <button className={`menu-btn ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <button
+          className={`menu-btn ${isMenuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+        >
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
-      <div className={`full-screen-menu ${isMenuOpen ? 'open' : ''}`}>
+      <div className={`full-screen-menu ${isMenuOpen ? "open" : ""}`}>
         <div className="menu-content">
           {menuItems.map((category, index) => (
             <div key={index} className="menu-category">
               <h3>{category.title}</h3>
               <ul>
-                {category.items.map((item, itemIndex) => (
-                  <li key={itemIndex} onClick={() => handleMenuItemClick(typeof item === 'object' ? item.path : null)}>
-                    {typeof item === 'object' ? item.name : item}
+                {category?.items?.map((item, itemIndex) => (
+                  <li
+                    key={itemIndex}
+                    onClick={() =>
+                      handleMenuItemClick(
+                        typeof item === "object" ? item.path : null
+                      )
+                    }
+                  >
+                    {typeof item === "object" ? item.name : item}
                   </li>
                 ))}
               </ul>

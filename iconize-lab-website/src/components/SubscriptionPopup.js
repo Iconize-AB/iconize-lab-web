@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import './SubscriptionPopup.scss';
 
-const SubscriptionPopup = () => {
-  const [isVisible, setIsVisible] = useState(false);
+const SubscriptionPopup = ({ showSubscriptionPopup, onClose }) => {
+  const [isVisible, setIsVisible] = useState(showSubscriptionPopup || false);
   const [email, setEmail] = useState('');
   const [country, setCountry] = useState('');
   const [countries, setCountries] = useState([]);
