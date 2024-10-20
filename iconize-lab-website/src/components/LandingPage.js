@@ -99,7 +99,7 @@ function LandingPage() {
           <div className="contact-text">
             <h2>Let's grow together</h2>
             <p>Have questions about your next growth move? Prophet has answers.</p>
-            <a href="#contact" className="contact-button">CONTACT US →</a>
+            <a href="/connect" className="contact-button">CONTACT US →</a>
           </div>
           <div className="decorative-plant">
             <svg viewBox="0 0 100 100" width="200" height="200">
