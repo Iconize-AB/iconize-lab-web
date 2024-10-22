@@ -18,6 +18,11 @@ function Header() {
       items: [
         { name: "Industries", path: "/industries" },
         { name: "App Development", path: "/services/app-development" },
+        { name: "Web Development", path: "/services/web-development" },
+        { name: "Marketing", path: "/services/marketing" },
+        { name: "Magento", path: "/services/magento" },
+        { name: "WooCommerce", path: "/services/woocommerce" },
+        { name: "Integrations", path: "/services/integration" },
       ],
     },
     { title: "Connect" },

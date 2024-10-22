@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './InteractiveFormSection.scss';
 
 function InteractiveFormSection() {
@@ -10,6 +12,66 @@ function InteractiveFormSection() {
     message: ''
   });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleServiceChange = (service) => {
+    setFormData(prevState => ({
+      ...prevState,
+      services: prevState.services.includes(service)
+        ? prevState.services.filter(s => s !== service)
+        : [...prevState.services, service]
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('https://formspree.io/f/mvgogrno', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        toast.success('Thank you for your submission!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          services: [],
+          message: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error('There was an error submitting the form. Please try again.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+  };
+
   const services = [
     'Magento Development',
     'Saleor Development',
@@ -20,28 +82,9 @@ function InteractiveFormSection() {
     'Marketing'
   ];
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === 'checkbox') {
-      setFormData(prevState => ({
-        ...prevState,
-        services: checked
-          ? [...prevState.services, value]
-          : prevState.services.filter(service => service !== value)
-      }));
-    } else {
-      setFormData(prevState => ({ ...prevState, [name]: value }));
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to your backend or email service
-  };
-
   return (
     <section className="interactive-form-section">
+      <ToastContainer />
       <div className="form-container">
         <h2>How can we help you grow?</h2>
         <p>Tell us about your project and we'll get back to you with solutions.</p>
@@ -80,17 +123,17 @@ function InteractiveFormSection() {
           </div>
           <div className="form-group">
             <label>Services you're interested in:</label>
-            <div className="checkbox-group">
-              {services.map((service, index) => (
-                <label key={index} className="checkbox-label">
+            <div className="services-checkboxes">
+              {services.map((service) => (
+                <label key={service} className="checkbox-label">
                   <input
                     type="checkbox"
                     name="services"
                     value={service}
                     checked={formData.services.includes(service)}
-                    onChange={handleChange}
+                    onChange={() => handleServiceChange(service)}
                   />
-                  {service}
+                  <span>{service}</span>
                 </label>
               ))}
             </div>
@@ -102,7 +145,7 @@ function InteractiveFormSection() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              rows="4"
+              required
             ></textarea>
           </div>
           <button type="submit" className="submit-button">Get in Touch</button>

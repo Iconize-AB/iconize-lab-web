@@ -16,13 +16,15 @@ import CompanyCulture from './pages/CompanyCulture';
 import IntegrationPage from './pages/IntegrationPage';
 import MagentoPage from './pages/MagentoPage';
 import WooCommercePage from './pages/WooCommercePage';
-import ContactPage from './pages/ConnectPage';
 import ConnectPage from './pages/ConnectPage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <ToastContainer />
         <Header />
         <SubscriptionPopup />
         <Routes>
