@@ -32,12 +32,38 @@ const SubscriptionPopup = ({ showSubscriptionPopup, onClose }) => {
       .catch(error => console.error('Error fetching countries:', error));
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Submitted:', { email, country });
-    Cookies.set('subscriptionSubmitted', 'true', { expires: 30 }); // Cookie expires in 30 days
-    setIsVisible(false);
+    try {
+      const response = await fetch(
+        'https://api.buttondown.email/v1/subscribers',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token YOUR_BUTTONDOWN_API_KEY'
+          },
+          body: JSON.stringify({
+            email: email,
+            metadata: {
+              country: country,
+            },
+          }),
+        }
+      );
+
+      if (response.ok) {
+        console.log('Subscribed successfully');
+        Cookies.set('subscriptionSubmitted', 'true', { expires: 30 });
+        setIsVisible(false);
+      } else {
+        const error = await response.json();
+        throw new Error(error.message);
+      }
+    } catch (error) {
+      console.error('Error subscribing:', error);
+      // Handle error (e.g., show error message to user)
+    }
   };
 
   const handleClose = () => {
