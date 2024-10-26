@@ -44,11 +44,10 @@ function EcommercePage() {
               <div
                 key={index}
                 className={`feature-item ${aktivFunktion === index ? 'active' : ''}`}
-                onMouseEnter={() => setAktivFunktion(index)}
-                onMouseLeave={() => setAktivFunktion(null)}
+                onClick={() => setAktivFunktion(aktivFunktion === index ? null : index)}
               >
                 <h3>{funktion.titel}</h3>
-                {aktivFunktion === index && <p>{funktion.beskrivning}</p>}
+                {(aktivFunktion === index || window.innerWidth > 768) && <p>{funktion.beskrivning}</p>}
               </div>
             ))}
           </div>
