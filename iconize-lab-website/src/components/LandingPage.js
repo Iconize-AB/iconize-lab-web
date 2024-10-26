@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 function LandingPage() {
   const [activeElements, setActiveElements] = useState(0);
+  const [clickedElements, setClickedElements] = useState({});
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,6 +30,13 @@ function LandingPage() {
     'green', 'outline', 'white', 'blue'
   ];
 
+  const handleElementClick = (index) => {
+    setClickedElements(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   return (
     <main className="landing-page">
       <section className="hero-section">
@@ -46,7 +54,8 @@ function LandingPage() {
           {decorativeElements.map((type, index) => (
             <div 
               key={index} 
-              className={`element ${type} ${index < activeElements ? 'active' : ''}`}
+              className={`element ${type} ${index < activeElements ? 'active' : ''} ${clickedElements[index] ? 'clicked' : ''}`}
+              onClick={() => handleElementClick(index)}
             />
           ))}
         </div>
@@ -120,7 +129,7 @@ function LandingPage() {
           <h2>Our Services</h2>
           <p>Iconize Lab brings an integrated portfolio of consulting, experience and creative expertise to every client engagement.</p>
           <ServicesGrid showCapabilities={false} limit={4} />
-          <Link to="/services" className="cta-button">EXPLORE ALL OUR SERVICES →</Link>
+          <Link to="/services" className="cta-button">UTFORSKA VÅRA TJÄNSTER →</Link>
         </div>
       </section>
     </main>

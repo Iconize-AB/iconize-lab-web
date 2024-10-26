@@ -41,6 +41,19 @@
           &:hover {
             background-color: #e54d42;
           }
+
+          // Update media query for mobile devices
+          @media (max-width: 768px) {
+            font-size: 12px;
+            padding: 8px 12px;
+            white-space: nowrap;
+          }
+        }
+
+        // Ensure buttons stay on one row on mobile
+        @media (max-width: 768px) {
+          flex-wrap: nowrap;
+          justify-content: center;
         }
       }
     }
@@ -62,6 +75,8 @@
         opacity: 0;
         transition: opacity 0.3s ease, transform 0.5s ease;
         transform: scale(0);
+        transition: all 0.3s ease;
+        cursor: pointer;
 
         &.active {
           opacity: 1;
@@ -74,6 +89,26 @@
         &.outline { 
           border: 2px solid #ffffff; 
           background-color: #26E594;
+        }
+
+        &.clicked {
+          transform: rotate(180deg);
+
+          &.blue {
+            background-color: #ff4081;
+          }
+
+          &.green {
+            background-color: #ff9800;
+          }
+
+          &.outline {
+            border-color: #e91e63;
+          }
+
+          &.white {
+            background-color: #9c27b0;
+          }
         }
       }
     }
@@ -389,27 +424,42 @@
 
       .content {
         max-width: 100%;
-        margin-bottom: 2rem;
+        text-align: center;
 
         h1 {
-          font-size: 2.5rem;
+          font-size: 2rem;
+          margin-bottom: 1rem;
         }
 
         p {
-          font-size: 1rem;
+          font-size: 0.9rem;
+          margin-bottom: 1.5rem;
         }
 
         .cta-buttons {
-          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .cta-button {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            width: 50%;
+          }
         }
+      
       }
 
       .decorative-elements {
-        position: relative;
-        top: auto;
-        right: auto;
+        position: static;
         transform: none;
-        margin-top: 2rem;
+        width: 150px;
+        height: 150px;
+        margin: 1.5rem auto 0;
+
+        .element {
+          width: 30px;
+          height: 30px;
+        }
       }
     }
 
@@ -417,44 +467,43 @@
       padding: 2rem 1rem;
 
       .case-study-content {
-        flex-direction: column;
-
         .case-study-text {
           padding-right: 0;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
+
+          h2 {
+            font-size: 1.2rem;
+          }
 
           h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
           }
         }
       }
     }
 
     .additional-cases {
-      flex-direction: column;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
 
       .case-item {
-        flex: 1 0 auto;
-        margin-right: 0;
-        margin-bottom: 1rem;
-        flex-direction: row;
+        margin-bottom: 1.5rem;
 
         img {
-          width: 100px;
-          height: 100px;
-          margin-right: 1rem;
-          margin-bottom: 0;
+          height: 150px;
         }
 
-        .case-item-content {
-          flex: 1;
+        h4 {
+          font-size: 0.9rem;
+        }
+
+        p {
+          font-size: 0.8rem;
         }
       }
 
       .view-all-link {
-        align-self: flex-start;
-        margin-top: 1rem;
+        font-size: 0.8rem;
       }
     }
 
@@ -464,14 +513,21 @@
       .testimonial-content {
         flex-direction: column;
 
-        blockquote {
-          margin: 2rem 0;
-          font-size: 1.2rem;
+        .client-info {
+          margin-bottom: 1rem;
+
+          img {
+            max-width: 100px;
+          }
+
+          p {
+            font-size: 0.8rem;
+          }
         }
 
-        .testimonial-link {
-          align-self: flex-start;
-          margin-top: 1rem;
+        blockquote {
+          font-size: 1.2rem;
+          margin: 1rem 0;
         }
       }
     }
@@ -480,23 +536,79 @@
       padding: 2rem 1rem;
 
       .contact-content {
-        flex-direction: column;
-
         .contact-text {
-          text-align: center;
-          margin-bottom: 2rem;
-
           h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
+          }
+
+          p {
+            font-size: 1rem;
+          }
+
+          .contact-button {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
           }
         }
 
         .decorative-plant {
-          justify-content: center;
-
           svg {
             max-width: 200px;
           }
+        }
+      }
+    }
+
+    .services-section {
+      padding: 2rem 1rem;
+
+      .services-content {
+        h2 {
+          font-size: 2rem;
+        }
+
+        > p {
+          font-size: 0.9rem;
+        }
+
+        .services-grid {
+          gap: 1.5rem;
+          justify-content: center;
+          align-items: center;
+
+          .service-item {
+            padding: 1.2rem;
+
+            .service-icon {
+              font-size: 2rem;
+            }
+
+            h3 {
+              font-size: 1.1rem;
+            }
+
+            p {
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        .cta-button {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      .cta-buttons {
+        flex-direction: column;
+
+        .cta-button {
+          width: 100%;
+          margin-bottom: 1rem;
         }
       }
     }

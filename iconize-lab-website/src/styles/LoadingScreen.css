@@ -1,0 +1,39 @@
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+}
+
+.logo-container {
+  text-align: center;
+}
+
+.animated-logo {
+  width: 250px;
+  animation: logo-animation 3.5s ease-in-out infinite;
+}
+
+.company-name {
+  margin-top: 20px;
+}
+
+@keyframes logo-animation {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  20% {
+    transform: translateY(0) rotate(720deg);
+  }
+  60% {
+    transform: translateY(-30px) rotate(720deg);
+  }
+  80% {
+    transform: translateY(0) rotate(720deg);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  90% {
+    transform: translateY(-5px) rotate(720deg);
+  }
+}

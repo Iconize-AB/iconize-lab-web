@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
-import logo from "../resources/[i]conizeLab.png"; // Adjust the path as needed
+import logo from "../resources/[i]conizeLab.png";
 
 function Header() {
   const [showServicesMenu, setShowServicesMenu] = useState(false);

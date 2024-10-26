@@ -16,7 +16,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="social-media">
-          <h3>SOCIAL MEDIA</h3>
+          <h3>SOCIALA MEDIER</h3>
           <div className="social-icons">
             <a href="#" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} /></a>
             <a href="#" aria-label="Facebook"><FontAwesomeIcon icon={faFacebookF} /></a>
@@ -25,36 +25,36 @@ function Footer() {
         </div>
 
         <div className="connect">
-          <h3>CONNECT</h3>
+          <h3>ANSLUT</h3>
           <div className="connect-columns">
             <div className="newsletter">
-              <h4>Newsletter</h4>
-              <p>Stay in the loop. Get the latest insights on growth and transformation.</p>
-              <button className="subscribe-btn" onClick={handleSubscribeClick}>SUBSCRIBE</button>
+              <h4>Nyhetsbrev</h4>
+              <p>Håll dig uppdaterad. Få de senaste insikterna om tillväxt och transformation.</p>
+              <button className="subscribe-btn" onClick={handleSubscribeClick}>PRENUMERERA</button>
             </div>
             <div className="contact-us">
-              <h4>Contact Us</h4>
-              <p>Need help with a project, have a question about employment or our work with nonprofits? We're here.</p>
-              <button className="connect-btn">CONNECT</button>
+              <h4>Kontakta oss</h4>
+              <p>Behöver du hjälp med ett projekt, har du en fråga om anställning eller vårt arbete med ideella organisationer? Vi finns här.</p>
+              <button className="connect-btn">ANSLUT</button>
             </div>
           </div>
         </div>
 
         <div className="footer-links">
           <div className="link-column">
-            <Link to="/services">Services</Link>
-            <Link to="/work">Work</Link>
-            <Link to="/thinking">Thinking</Link>
+            <Link to="/services">Tjänster</Link>
+            <Link to="/work">Arbete</Link>
+            <Link to="/thinking">Tänkande</Link>
           </div>
           <div className="link-column">
-            <Link to="/about">About</Link>
+            <Link to="/about">Om oss</Link>
             <Link to="/aaker">Aaker</Link>
-            <Link to="/careers">Careers</Link>
+            <Link to="/careers">Karriärer</Link>
           </div>
           <div className="link-column">
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-of-use">Terms of Use</Link>
-            <a href="#" id="open_preferences_center">Update cookies preferences</a>
+            <Link to="/privacy-policy">Integritetspolicy</Link>
+            <Link to="/terms-of-use">Användarvillkor</Link>
+            <a href="#" id="open_preferences_center">Uppdatera cookieinställningar</a>
           </div>
         </div>
       </div>
