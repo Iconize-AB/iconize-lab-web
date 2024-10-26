@@ -1,0 +1,25 @@
+.services-grid-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.service-item {
+  flex: 0 0 300px; /* Adjust width as needed */
+  margin-right: 20px;
+  scroll-snap-align: start;
+  // ... other existing styles ...
+}
+
+.service-item h3,
+.service-item p {
+  color: #6200ea;
+}
+
+// ... other existing styles ...

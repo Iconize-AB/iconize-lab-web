@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
-import logo from "../resources/iconize.png"; // Adjust the path as needed
+import logo from "../resources/[i]conizeLab.png"; // Adjust the path as needed
 
 function Header() {
   const [showServicesMenu, setShowServicesMenu] = useState(false);
@@ -30,7 +30,6 @@ function Header() {
       title: "Areas of focus",
       items: [
         "Saleor",
-        "WooCommerce",
         "Shopify",
         { name: "E-commerce", path: "/services/ecommerce" },
         { name: "App Development", path: "/services/app-development" },
@@ -42,6 +41,8 @@ function Header() {
       ],
     },
   ];
+
+  const mainMenuItems = menuItems.filter(item => item.title !== "Areas of focus" && item.title !== "Connect");
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -55,6 +56,18 @@ function Header() {
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768 && isMenuOpen) {
+        setIsMenuOpen(false);
+        document.body.style.overflow = "auto";
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMenuOpen]);
+
   return (
     <header className="header">
       <div className="logo">
@@ -62,9 +75,9 @@ function Header() {
           <img src={logo} alt="Iconize Lab Logo" />
         </Link>
       </div>
-      <nav>
+      <nav className="main-nav">
         <ul>
-          {menuItems.map((item, index) => (
+          {mainMenuItems.map((item, index) => (
             <li key={index}>
               <Link to={`/${item.title.toLowerCase().replace(" ", "-")}`}>
                 {item.title}
@@ -78,6 +91,7 @@ function Header() {
         <button
           className={`menu-btn ${isMenuOpen ? "open" : ""}`}
           onClick={toggleMenu}
+          aria-label="Toggle menu"
         >
           <span></span>
           <span></span>
@@ -86,25 +100,27 @@ function Header() {
       </div>
       <div className={`full-screen-menu ${isMenuOpen ? "open" : ""}`}>
         <div className="menu-content">
-          {menuItems.map((category, index) => (
-            <div key={index} className="menu-category">
-              <h3>{category.title}</h3>
-              <ul>
-                {category?.items?.map((item, itemIndex) => (
-                  <li
-                    key={itemIndex}
-                    onClick={() =>
-                      handleMenuItemClick(
-                        typeof item === "object" ? item.path : null
-                      )
-                    }
-                  >
-                    {typeof item === "object" ? item.name : item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {menuItems
+            .filter((category) => category.title !== "Connect")
+            .map((category, index) => (
+              <div key={index} className="menu-category">
+                <h3>{category.title}</h3>
+                <ul>
+                  {category?.items?.map((item, itemIndex) => (
+                    <li
+                      key={itemIndex}
+                      onClick={() =>
+                        handleMenuItemClick(
+                          typeof item === "object" ? item.path : null
+                        )
+                      }
+                    >
+                      {typeof item === "object" ? item.name : item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
         </div>
       </div>
     </header>

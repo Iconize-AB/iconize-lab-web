@@ -8,63 +8,63 @@ const WooCommercePage = () => {
   const [activeFeature, setActiveFeature] = useState(null);
 
   const wooCommerceServices = [
-    { name: "WooCommerce Store Setup", icon: "🛒" },
-    { name: "Custom Theme Development", icon: "🎨" },
-    { name: "Plugin Development", icon: "🔌" },
-    { name: "WooCommerce Optimization", icon: "🚀" },
-    { name: "WooCommerce Support & Maintenance", icon: "🛠️" },
+    { name: "WooCommerce Butiksutveckling", icon: "🏪" },
+    { name: "WooCommerce Migration", icon: "🚀" },
+    { name: "Anpassad Pluginutveckling", icon: "🧩" },
+    { name: "WooCommerce Optimering", icon: "⚡" },
+    { name: "WooCommerce Support & Underhåll", icon: "🛠️" },
   ];
 
   const wooCommerceFeatures = [
-    { title: 'WordPress Integration', description: 'Seamlessly integrate e-commerce functionality into your WordPress site.' },
-    { title: 'Customizable Design', description: 'Create a unique store design that matches your brand identity.' },
-    { title: 'Extensive Plugin Ecosystem', description: 'Extend functionality with thousands of free and premium plugins.' },
-    { title: 'SEO-Friendly', description: "Benefit from WordPress's excellent SEO capabilities for better visibility." },
-    { title: 'Scalable Solution', description: 'Grow your online store from a small business to a large enterprise.' },
-    { title: 'Mobile-Responsive', description: 'Provide a seamless shopping experience across all devices.' },
+    { title: 'Enkel installation', description: 'Få din onlinebutik igång snabbt med intuitiva installationsguider och konfigurationsalternativ.' },
+    { title: 'Anpassningsbar', description: 'Skräddarsy din butiks utseende och funktionalitet med tusentals teman och plugins.' },
+    { title: 'Skalbar', description: 'Väx ditt företag utan begränsningar, från några få produkter till tusentals.' },
+    { title: 'Säker', description: 'Dra nytta av inbyggda säkerhetsfunktioner och regelbundna uppdateringar för att hålla din butik säker.' },
+    { title: 'SEO-vänlig', description: 'Optimera din butik för sökmotorer med WooCommerces SEO-vänliga struktur.' },
+    { title: 'Mobilanpassad', description: 'Erbjud en sömlös shoppingupplevelse på alla enheter med responsiv design.' },
   ];
 
   const faqItems = [
     {
-      question: "Why should I choose WooCommerce for my online store?",
-      answer: "WooCommerce is a flexible, open-source e-commerce platform built on WordPress. It's ideal for businesses of all sizes due to its ease of use, customizability, and scalability. Plus, it's free to use with affordable extensions available."
+      question: "Varför ska jag välja WooCommerce för min e-handelsbutik?",
+      answer: "WooCommerce är en kraftfull och flexibel e-handelsplattform som erbjuder skalbarhet, anpassning och ett brett utbud av funktioner. Den är idealisk för företag i alla storlekar, från små nystartade företag till stora företag."
     },
     {
-      question: "Can you migrate my existing store to WooCommerce?",
-      answer: "Yes, we offer migration services to WooCommerce. We can transfer your products, customers, and order history from your current platform to WooCommerce, ensuring a smooth transition with minimal disruption to your business."
+      question: "Kan ni migrera min befintliga butik till WooCommerce?",
+      answer: "Ja, vi erbjuder WooCommerce-migreringstjänster. Vi kan överföra dina produkter, kunder och orderhistorik från din nuvarande plattform till WooCommerce, vilket säkerställer en smidig övergång med minimal störning för din verksamhet."
     },
     {
-      question: "How long does it take to develop a WooCommerce store?",
-      answer: "The development time varies depending on the complexity of your project. A basic WooCommerce store can be set up in 2-4 weeks, while more complex, custom-built stores may take 6-12 weeks. We'll provide a detailed timeline after assessing your specific requirements."
+      question: "Hur lång tid tar det att utveckla en WooCommerce-butik?",
+      answer: "Utvecklingstiden kan variera beroende på projektets komplexitet. En grundläggande WooCommerce-butik kan sättas upp på 2-4 veckor, medan mer komplexa, skräddarsydda butiker kan ta 2-3 månader. Vi kommer att ge en detaljerad tidslinje efter att ha bedömt dina specifika krav."
     },
     {
-      question: "Do I need to purchase hosting separately for WooCommerce?",
-      answer: "Yes, you'll need to purchase WordPress hosting for your WooCommerce store. We can recommend reliable hosting providers optimized for WooCommerce and assist with the setup process to ensure optimal performance."
+      question: "Erbjuder ni WooCommerce-hostingtjänster?",
+      answer: "Även om vi inte tillhandahåller hosting direkt kan vi rekommendera och hjälpa till att sätta upp optimala hostinglösningar för din WooCommerce-butik. Vi samarbetar med pålitliga hostingpartners som specialiserar sig på WordPress och WooCommerce-hosting för att säkerställa bästa prestanda för din webbplats."
     },
     {
-      question: "Can you integrate WooCommerce with other business systems?",
-      answer: "Absolutely. We have experience integrating WooCommerce with various ERP, CRM, and other business systems. We can create custom integrations or use existing plugins to streamline your operations and improve efficiency."
+      question: "Kan ni integrera WooCommerce med mina befintliga system?",
+      answer: "Absolut. Vi har omfattande erfarenhet av att integrera WooCommerce med olika ERP-, CRM- och andra affärssystem. Vi kan skapa anpassade integrationer för att effektivisera dina verksamheter och förbättra effektiviteten."
     },
   ];
 
   return (
     <div className="woocommerce-page">
       <div className="breadcrumb">
-        <Link to="/">Home</Link> &gt; <Link to="/services">Services</Link> &gt;{" "}
-        <span>WooCommerce Development</span>
+        <Link to="/">Hem</Link> &gt; <Link to="/services">Tjänster</Link> &gt;{" "}
+        <span>WooCommerce-utveckling</span>
       </div>
       <div className="content-wrapper">
         <div className="woocommerce-header">
           <img src={wooCommerceLogo} alt="WooCommerce Logo" className="woocommerce-logo" />
-          <h1>WooCommerce Development Services</h1>
+          <h1>WooCommerce-utvecklingstjänster</h1>
         </div>
         <p className="intro-text">
-          We specialize in creating powerful, customizable e-commerce solutions using WooCommerce. 
-          Our expert team can help you leverage this versatile platform to build a successful online store that grows with your business.
+          Vi specialiserar oss på att skapa kraftfulla, skalbara e-handelslösningar med WooCommerce. 
+          Vårt expertteam kan hjälpa dig att utnyttja den fulla potentialen i denna robusta plattform för att driva tillväxten i din onlineverksamhet.
         </p>
 
         <section className="woocommerce-services">
-          <h2>Our WooCommerce Services</h2>
+          <h2>Våra WooCommerce-tjänster</h2>
           <div className="services-grid">
             {wooCommerceServices.map((service, index) => (
               <div key={index} className="service-item">
@@ -76,7 +76,7 @@ const WooCommercePage = () => {
         </section>
 
         <section className="woocommerce-features">
-          <h2>Key WooCommerce Features</h2>
+          <h2>Viktiga WooCommerce-funktioner</h2>
           <div className="features-grid">
             {wooCommerceFeatures.map((feature, index) => (
               <div
@@ -93,33 +93,33 @@ const WooCommercePage = () => {
         </section>
 
         <section className="woocommerce-process">
-          <h2>Our WooCommerce Development Process</h2>
+          <h2>Vår WooCommerce-utvecklingsprocess</h2>
           <div className="process-steps">
             <div className="step">
               <div className="step-number">1</div>
-              <h3>Requirements Gathering</h3>
-              <p>We analyze your needs and create a detailed project plan.</p>
+              <h3>Upptäckt & Planering</h3>
+              <p>Vi analyserar dina krav och skapar en detaljerad projektplan.</p>
             </div>
             <div className="step">
               <div className="step-number">2</div>
               <h3>Design & Prototyping</h3>
-              <p>Our designers create an attractive and user-friendly interface for your store.</p>
+              <p>Våra designers skapar ett engagerande och användarvänligt gränssnitt för din butik.</p>
             </div>
             <div className="step">
               <div className="step-number">3</div>
-              <h3>Development & Customization</h3>
-              <p>We build your WooCommerce store, including any custom functionality or integrations.</p>
+              <h3>Utveckling & Anpassning</h3>
+              <p>Vi bygger din WooCommerce-butik, inklusive eventuella anpassade plugins eller integrationer.</p>
             </div>
             <div className="step">
               <div className="step-number">4</div>
-              <h3>Testing & Deployment</h3>
-              <p>We thoroughly test your store and assist with the launch process.</p>
+              <h3>Testning & Lansering</h3>
+              <p>Vi testar din butik noggrant och hjälper till med lanseringsprocessen.</p>
             </div>
           </div>
         </section>
 
         <section className="faq">
-          <h2>Frequently Asked Questions</h2>
+          <h2>Vanliga frågor</h2>
           {faqItems.map((item, index) => (
             <div key={index} className="faq-item">
               <h3
@@ -136,9 +136,9 @@ const WooCommercePage = () => {
         </section>
 
         <div className="cta-section">
-          <h2>Ready to Launch Your WooCommerce Store?</h2>
-          <p>Let's discuss how we can create a powerful online presence for your business with WooCommerce.</p>
-          <button className="cta-button">Get Started</button>
+          <h2>Redo att bygga din WooCommerce e-handelsbutik?</h2>
+          <p>Låt oss diskutera hur vi kan skapa en kraftfull online-närvaro för ditt företag med WooCommerce.</p>
+          <button className="cta-button">Kom igång</button>
         </div>
       </div>
     </div>

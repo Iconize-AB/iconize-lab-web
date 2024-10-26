@@ -33,9 +33,9 @@ function App() {
           <Route path="/services/app-development" element={<AppDevelopment />} />
           <Route path="/services/web-development" element={<WebDevelopment />} />
           <Route path="/services/marketing" element={<Marketing />} />
-          <Route path="/services/magento" element={<MagentoPage />} />
+          <Route path="/services/ecommerce/magento" element={<MagentoPage />} />
           <Route path="/services/ecommerce" element={<EcommercePage />} />
-          <Route path="/services/woocommerce" element={<WooCommercePage />} />
+          <Route path="/services/ecommerce/woocommerce" element={<WooCommercePage />} />
           <Route path="/services/integration" element={<IntegrationPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/company-culture" element={<CompanyCulture />} />

@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ServicesGrid from './ServicesGrid';
 import './ServicesPage.css';
 
 function ServicesPage() {
   const [activeCircle, setActiveCircle] = useState(null);
-  const [activeCapabilities, setActiveCapabilities] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const circleServices = [
     { name: 'Consulting', description: 'Identifying growth opportunities, defining critical strategies and building plan-to-win roadmaps to drive in-market impact' },
@@ -12,60 +16,12 @@ function ServicesPage() {
     { name: 'Creative', description: 'Crafting compelling narratives and visual identities that resonate with audiences and drive engagement' }
   ];
 
-  const detailedServices = [
-    { 
-      icon: '🛒', 
-      title: 'E-commerce', 
-      description: 'We develop robust e-commerce solutions to help businesses thrive in the digital marketplace.',
-      capabilities: ['Magento', 'Adobe Commerce', 'Saleor'],
-      link: '/services/ecommerce'
-    },
-    { 
-      icon: '📱', 
-      title: 'App Development', 
-      description: 'We create innovative mobile applications that engage users and drive business growth.',
-      capabilities: ['iOS', 'Android', 'React Native'],
-      link: '/services/app-development'
-    },
-    { 
-      icon: '💻', 
-      title: 'Web Development', 
-      description: 'We build responsive, user-friendly websites that deliver exceptional digital experiences.',
-      capabilities: ['Node.js', 'Python', 'React', 'Vue.js'],
-      link: '/services/web-development'
-    },
-    { 
-      icon: '🎨', 
-      title: 'Reimagine Brands', 
-      description: 'We help businesses reinvent their brand identity to stay relevant and impactful in evolving markets.',
-      capabilities: ['Brand Strategy', 'Visual Identity', 'Brand Guidelines'],
-      link: '/services/brand-reimagination'
-    },
-    { 
-      icon: '📈', 
-      title: 'Marketing', 
-      description: 'We develop comprehensive marketing strategies to boost visibility and drive customer acquisition.',
-      capabilities: ['Digital Marketing', 'Content Strategy', 'SEO/SEM'],
-      link: '/services/marketing'
-    },
-    { 
-      icon: '🔗', 
-      title: 'Integrations', 
-      description: 'We seamlessly integrate various systems and platforms to optimize business operations and efficiency.',
-      capabilities: ['API Development', 'Middleware Solutions', 'Data Migration'],
-      link: '/services/integrations'
-    }
-  ];
-
-  const toggleCapabilities = (index) => {
-    setActiveCapabilities(activeCapabilities === index ? null : index);
-  };
 
   return (
     <div className="services-page">
       <div className="content-wrapper">
         <div className="breadcrumb">
-          <Link to="/">Home</Link> &gt; <span>Services</span>
+          <Link to="/">Home</Link> &gt; <span>Tjänster</span>
         </div>
         <div className="section-content">
           <h1>We help leaders turn uncertainty into competitive advantage.</h1>
@@ -110,30 +66,7 @@ function ServicesPage() {
         <div id="detailed-services" className="detailed-services">
           <h2>SERVICES</h2>
           <p>Iconize Lab brings an integrated portfolio of consulting, experience and creative expertise to every client engagement.</p>
-          <div className="services-grid">
-            {detailedServices.map((service, index) => (
-              <div key={index} className="service-item">
-                <div className="service-icon">{service.icon}</div>
-                <Link to={service.link}>
-                  <h3>{service.title} →</h3>
-                </Link>
-                <p>{service.description}</p>
-                <button 
-                  className="capabilities-btn" 
-                  onClick={() => toggleCapabilities(index)}
-                >
-                  Capabilities {activeCapabilities === index ? '▲' : '▼'}
-                </button>
-                {activeCapabilities === index && (
-                  <ul className="capabilities-list">
-                    {service.capabilities.map((capability, capIndex) => (
-                      <li key={capIndex}>{capability}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-          </div>
+          <ServicesGrid showCapabilities={true} />
         </div>
 
         <div id="industries" className="industries-section">

@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./AppDevelopment.scss";
 
 const AppDevelopment = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const technologies = [
     { name: "React Native", icon: "🔵" },
@@ -46,7 +50,7 @@ const AppDevelopment = () => {
   return (
     <div className="app-development-page">
       <div className="breadcrumb">
-        <Link to="/">Home</Link> &gt; <Link to="/services">Services</Link> &gt;{" "}
+        <Link to="/">Home</Link> &gt; <Link to="/services">Tjänster</Link> &gt;{" "}
         <span>App Development</span>
       </div>
       <div className="content-wrapper">
@@ -121,6 +125,15 @@ const AppDevelopment = () => {
           ))}
         </section>
       </div>
+      <div className="cta-section-wrapper">
+          <div className="content-wrapper-app">
+            <div className="cta-section">
+              <h2>Ready to Launch Your Mobile App?</h2>
+              <p>Let's discuss how we can help you create an innovative mobile application that engages users and drives business growth.</p>
+              <button className="cta-button">Get Started</button>
+            </div>
+          </div>
+        </div>
     </div>
   );
 };

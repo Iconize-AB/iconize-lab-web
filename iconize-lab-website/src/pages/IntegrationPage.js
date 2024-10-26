@@ -5,160 +5,160 @@ import sapLogo from '../resources/sap.png';
 import salesforceLogo from '../resources/salesforce.png';
 import microsoftDynamicsLogo from '../resources/hubspot.png';
 
-const IntegrationPage = () => {
-  const [activeQuestion, setActiveQuestion] = useState(null);
-  const [activeFeature, setActiveFeature] = useState(null);
+const IntegrationsPage = () => {
+  const [aktivFråga, setAktivFråga] = useState(null);
+  const [aktivFunktion, setAktivFunktion] = useState(null);
 
-  const integrationTypes = [
-    { name: "ERP Integration", icon: "🏭" },
-    { name: "CRM Integration", icon: "🤝" },
-    { name: "E-commerce Integration", icon: "🛒" },
-    { name: "API Development", icon: "🔌" },
-    { name: "Data Migration", icon: "💾" },
+  const integrationsTyper = [
+    { namn: "ERP-integration", ikon: "🏭" },
+    { namn: "CRM-integration", ikon: "🤝" },
+    { namn: "E-handelsintegration", ikon: "🛒" },
+    { namn: "API-utveckling", ikon: "🔌" },
+    { namn: "Datamigrering", ikon: "💾" },
   ];
 
-  const integrationFeatures = [
-    { title: 'Seamless Data Flow', description: 'Ensure smooth data transfer between your ERP/CRM systems and web/e-commerce platforms.' },
-    { title: 'Real-time Synchronization', description: 'Keep your inventory, orders, and customer data up-to-date across all systems.' },
-    { title: 'Custom Workflows', description: 'Develop tailored workflows to match your unique business processes.' },
-    { title: 'Scalable Architecture', description: 'Build integrations that can grow with your business needs.' },
-    { title: 'Security & Compliance', description: 'Implement robust security measures and ensure compliance with data protection regulations.' },
-    { title: 'Performance Optimization', description: 'Optimize integration performance for faster data processing and reduced latency.' },
+  const integrationsFunktioner = [
+    { titel: 'Sömlöst dataflöde', beskrivning: 'Säkerställ smidig dataöverföring mellan dina ERP/CRM-system och webb/e-handelsplattformar.' },
+    { titel: 'Realtidssynkronisering', beskrivning: 'Håll ditt lager, ordrar och kunddata uppdaterade i alla system.' },
+    { titel: 'Anpassade arbetsflöden', beskrivning: 'Utveckla skräddarsydda arbetsflöden som matchar dina unika affärsprocesser.' },
+    { titel: 'Skalbar arkitektur', beskrivning: 'Bygg integrationer som kan växa med dina affärsbehov.' },
+    { titel: 'Säkerhet och efterlevnad', beskrivning: 'Implementera robusta säkerhetsåtgärder och säkerställ efterlevnad av dataskyddsregler.' },
+    { titel: 'Prestandaoptimering', beskrivning: 'Optimera integrationsprestandaför snabbare databehandling och minskad latens.' },
   ];
 
-  const platforms = [
-    { name: 'SAP', logo: sapLogo },
-    { name: 'Salesforce', logo: salesforceLogo },
-    { name: 'Microsoft Dynamics', logo: microsoftDynamicsLogo },
+  const plattformar = [
+    { namn: 'SAP', logo: sapLogo },
+    { namn: 'Salesforce', logo: salesforceLogo },
+    { namn: 'Microsoft Dynamics', logo: microsoftDynamicsLogo },
   ];
 
-  const faqItems = [
+  const vanligaFrågor = [
     {
-      question: "How can integrating ERP/CRM with my website benefit my business?",
-      answer: "Integrating ERP/CRM systems with your website can streamline operations, improve data accuracy, enhance customer experiences, and provide real-time insights for better decision-making."
+      fråga: "Hur kan integrering av ERP/CRM med min webbplats gynna mitt företag?",
+      svar: "Integrering av ERP/CRM-system med din webbplats kan effektivisera verksamheten, förbättra datanoggrannheten, förbättra kundupplevelser och ge realtidsinsikter för bättre beslutsfattande."
     },
     {
-      question: "How long does a typical integration project take?",
-      answer: "The duration of an integration project can vary depending on complexity, but typically ranges from 2-6 months. We'll provide a detailed timeline after assessing your specific requirements."
+      fråga: "Hur lång tid tar ett typiskt integrationsprojekt?",
+      svar: "Varaktigheten för ett integrationsprojekt kan variera beroende på komplexitet, men sträcker sig vanligtvis från 2-6 månader. Vi kommer att ge en detaljerad tidslinje efter att ha bedömt dina specifika krav."
     },
     {
-      question: "Can you integrate custom or legacy systems?",
-      answer: "Yes, we have experience integrating a wide range of systems, including custom-built and legacy solutions. We'll work with you to develop the best integration strategy for your unique setup."
+      fråga: "Kan ni integrera anpassade eller äldre system?",
+      svar: "Ja, vi har erfarenhet av att integrera ett brett utbud av system, inklusive skräddarsydda och äldre lösningar. Vi kommer att arbeta med dig för att utveckla den bästa integrationsstrategin för din unika uppsättning."
     },
     {
-      question: "How do you ensure data security during the integration process?",
-      answer: "We implement industry-standard security measures, including encryption, secure APIs, and access controls. We also comply with relevant data protection regulations to ensure your data remains safe throughout the integration process."
+      fråga: "Hur säkerställer ni datasäkerheten under integrationsprocessen?",
+      svar: "Vi implementerar branschstandardsäkerhetsåtgärder, inklusive kryptering, säkra API:er och åtkomstkontroller. Vi följer också relevanta dataskyddsregler för att säkerställa att dina data förblir säkra under hela integrationsprocessen."
     },
     {
-      question: "Do you provide support after the integration is complete?",
-      answer: "Absolutely. We offer ongoing support and maintenance services to ensure your integrations continue to function smoothly and adapt to any changes in your systems or business processes."
+      fråga: "Erbjuder ni support efter att integrationen är klar?",
+      svar: "Absolut. Vi erbjuder löpande support- och underhållstjänster för att säkerställa att dina integrationer fortsätter att fungera smidigt och anpassar sig till eventuella förändringar i dina system eller affärsprocesser."
     },
   ];
 
   return (
     <div className="integration-page">
       <div className="breadcrumb">
-        <Link to="/">Home</Link> &gt; <Link to="/services">Services</Link> &gt;{" "}
-        <span>Integration Services</span>
+        <Link to="/">Hem</Link> &gt; <Link to="/services">Tjänster</Link> &gt;{" "}
+        <span>Integrationstjänster</span>
       </div>
       <div className="content-wrapper">
-        <h1>Integration Services</h1>
+        <h1>Integrationstjänster</h1>
         <p className="intro-text">
-          We specialize in seamlessly integrating ERP and CRM systems with web and e-commerce platforms, 
-          optimizing your business processes and enhancing customer experiences.
+          Vi specialiserar oss på att sömlöst integrera ERP- och CRM-system med webb- och e-handelsplattformar, 
+          optimera dina affärsprocesser och förbättra kundupplevelser.
         </p>
 
         <section className="integration-types">
-          <h2>Integration Solutions We Offer</h2>
+          <h2>Integrationslösningar vi erbjuder</h2>
           <div className="type-grid">
-            {integrationTypes.map((type, index) => (
+            {integrationsTyper.map((typ, index) => (
               <div key={index} className="type-item">
-                <span className="type-icon">{type.icon}</span>
-                <span className="type-name">{type.name}</span>
+                <span className="type-icon">{typ.ikon}</span>
+                <span className="type-name">{typ.namn}</span>
               </div>
             ))}
           </div>
         </section>
 
         <section className="integration-features">
-          <h2>Key Integration Features</h2>
+          <h2>Viktiga integrationsfunktioner</h2>
           <div className="features-grid">
-            {integrationFeatures.map((feature, index) => (
+            {integrationsFunktioner.map((funktion, index) => (
               <div
                 key={index}
-                className={`feature-item ${activeFeature === index ? 'active' : ''}`}
-                onMouseEnter={() => setActiveFeature(index)}
-                onMouseLeave={() => setActiveFeature(null)}
+                className={`feature-item ${aktivFunktion === index ? 'active' : ''}`}
+                onMouseEnter={() => setAktivFunktion(index)}
+                onMouseLeave={() => setAktivFunktion(null)}
               >
-                <h3>{feature.title}</h3>
-                {activeFeature === index && <p>{feature.description}</p>}
+                <h3>{funktion.titel}</h3>
+                {aktivFunktion === index && <p>{funktion.beskrivning}</p>}
               </div>
             ))}
           </div>
         </section>
 
         <section className="integration-platforms">
-          <h2>Platforms We Integrate With</h2>
+          <h2>Plattformar vi integrerar med</h2>
           <div className="platforms-list">
-            {platforms.map((platform, index) => (
+            {plattformar.map((plattform, index) => (
               <div key={index} className="platform-item">
-                <img src={platform.logo} alt={`${platform.name} logo`} />
+                <img src={plattform.logo} alt={`${plattform.namn} logotyp`} />
               </div>
             ))}
           </div>
         </section>
 
         <section className="integration-process">
-          <h2>Our Integration Process</h2>
+          <h2>Vår integrationsprocess</h2>
           <div className="process-steps">
             <div className="step">
               <div className="step-number">1</div>
-              <h3>Requirements Analysis</h3>
-              <p>We thoroughly assess your current systems and integration needs.</p>
+              <h3>Kravanalys</h3>
+              <p>Vi gör en grundlig bedömning av dina nuvarande system och integrationsbehov.</p>
             </div>
             <div className="step">
               <div className="step-number">2</div>
-              <h3>Solution Design</h3>
-              <p>We design a tailored integration solution to meet your specific requirements.</p>
+              <h3>Lösningsdesign</h3>
+              <p>Vi utformar en skräddarsydd integrationslösning för att möta dina specifika krav.</p>
             </div>
             <div className="step">
               <div className="step-number">3</div>
-              <h3>Development & Testing</h3>
-              <p>We develop the integration and conduct rigorous testing to ensure reliability.</p>
+              <h3>Utveckling & Testning</h3>
+              <p>Vi utvecklar integrationen och genomför rigorös testning för att säkerställa tillförlitlighet.</p>
             </div>
             <div className="step">
               <div className="step-number">4</div>
-              <h3>Deployment & Support</h3>
-              <p>We deploy the integration and provide ongoing support and maintenance.</p>
+              <h3>Driftsättning & Support</h3>
+              <p>Vi driftsätter integrationen och tillhandahåller löpande support och underhåll.</p>
             </div>
           </div>
         </section>
 
         <section className="faq">
-          <h2>Frequently Asked Questions</h2>
-          {faqItems.map((item, index) => (
+          <h2>Vanliga frågor</h2>
+          {vanligaFrågor.map((item, index) => (
             <div key={index} className="faq-item">
               <h3
                 onClick={() =>
-                  setActiveQuestion(activeQuestion === index ? null : index)
+                  setAktivFråga(aktivFråga === index ? null : index)
                 }
-                className={activeQuestion === index ? "active" : ""}
+                className={aktivFråga === index ? "active" : ""}
               >
-                {item.question}
+                {item.fråga}
               </h3>
-              {activeQuestion === index && <p>{item.answer}</p>}
+              {aktivFråga === index && <p>{item.svar}</p>}
             </div>
           ))}
         </section>
 
         <div className="cta-section">
-          <h2>Ready to Streamline Your Business with Seamless Integrations?</h2>
-          <p>Let's discuss how we can help you integrate your systems and boost your efficiency.</p>
-          <button className="cta-button">Get Started</button>
+          <h2>Redo att effektivisera din verksamhet med sömlösa integrationer?</h2>
+          <p>Låt oss diskutera hur vi kan hjälpa dig att integrera dina system och öka din effektivitet.</p>
+          <button className="cta-button">Kom igång</button>
         </div>
       </div>
     </div>
   );
 };
 
-export default IntegrationPage;
+export default IntegrationsPage;

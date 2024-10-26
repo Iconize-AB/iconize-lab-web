@@ -12,11 +12,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
 }
 
 .breadcrumb {
   font-size: 0.9rem;
+  padding: 2rem;
   margin-bottom: 4rem;
 }
 
@@ -98,7 +98,7 @@ h1 {
 }
 
 .detailed-services {
-  padding: 4rem 2rem;
+  padding: 4rem 4rem;
   text-align: left;
   background-color: #000;
   color: #fff;
@@ -241,7 +241,7 @@ html {
 }
 
 .industries-section {
-  background-color: #4169E1;
+  background-color: #6200ea;
   color: #ffffff;
   padding: 4rem 2rem;
   position: relative;
@@ -301,4 +301,30 @@ html {
     margin-top: 2rem;
     align-self: center;
   }
+}
+
+.capabilities-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.capability-tag {
+  background-color: rgba(128, 0, 128, 0.1);
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 0.9em;
+  color: #e0b0ff;
+  border: 1px solid #6200ea;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.capability-tag:hover {
+  background-color: rgba(128, 0, 128, 0.2);
+  color: #fff;
+  border-color: #FD5E53;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(128, 0, 128, 0.3);
 }

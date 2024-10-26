@@ -3,45 +3,45 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './InteractiveFormSection.scss';
 
-function InteractiveFormSection() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    services: [],
-    message: ''
+function InteraktivtFormulärSektion() {
+  const [formulärData, setFormulärData] = useState({
+    namn: '',
+    epost: '',
+    företag: '',
+    tjänster: [],
+    meddelande: ''
   });
 
-  const handleChange = (e) => {
+  const hanteraÄndring = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
+    setFormulärData(föregåendeTillstånd => ({
+      ...föregåendeTillstånd,
       [name]: value
     }));
   };
 
-  const handleServiceChange = (service) => {
-    setFormData(prevState => ({
-      ...prevState,
-      services: prevState.services.includes(service)
-        ? prevState.services.filter(s => s !== service)
-        : [...prevState.services, service]
+  const hanteraTjänstÄndring = (tjänst) => {
+    setFormulärData(föregåendeTillstånd => ({
+      ...föregåendeTillstånd,
+      tjänster: föregåendeTillstånd.tjänster.includes(tjänst)
+        ? föregåendeTillstånd.tjänster.filter(t => t !== tjänst)
+        : [...föregåendeTillstånd.tjänster, tjänst]
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const hanteraInlämning = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://formspree.io/f/mvgogrno', {
+      const svar = await fetch('https://formspree.io/f/mvgogrno', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formulärData)
       });
 
-      if (response.ok) {
-        toast.success('Thank you for your submission!', {
+      if (svar.ok) {
+        toast.success('Tack för din inlämning!', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -49,19 +49,19 @@ function InteractiveFormSection() {
           pauseOnHover: true,
           draggable: true,
         });
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          services: [],
-          message: ''
+        setFormulärData({
+          namn: '',
+          epost: '',
+          företag: '',
+          tjänster: [],
+          meddelande: ''
         });
       } else {
-        throw new Error('Form submission failed');
+        throw new Error('Formulärinlämningen misslyckades');
       }
-    } catch (error) {
-      console.error('Error:', error);
-      toast.error('There was an error submitting the form. Please try again.', {
+    } catch (fel) {
+      console.error('Fel:', fel);
+      toast.error('Det uppstod ett fel vid inlämning av formuläret. Vänligen försök igen.', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -72,87 +72,87 @@ function InteractiveFormSection() {
     }
   };
 
-  const services = [
-    'Magento Development',
-    'Saleor Development',
-    'WooCommerce Development',
-    'Application Development',
-    'Web Development',
-    'Copywriting',
-    'Marketing'
+  const tjänster = [
+    'Magento-utveckling',
+    'Saleor-utveckling',
+    'WooCommerce-utveckling',
+    'App-utveckling',
+    'Web-utveckling',
+    'Kopiering',
+    'Marknadsföring'
   ];
 
   return (
     <section className="interactive-form-section">
       <ToastContainer />
       <div className="form-container">
-        <h2>How can we help you grow?</h2>
+        <h2>Hur kan vi hjälpa dig att växa?</h2>
         <p>Tell us about your project and we'll get back to you with solutions.</p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={hanteraInlämning}>
           <div className="form-group">
-            <label htmlFor="name">Name*</label>
+            <label htmlFor="namn">Namn*</label>
             <input
               type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
+              id="namn"
+              name="namn"
+              value={formulärData.namn}
+              onChange={hanteraÄndring}
               required
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email*</label>
+            <label htmlFor="epost">E-post*</label>
             <input
               type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
+              id="epost"
+              name="epost"
+              value={formulärData.epost}
+              onChange={hanteraÄndring}
               required
             />
           </div>
           <div className="form-group">
-            <label htmlFor="company">Company</label>
+            <label htmlFor="företag">Företag</label>
             <input
               type="text"
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
+              id="företag"
+              name="företag"
+              value={formulärData.företag}
+              onChange={hanteraÄndring}
             />
           </div>
           <div className="form-group">
-            <label>Services you're interested in:</label>
+            <label>Tjänster du är intresserad av:</label>
             <div className="services-checkboxes">
-              {services.map((service) => (
-                <label key={service} className="checkbox-label">
+              {tjänster.map((tjänst) => (
+                <label key={tjänst} className="checkbox-label">
                   <input
                     type="checkbox"
-                    name="services"
-                    value={service}
-                    checked={formData.services.includes(service)}
-                    onChange={() => handleServiceChange(service)}
+                    name="tjänster"
+                    value={tjänst}
+                    checked={formulärData.tjänster.includes(tjänst)}
+                    onChange={() => hanteraTjänstÄndring(tjänst)}
                   />
-                  <span>{service}</span>
+                  <span>{tjänst}</span>
                 </label>
               ))}
             </div>
           </div>
           <div className="form-group">
-            <label htmlFor="message">Tell us more about your project:</label>
+            <label htmlFor="meddelande">Berätta mer om ditt projekt:</label>
             <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
+              id="meddelande"
+              name="meddelande"
+              value={formulärData.meddelande}
+              onChange={hanteraÄndring}
               required
             ></textarea>
           </div>
-          <button type="submit" className="submit-button">Get in Touch</button>
+          <button type="submit" className="submit-button">Kontakta oss</button>
         </form>
       </div>
     </section>
   );
 }
 
-export default InteractiveFormSection;
+export default InteraktivtFormulärSektion;

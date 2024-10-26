@@ -44,7 +44,7 @@ const WebDevelopment = () => {
   return (
     <div className="web-development-page">
       <div className="breadcrumb">
-        <Link to="/">Home</Link> &gt; <Link to="/services">Services</Link> &gt;{" "}
+        <Link to="/">Home</Link> &gt; <Link to="/services">Tjänster</Link> &gt;{" "}
         <span>Web Development</span>
       </div>
       <div className="content-wrapper">

@@ -4,141 +4,141 @@ import './MagentoPage.scss';
 import magentoLogo from '../resources/magento.png';
 
 const MagentoPage = () => {
-  const [activeQuestion, setActiveQuestion] = useState(null);
-  const [activeFeature, setActiveFeature] = useState(null);
+  const [aktivFråga, setAktivFråga] = useState(null);
+  const [aktivFunktion, setAktivFunktion] = useState(null);
 
-  const magentoServices = [
-    { name: "Magento Store Development", icon: "🏪" },
-    { name: "Magento Migration", icon: "🚀" },
-    { name: "Custom Module Development", icon: "🧩" },
-    { name: "Magento Optimization", icon: "⚡" },
-    { name: "Magento Support & Maintenance", icon: "🛠️" },
+  const magentoTjänster = [
+    { namn: "Magento Butiksutveckling", ikon: "🏪" },
+    { namn: "Magento Migrering", ikon: "🚀" },
+    { namn: "Anpassad Modulutveckling", ikon: "🧩" },
+    { namn: "Magento Optimering", ikon: "⚡" },
+    { namn: "Magento Support & Underhåll", ikon: "🛠️" },
   ];
 
-  const magentoFeatures = [
-    { title: 'Scalable Architecture', description: 'Magento\'s robust architecture allows your e-commerce store to grow with your business.' },
-    { title: 'Customizable Design', description: 'Create a unique shopping experience with Magento\'s flexible theming system.' },
-    { title: 'Multi-Store Management', description: 'Manage multiple stores from a single backend, perfect for international businesses.' },
-    { title: 'Advanced SEO Tools', description: 'Boost your online visibility with Magento\'s built-in SEO features.' },
-    { title: 'Extensive Marketplace', description: 'Extend functionality with thousands of extensions from the Magento Marketplace.' },
-    { title: 'Mobile-Friendly', description: 'Provide a seamless shopping experience across all devices with responsive design.' },
+  const magentoFunktioner = [
+    { titel: 'Skalbar Arkitektur', beskrivning: 'Magentos robusta arkitektur låter din e-handelsbutik växa med ditt företag.' },
+    { titel: 'Anpassningsbar Design', beskrivning: 'Skapa en unik shoppingupplevelse med Magentos flexibla temasystem.' },
+    { titel: 'Hantering av Flera Butiker', beskrivning: 'Hantera flera butiker från en enda backend, perfekt för internationella företag.' },
+    { titel: 'Avancerade SEO-verktyg', beskrivning: 'Öka din synlighet online med Magentos inbyggda SEO-funktioner.' },
+    { titel: 'Omfattande Marknadsplats', beskrivning: 'Utöka funktionaliteten med tusentals tillägg från Magento Marketplace.' },
+    { titel: 'Mobilanpassad', beskrivning: 'Erbjud en sömlös shoppingupplevelse på alla enheter med responsiv design.' },
   ];
 
-  const faqItems = [
+  const vanligaFrågor = [
     {
-      question: "Why should I choose Magento for my e-commerce store?",
-      answer: "Magento is a powerful, flexible e-commerce platform that offers scalability, customization, and a wide range of features. It's ideal for businesses of all sizes, from small startups to large enterprises."
+      fråga: "Varför ska jag välja Magento för min e-handelsbutik?",
+      svar: "Magento är en kraftfull, flexibel e-handelsplattform som erbjuder skalbarhet, anpassning och ett brett utbud av funktioner. Den är idealisk för företag i alla storlekar, från små nystartade företag till stora företag."
     },
     {
-      question: "Can you migrate my existing store to Magento?",
-      answer: "Yes, we offer Magento migration services. We can transfer your products, customers, and order history from your current platform to Magento, ensuring a smooth transition with minimal disruption to your business."
+      fråga: "Kan ni migrera min befintliga butik till Magento?",
+      svar: "Ja, vi erbjuder Magento-migreringstjänster. Vi kan överföra dina produkter, kunder och orderhistorik från din nuvarande plattform till Magento, vilket säkerställer en smidig övergång med minimal störning för din verksamhet."
     },
     {
-      question: "How long does it take to develop a Magento store?",
-      answer: "The development time can vary depending on the complexity of your project. A basic Magento store can be set up in 4-6 weeks, while more complex, custom-built stores may take 3-6 months. We'll provide a detailed timeline after assessing your specific requirements."
+      fråga: "Hur lång tid tar det att utveckla en Magento-butik?",
+      svar: "Utvecklingstiden kan variera beroende på projektets komplexitet. En grundläggande Magento-butik kan sättas upp på 4-6 veckor, medan mer komplexa, skräddarsydda butiker kan ta 3-6 månader. Vi kommer att ge en detaljerad tidslinje efter att ha bedömt dina specifika krav."
     },
     {
-      question: "Do you provide Magento hosting services?",
-      answer: "While we don't provide hosting directly, we can recommend and help set up optimal hosting solutions for your Magento store. We work with reliable hosting partners that specialize in Magento hosting to ensure the best performance for your site."
+      fråga: "Erbjuder ni Magento-hostingtjänster?",
+      svar: "Även om vi inte tillhandahåller hosting direkt, kan vi rekommendera och hjälpa till att sätta upp optimala hostinglösningar för din Magento-butik. Vi samarbetar med pålitliga hostingpartners som specialiserar sig på Magento-hosting för att säkerställa bästa prestanda för din webbplats."
     },
     {
-      question: "Can you integrate Magento with my existing systems?",
-      answer: "Absolutely. We have extensive experience integrating Magento with various ERP, CRM, and other business systems. We can create custom integrations to streamline your operations and improve efficiency."
+      fråga: "Kan ni integrera Magento med mina befintliga system?",
+      svar: "Absolut. Vi har omfattande erfarenhet av att integrera Magento med olika ERP-, CRM- och andra affärssystem. Vi kan skapa anpassade integrationer för att effektivisera dina verksamhetsprocesser och förbättra effektiviteten."
     },
   ];
 
   return (
     <div className="magento-page">
       <div className="breadcrumb">
-        <Link to="/">Home</Link> &gt; <Link to="/services">Services</Link> &gt;{" "}
-        <span>Magento Development</span>
+        <Link to="/">Hem</Link> &gt; <Link to="/services">Tjänster</Link> &gt;{" "}
+        <span>Magento-utveckling</span>
       </div>
       <div className="content-wrapper">
         <div className="magento-header">
-          <img src={magentoLogo} alt="Magento Logo" className="magento-logo" />
-          <h1>Magento Development Services</h1>
+          <img src={magentoLogo} alt="Magento Logotyp" className="magento-logo" />
+          <h1>Magento-utvecklingstjänster</h1>
         </div>
         <p className="intro-text">
-          We specialize in creating powerful, scalable e-commerce solutions using Magento. 
-          Our expert team can help you harness the full potential of this robust platform to drive your online business growth.
+          Vi specialiserar oss på att skapa kraftfulla, skalbara e-handelslösningar med Magento. 
+          Vårt expertteam kan hjälpa dig att utnyttja den här robusta plattformens fulla potential för att driva tillväxten i din onlineverksamhet.
         </p>
 
         <section className="magento-services">
-          <h2>Our Magento Services</h2>
+          <h2>Våra Magento-tjänster</h2>
           <div className="services-grid">
-            {magentoServices.map((service, index) => (
+            {magentoTjänster.map((tjänst, index) => (
               <div key={index} className="service-item">
-                <span className="service-icon">{service.icon}</span>
-                <span className="service-name">{service.name}</span>
+                <span className="service-icon">{tjänst.ikon}</span>
+                <span className="service-name">{tjänst.namn}</span>
               </div>
             ))}
           </div>
         </section>
 
         <section className="magento-features">
-          <h2>Key Magento Features</h2>
+          <h2>Viktiga Magento-funktioner</h2>
           <div className="features-grid">
-            {magentoFeatures.map((feature, index) => (
+            {magentoFunktioner.map((funktion, index) => (
               <div
                 key={index}
-                className={`feature-item ${activeFeature === index ? 'active' : ''}`}
-                onMouseEnter={() => setActiveFeature(index)}
-                onMouseLeave={() => setActiveFeature(null)}
+                className={`feature-item ${aktivFunktion === index ? 'active' : ''}`}
+                onMouseEnter={() => setAktivFunktion(index)}
+                onMouseLeave={() => setAktivFunktion(null)}
               >
-                <h3>{feature.title}</h3>
-                {activeFeature === index && <p>{feature.description}</p>}
+                <h3>{funktion.titel}</h3>
+                {aktivFunktion === index && <p>{funktion.beskrivning}</p>}
               </div>
             ))}
           </div>
         </section>
 
         <section className="magento-process">
-          <h2>Our Magento Development Process</h2>
+          <h2>Vår Magento-utvecklingsprocess</h2>
           <div className="process-steps">
             <div className="step">
               <div className="step-number">1</div>
-              <h3>Discovery & Planning</h3>
-              <p>We analyze your requirements and create a detailed project roadmap.</p>
+              <h3>Upptäckt & Planering</h3>
+              <p>Vi analyserar dina krav och skapar en detaljerad projektplan.</p>
             </div>
             <div className="step">
               <div className="step-number">2</div>
               <h3>Design & Prototyping</h3>
-              <p>Our designers create an engaging and user-friendly interface for your store.</p>
+              <p>Våra designers skapar ett engagerande och användarvänligt gränssnitt för din butik.</p>
             </div>
             <div className="step">
               <div className="step-number">3</div>
-              <h3>Development & Customization</h3>
-              <p>We build your Magento store, including any custom modules or integrations.</p>
+              <h3>Utveckling & Anpassning</h3>
+              <p>Vi bygger din Magento-butik, inklusive eventuella anpassade moduler eller integrationer.</p>
             </div>
             <div className="step">
               <div className="step-number">4</div>
-              <h3>Testing & Launch</h3>
-              <p>We thoroughly test your store and assist with the launch process.</p>
+              <h3>Testning & Lansering</h3>
+              <p>Vi testar din butik noggrant och hjälper till med lanseringsprocessen.</p>
             </div>
           </div>
         </section>
 
         <section className="faq">
-          <h2>Frequently Asked Questions</h2>
-          {faqItems.map((item, index) => (
+          <h2>Vanliga frågor</h2>
+          {vanligaFrågor.map((item, index) => (
             <div key={index} className="faq-item">
               <h3
                 onClick={() =>
-                  setActiveQuestion(activeQuestion === index ? null : index)
+                  setAktivFråga(aktivFråga === index ? null : index)
                 }
-                className={activeQuestion === index ? "active" : ""}
+                className={aktivFråga === index ? "active" : ""}
               >
-                {item.question}
+                {item.fråga}
               </h3>
-              {activeQuestion === index && <p>{item.answer}</p>}
+              {aktivFråga === index && <p>{item.svar}</p>}
             </div>
           ))}
         </section>
 
         <div className="cta-section">
-          <h2>Ready to Build Your Magento E-commerce Store?</h2>
-          <p>Let's discuss how we can create a powerful online presence for your business with Magento.</p>
-          <button className="cta-button">Get Started</button>
+          <h2>Redo att bygga din Magento e-handelsbutik?</h2>
+          <p>Låt oss diskutera hur vi kan skapa en kraftfull online-närvaro för ditt företag med Magento.</p>
+          <button className="cta-button">Kom igång</button>
         </div>
       </div>
     </div>

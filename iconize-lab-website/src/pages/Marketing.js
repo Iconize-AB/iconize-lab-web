@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Marketing.scss";
 
 const Marketing = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const services = [
     { name: "SEO", icon: "🔍" },
@@ -49,7 +53,7 @@ const Marketing = () => {
   return (
     <div className="marketing-page">
       <div className="breadcrumb">
-        <Link to="/">Home</Link> &gt; <Link to="/services">Services</Link> &gt;{" "}
+        <Link to="/">Home</Link> &gt; <Link to="/services">Tjänster</Link> &gt;{" "}
         <span>Marketing</span>
       </div>
       <div className="content-wrapper">
