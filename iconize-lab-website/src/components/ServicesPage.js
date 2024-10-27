@@ -11,9 +11,9 @@ function ServicesPage() {
   }, []);
 
   const circleServices = [
-    { name: 'Kreativitet', description: 'Identifying growth opportunities, defining critical strategies and building plan-to-win roadmaps to drive in-market impact' },
-    { name: 'Kompetens', description: 'Anticipating needs, solving pain points, and creating value with deeply human products, services and experiences' },
-    { name: 'Konsulting', description: 'Crafting compelling narratives and visual identities that resonate with audiences and drive engagement' }
+    { name: 'Kreativitet', description: 'Identifying growth opportunities, defining critical' },
+    { name: 'Kompetens', description: 'Anticipating needs, solving pain points, and creating' },
+    { name: 'Konsulting', description: 'Crafting compelling narratives and visual identities' }
   ];
 
 

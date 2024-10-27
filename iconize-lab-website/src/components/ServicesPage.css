@@ -109,24 +109,22 @@ h1 {
 
 .service-name {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.6em;
   transition: all 0.3s ease;
 }
 
 .service-description {
-  font-size: 0.9em;
+  font-size: 1.1em;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
-.circle:hover .service-content {
-  justify-content: flex-start;
-}
-
 .circle:hover .service-name {
-  margin-bottom: 10px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .circle:hover .service-description {
@@ -364,4 +362,36 @@ html {
   border-color: #FD5E53;
   transform: translateY(-2px);
   box-shadow: 0 2px 4px rgba(128, 0, 128, 0.3);
+}
+
+@media (max-width: 768px) {
+  .services-diagram {
+    width: 300px;
+    height: 300px;
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .service-name {
+    font-size: 1.2em;
+  }
+
+  .service-description {
+    display: none;
+  }
+
+  .circle:hover {
+    transform: none;
+  }
+
+  .circle:hover .service-name {
+    opacity: 1;
+    max-height: none;
+    overflow: visible;
+  }
+
+  /* ... rest of the mobile CSS ... */
 }
