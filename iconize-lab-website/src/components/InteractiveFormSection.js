@@ -87,7 +87,7 @@ function InteraktivtFormulärSektion() {
       <ToastContainer />
       <div className="form-container">
         <h2>Hur kan vi hjälpa dig att växa?</h2>
-        <p>Tell us about your project and we'll get back to you with solutions.</p>
+        <p>Berätta mer om det ni vill åstadkomma så svarar vi så snart vi kan.</p>
         <form onSubmit={hanteraInlämning}>
           <div className="form-group">
             <label htmlFor="namn">Namn*</label>

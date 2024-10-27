@@ -166,8 +166,8 @@ function LandingPage() {
       
       <section className="services-section">
         <div className="services-content">
-          <h2>Our Services</h2>
-          <p>Iconize Lab brings an integrated portfolio of consulting, experience and creative expertise to every client engagement.</p>
+          <h2>Våra tjänster</h2>
+          <p>[i]conize lab erbjuder en bred portfolio av tjänster som hjälper dig nå dina mål</p>
           <ServicesGrid showCapabilities={false} limit={4} />
           <Link to="/services" className="cta-button">UTFORSKA VÅRA TJÄNSTER →</Link>
         </div>
