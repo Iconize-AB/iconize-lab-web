@@ -4,10 +4,9 @@
   min-height: 100vh;
 
   .content-wrapper-ecommerce {
-    max-width: 1200px;
+    background-color: #000;
     margin: 0 auto;
-    margin-bottom: 4rem;
-    padding: 2rem;
+    padding: 6rem;
 
     @media (max-width: 768px) {
       padding: 1rem;
@@ -113,10 +112,13 @@
   }
 
   .ecommerce-platforms {
-    background-color: #6200ea; /* Deep purple background */
     padding: 60px 0;
     color: white;
     text-align: center;
+
+    .content-wrapper-ecommerce {
+      background-color: #6200ea;
+    }
 
     .platforms-grid {
       display: flex;
@@ -171,9 +173,7 @@
   }
 
   .cta-section-wrapper {
-    background-color: #6200ea; // A deep purple color, adjust as needed
     width: 100%;
-    padding: 60px 0;
   }
 
   .cta-section {
@@ -215,7 +215,7 @@
       }
 
       &:hover {
-        background-color: #e0e0e0;
+        background-color: #6200ea;
       }
     }
   }

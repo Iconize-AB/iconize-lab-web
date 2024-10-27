@@ -5,6 +5,7 @@ import ServicesGrid from './ServicesGrid';
 import Bostrom from '../resources/bostrom.png';
 import Gift from '../resources/gif-t.gif';
 import CtFood from '../resources/ctfood.jpg';
+import IconizeLogo from '../resources/iconize-new.png';
 import { Link } from 'react-router-dom';
 
 function LandingPage() {
@@ -64,7 +65,7 @@ function LandingPage() {
       <section className="case-study-section">
         <div className="case-study-content">
           <div className="case-study-text">
-            <h2>BOSTRÖM REDOVISNING</h2>
+            <h2>BOSTROM ACCOUNTING</h2>
             <h3>150 % fler kunder - på 6 månader</h3>
             <a href="#learn-more" className="learn-more-link">LÄS MER</a>
           </div>
@@ -74,22 +75,61 @@ function LandingPage() {
         </div>
       </section>
       
-      <section className="additional-cases">
-        <div className="case-item">
-          <img src={Gift} alt="The North Face" loading="lazy" />
-          <div className="case-item-content">
-            <h4>GIF-T</h4>
-            <p>Gif-t är ett sätt att snabbt skapa en komprimerad och delbar gif från vilken offentlig webbsida, presentation eller video som helst.</p>
+      <section className="client-cases">
+        <h2>Our Client Cases</h2>
+        <div className="cases-container">
+          <div className="case-item">
+            <div className="case-header">
+              <img src={IconizeLogo} alt="Iconize Lab logo" className="iconize-logo" />
+              <span className="logo-separator">×</span>
+              <span className="client-name">GIF-T</span>
+            </div>
+            <div className="case-content">
+              <img src={Gift} alt="GIF-T case study" className="case-image" />
+              <h3>GIF-T</h3>
+              <p>Snabb och komprimerad GIF-skapare för webbsidor, presentationer och videos.</p>
+              <div className="tags">
+                <span className="tag">Webdevelopment</span>
+                <span className="tag">UX Design</span>
+              </div>
+            </div>
+            <Link to="/case-studies/gif-t" className="case-link">Läs mer</Link>
+          </div>
+          <div className="case-item">
+            <div className="case-header">
+              <img src={IconizeLogo} alt="Iconize Lab logo" className="iconize-logo" />
+              <span className="logo-separator">×</span>
+              <span className="client-name">CT FOOD AB</span>
+            </div>
+            <div className="case-content">
+              <img src={CtFood} alt="CT Food case study" className="case-image" />
+              <h3>CT FOOD AB</h3>
+              <p>Marknadsledande import och distribution av autentiska smaker från Sydostasien.</p>
+              <div className="tags">
+                <span className="tag">E-commerce</span>
+                <span className="tag">ERP</span>
+              </div>
+            </div>
+            <Link to="/case-studies/ct-food" className="case-link">Läs mer</Link>
+          </div>
+          <div className="case-item">
+            <div className="case-header">
+              <img src={IconizeLogo} alt="Iconize Lab logo" className="iconize-logo" />
+              <span className="logo-separator">×</span>
+              <span className="client-name">BOSTROM ACCOUNTING</span>
+            </div>
+            <div className="case-content">
+              <img src={Bostrom} alt="Bostrom Accounting case study" className="case-image" />
+              <h3>BOSTROM ACCOUNTING</h3>
+              <p>150% kundökning på bara 6 månader.</p>
+              <div className="tags">
+                <span className="tag">Webdevelopment</span>
+                <span className="tag">Digital Marketing</span>
+              </div>
+            </div>
+            <Link to="/case-studies/bostrom" className="case-link">Läs mer</Link>
           </div>
         </div>
-        <div className="case-item">
-          <img src={CtFood} alt="AB InBev" loading="lazy" />
-          <div className="case-item-content">
-            <h4>CT FOOD AB</h4>
-            <p>CT Food är ett marknadsledande import- och distributionsföretag i Sverige som för de autentiska smakerna från Sydostasien till Skandinavien.</p>
-          </div>
-        </div>
-        <a href="#view-all-cases" className="view-all-link">SE ALLA CASE →</a>
       </section>
       <section className="testimonial">
         <div className="testimonial-content">
