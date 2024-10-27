@@ -1,48 +1,48 @@
 import React from 'react';
-import ProphetDifferentSection from '../components/ProphetDifferentSection';
 import { Link } from 'react-router-dom';
 import './About.scss';
+import IconizeDifferentSection from '../components/IconizeDifferentSection';
 
 const About = () => {
   const detailedServices = [
     { 
       icon: '🛒', 
-      title: 'E-commerce', 
-      description: 'We develop robust e-commerce solutions to help businesses thrive in the digital marketplace.'
+      title: 'E-handel', 
+      description: 'Vi utvecklar robusta e-handelslösningar för att hjälpa företag att blomstra på den digitala marknaden.'
     },
     { 
       icon: '📱', 
-      title: 'App Development', 
-      description: 'We create innovative mobile applications that engage users and drive business growth.'
+      title: 'Apputveckling', 
+      description: 'Vi skapar innovativa mobilapplikationer som engagerar användare och driver företagstillväxt.'
     },
     { 
       icon: '💻', 
-      title: 'Web Development', 
-      description: 'We build responsive, user-friendly websites that deliver exceptional digital experiences.'
+      title: 'Webbutveckling', 
+      description: 'Vi bygger responsiva, användarvänliga webbplatser som levererar exceptionella digitala upplevelser.'
     },
     { 
       icon: '🎨', 
-      title: 'Reimagine Brands', 
-      description: 'We help businesses reinvent their brand identity to stay relevant and impactful in evolving markets.'
+      title: 'Varumärke', 
+      description: 'Vi hjälper företag att skapa eller förnya sin varumärkesidentitet för att förbli relevanta på föränderliga marknader.'
     },
     { 
       icon: '📈', 
-      title: 'Marketing', 
-      description: 'We develop comprehensive marketing strategies to boost visibility and drive customer acquisition.'
+      title: 'Marknadsföring', 
+      description: 'Vi skapar och exekverar på digitala marknadsstrategier som får er att synas för rätt människor'
     },
     { 
       icon: '🔗', 
-      title: 'Integrations', 
-      description: 'We seamlessly integrate various systems and platforms to optimize business operations and efficiency.'
+      title: 'Integrationer', 
+      description: 'Vi integrerar era system och plattformar för att optimera er tech-stach och göra er mer effektiva.'
     }
   ];
 
   return (
     <div className="about-page">
-      <h1>About Us</h1>
-      <ProphetDifferentSection />
+      <h1>Om oss</h1>
+      <IconizeDifferentSection />
       <section className="what-we-do">
-        <h2>WHAT WE DO</h2>
+        <h2>VAD VI GÖR</h2>
         <div className="services-grid">
           {detailedServices.map((service, index) => (
             <div key={index} className="service-item">
@@ -52,7 +52,7 @@ const About = () => {
             </div>
           ))}
         </div>
-        <Link to="/services" className="view-services-btn">VIEW OUR SERVICES →</Link>
+        <Link to="/services" className="view-services-btn">VÅRA TJÄNSTER →</Link>
       </section>
       {/* Add any other sections or components for the About page here */}
     </div>

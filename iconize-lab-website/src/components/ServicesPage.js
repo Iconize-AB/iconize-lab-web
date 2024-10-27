@@ -11,9 +11,9 @@ function ServicesPage() {
   }, []);
 
   const circleServices = [
-    { name: 'Consulting', description: 'Identifying growth opportunities, defining critical strategies and building plan-to-win roadmaps to drive in-market impact' },
-    { name: 'Experience', description: 'Anticipating needs, solving pain points, and creating value with deeply human products, services and experiences' },
-    { name: 'Creative', description: 'Crafting compelling narratives and visual identities that resonate with audiences and drive engagement' }
+    { name: 'Kreativitet', description: 'Identifying growth opportunities, defining critical strategies and building plan-to-win roadmaps to drive in-market impact' },
+    { name: 'Kompetens', description: 'Anticipating needs, solving pain points, and creating value with deeply human products, services and experiences' },
+    { name: 'Konsulting', description: 'Crafting compelling narratives and visual identities that resonate with audiences and drive engagement' }
   ];
 
 
@@ -24,7 +24,7 @@ function ServicesPage() {
           <Link to="/">Home</Link> &gt; <span>Tjänster</span>
         </div>
         <div className="section-content">
-          <h1>We help leaders turn uncertainty into competitive advantage.</h1>
+          <h1>Vi hjälper ledare gå från osäkerhet till säker framgång</h1>
           <div className="services-diagram">
             <svg viewBox="0 0 400 400" width="400" height="400">
               <defs>
@@ -55,16 +55,16 @@ function ServicesPage() {
                 onMouseEnter={() => setActiveCircle(index)}
                 onMouseLeave={() => setActiveCircle(null)}
               >
-                <span className="service-name">{service.name}</span>
-                {activeCircle === index && (
+                <div className="service-content">
+                  <span className="service-name">{service.name}</span>
                   <span className="service-description">{service.description}</span>
-                )}
+                </div>
               </div>
             ))}
           </div>
         </div>
         <div id="detailed-services" className="detailed-services">
-          <h2>SERVICES</h2>
+          <h2>Tjänster</h2>
           <p>Iconize Lab brings an integrated portfolio of consulting, experience and creative expertise to every client engagement.</p>
           <ServicesGrid showCapabilities={true} />
         </div>
@@ -73,9 +73,7 @@ function ServicesPage() {
           <div className="industries-content">
             <h2>Industries</h2>
             <p>
-              Our solutions are unique to every client, but our industry experts who know your unique set of 
-              challenges and understand your situation inside and out are crucial to helping you achieve your 
-              growth goals.
+            [i]conize lab erbjuder en bred portfolio av kompetenser som hjälper er nå dit ni vill.
             </p>
             <Link to="/industries" className="industries-link">INDUSTRIES WE SERVE →</Link>
           </div>

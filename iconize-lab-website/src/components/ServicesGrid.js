@@ -10,7 +10,7 @@ function ServicesGrid({ showCapabilities = true, limit = null }) {
       icon: '🛒', 
       title: 'E-handel', 
       description: 'Vi utvecklar robusta e-handelslösningar för att hjälpa företag att blomstra på den digitala marknaden.',
-      capabilities: ['Magento', 'Adobe Commerce', 'Saleor'],
+      capabilities: ['Magento', 'Adobe Commerce', 'Saleor', 'PWA Studio', 'Shopify', 'WooCommerce'],
       link: '/services/ecommerce'
     },
     { 
@@ -24,7 +24,7 @@ function ServicesGrid({ showCapabilities = true, limit = null }) {
       icon: '💻', 
       title: 'Webbutveckling', 
       description: 'Vi bygger responsiva, användarvänliga webbplatser som levererar exceptionella digitala upplevelser.',
-      capabilities: ['Node.js', 'Python', 'React', 'Vue.js'],
+      capabilities: ['Node.js', 'Python', 'React', 'Vue.js', 'Next.js', 'Laravel', 'Squarespace', 'Wordpress', 'Shopify'],
       link: '/services/web-development'
     },
     { 

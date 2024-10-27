@@ -53,48 +53,85 @@ h1 {
   position: absolute;
   width: 200px;
   height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.circle:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.kreativitet {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.kompetens {
+  bottom: 0;
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+.konsulting {
+  bottom: 0;
+  right: 25%;
+  transform: translateX(50%);
+}
+
+.kreativitet:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.kompetens:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.konsulting:hover {
+  transform: translateX(50%) scale(1.1);
+}
+
+.service-content {
+  text-align: center;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  font-size: 1.8rem;
+  height: 100%;
   transition: all 0.3s ease;
 }
 
-.consulting {
-  top: 0;
-  left: 100px;
-}
-
-.experience {
-  bottom: 0;
-  left: 0;
-}
-
-.creative {
-  bottom: 0;
-  right: 0;
-}
-
 .service-name {
-  transition: transform 0.3s ease;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
 }
 
 .service-description {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 1rem;
-  font-size: 0.9rem;
-  font-weight: normal;
-  text-align: center;
-  max-width: 180px;
+  font-size: 0.9em;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.circle:hover .service-content {
+  justify-content: flex-start;
 }
 
 .circle:hover .service-name {
-  transform: translateY(-30px);
+  margin-bottom: 10px;
+}
+
+.circle:hover .service-description {
+  opacity: 1;
+  max-height: 200px;
 }
 
 .detailed-services {
