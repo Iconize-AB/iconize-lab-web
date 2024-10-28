@@ -7,21 +7,21 @@ function ServicesGrid({ showCapabilities = true, limit = null }) {
 
   const detailedServices = [
     { 
-      icon: '🛒', 
-      title: 'E-handel', 
+      icon: '&#128722;', // Shopping cart
+      title: 'E-handel',
       description: 'Vi utvecklar robusta e-handelslösningar för att hjälpa företag att blomstra på den digitala marknaden.',
       capabilities: ['Magento', 'Adobe Commerce', 'Saleor', 'PWA Studio', 'Shopify', 'WooCommerce'],
       link: '/services/ecommerce'
     },
     { 
-      icon: '📱', 
-      title: 'Apputveckling', 
+      icon: '&#128241;', // Mobile phone
+      title: 'Apputveckling',
       description: 'Vi skapar innovativa mobilapplikationer som engagerar användare och driver företagstillväxt.',
       capabilities: ['iOS', 'Android', 'React Native'],
       link: '/services/app-development'
     },
     { 
-      icon: '💻', 
+      icon: '&#128187;', // Laptop
       title: 'Webbutveckling',
       description: 'Vi bygger responsiva, användarvänliga webbplatser som levererar exceptionella digitala upplevelser.',
       capabilities: ['Node.js', 'Python', 'React', 'Vue.js', 'Next.js', 'Laravel', 'Squarespace', 'Wordpress', 'Shopify'],
@@ -35,15 +35,15 @@ function ServicesGrid({ showCapabilities = true, limit = null }) {
     //   link: '/services/brand-reimagination'
     // },
     { 
-      icon: '📈', 
-      title: 'Marknadsföring', 
+      icon: '&#128200;', // Chart
+      title: 'Marknadsföring',
       description: 'Vi utvecklar omfattande marknadsföringsstrategier för att öka synligheten och driva kundförvärv.',
       capabilities: ['Digital Marknadsföring', 'Innehållsstrategi', 'SEO/SEM'],
       link: '/services/marketing'
     },
     { 
-      icon: '🔗', 
-      title: 'Integrationer', 
+      icon: '&#128279;', // Link
+      title: 'Integrationer',
       description: 'Vi integrerar sömlöst olika system och plattformar för att optimera affärsverksamheten och effektiviteten.',
       capabilities: ['API-utveckling', 'Mellanlösningar', 'Datamigrering'],
       link: '/services/integrations'
@@ -60,7 +60,10 @@ function ServicesGrid({ showCapabilities = true, limit = null }) {
     <div className="services-grid">
       {servicesToShow.map((service, index) => (
         <div key={index} className="service-item">
-          <div className="service-icon">{service.icon}</div>
+          <div 
+            className="service-icon" 
+            dangerouslySetInnerHTML={{ __html: service.icon }}
+          />
           <Link to={service.link}>
             <h3>{service.title} →</h3>
           </Link>
