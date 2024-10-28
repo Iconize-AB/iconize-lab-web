@@ -149,7 +149,7 @@ function LandingPage() {
           </div>
         </div>
       </section> */}
-      <section className="contact-us">
+      {/* <section className="contact-us">
         <div className="contact-content">
           <div className="contact-text">
             <h2>Låt oss växa tillsammans</h2>
@@ -159,7 +159,7 @@ function LandingPage() {
           <div className="decorative-plant">
           </div>
         </div>
-      </section>
+      </section> */}
       
       <section className="services-section">
         <div className="services-content">
