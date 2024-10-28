@@ -11,23 +11,13 @@ function Header() {
   const menuItems = [
     {
       title: "Om oss",
+      path: "/about",
       items: ["Karriär", "Iconize Lab's Kultur", "Iconize Lab's påverkan"],
     },
-    // {
-    //   title: "Tjänster",
-    //   items: [
-    //     { name: "Industrier", path: "/industries" },
-    //     { name: "App Development", path: "/services/app-development" },
-    //     { name: "Web Development", path: "/services/web-development" },
-    //     { name: "Marketing", path: "/services/marketing" },
-    //     { name: "Magento", path: "/services/magento" },
-    //     { name: "WooCommerce", path: "/services/woocommerce" },
-    //     { name: "Integrationer", path: "/services/integration" },
-    //   ],
-    // },
     { title: "Connect" },
     {
       title: "Våra fokusområden",
+      path: "/services",
       items: [
         { name: "E-commerce", path: "/services/ecommerce" },
         { name: "App Development", path: "/services/app-development" },
@@ -78,7 +68,7 @@ function Header() {
         <ul>
           {mainMenuItems.map((item, index) => (
             <li key={index}>
-              <Link to={`/${item.title.toLowerCase().replace(" ", "-")}`}>
+              <Link to={item.path || '/'}>  {/* Updated to use item.path */}
                 {item.title}
               </Link>
             </li>
