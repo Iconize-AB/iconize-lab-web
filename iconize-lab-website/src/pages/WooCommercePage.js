@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './WooCommercePage.scss';
 import wooCommerceLogo from '../resources/woocommerce.png';
@@ -6,6 +6,10 @@ import wooCommerceLogo from '../resources/woocommerce.png';
 const WooCommercePage = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
   const [activeFeature, setActiveFeature] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const wooCommerceServices = [
     { name: "WooCommerce Butiksutveckling", icon: "🏪" },

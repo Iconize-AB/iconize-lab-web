@@ -56,12 +56,11 @@ const AppDevelopment = () => {
       <div className="content-wrapper">
         <h1>App Development</h1>
         <p className="intro-text">
-          We create innovative mobile applications that engage users and drive
-          business growth.
+          Vi skapar innovativa mobilapplikationer som engagerar användare och driver affärstillväxt.
         </p>
 
         <section className="technologies">
-          <h2>Technologies We Use</h2>
+          <h2>Teknologier Vi Använder</h2>
           <div className="tech-grid">
             {technologies.map((tech, index) => (
               <div key={index} className="tech-item">
@@ -73,36 +72,34 @@ const AppDevelopment = () => {
         </section>
 
         <section className="app-development-process">
-          <h2>Our App Development Process</h2>
+          <h2>Vår Apputvecklingsprocess</h2>
           <div className="process-steps">
             <div className="step">
               <div className="step-number">1</div>
-              <h3>Discovery & Planning</h3>
+              <h3>Upptäckt & Planering</h3>
               <p>
-                We analyze your requirements and create a detailed project plan.
+                Vi analyserar dina krav och skapar en detaljerad projektplan.
               </p>
             </div>
             <div className="step">
               <div className="step-number">2</div>
-              <h3>Design & Prototyping</h3>
+              <h3>Design & Prototyp</h3>
               <p>
-                Our designers create intuitive and engaging user interfaces.
+                Våra designers skapar intuitiva och engagerande användargränssnitt.
               </p>
             </div>
             <div className="step">
               <div className="step-number">3</div>
-              <h3>Development & Testing</h3>
+              <h3>Utveckling & Testning</h3>
               <p>
-                We build your app using the latest technologies and perform
-                rigorous testing.
+                Vi bygger din app med den senaste tekniken och utför noggrann testning.
               </p>
             </div>
             <div className="step">
               <div className="step-number">4</div>
-              <h3>Launch & Support</h3>
+              <h3>Lansering & Support</h3>
               <p>
-                We help you launch your app and provide ongoing support and
-                maintenance.
+                Vi hjälper dig att lansera din app och erbjuder kontinuerligt support och underhåll.
               </p>
             </div>
           </div>
@@ -126,14 +123,14 @@ const AppDevelopment = () => {
         </section>
       </div>
       <div className="cta-section-wrapper">
-          <div className="content-wrapper-app">
-            <div className="cta-section">
-              <h2>Ready to Launch Your Mobile App?</h2>
-              <p>Let's discuss how we can help you create an innovative mobile application that engages users and drives business growth.</p>
-              <button className="cta-button">Get Started</button>
-            </div>
+        <div className="content-wrapper-app">
+          <div className="cta-section">
+            <h2>Redo att Lansera Din Mobilapp?</h2>
+            <p>Låt oss diskutera hur vi kan hjälpa dig att skapa en innovativ mobilapplikation som engagerar användare och driver affärstillväxt.</p>
+            <button className="cta-button">Kom Igång</button>
           </div>
         </div>
+      </div>
     </div>
   );
 };

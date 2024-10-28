@@ -76,11 +76,11 @@ const SubscriptionPopup = ({ showSubscriptionPopup, onClose }) => {
     <div className="subscription-popup">
       <div className="popup-content">
         <button className="close-btn" onClick={handleClose}>×</button>
-        <h2>Join our mailing list</h2>
-        <p>Sign up and receive our latest thinking, insights and strategies to help your business grow better.</p>
+        <h2>Gå med i vårt nyhetsbrev</h2>
+        <p>Registrera dig och ta del av våra senaste tankar, insikter och strategier för att hjälpa ditt företag att växa bättre.</p>
         <form onSubmit={handleSubmit}>
           <select value={country} onChange={(e) => setCountry(e.target.value)} required>
-            <option value="">Country*</option>
+            <option value="">Land*</option>
             {countries.map(country => (
               <option key={country.code} value={country.code}>
                 {country.name}
@@ -91,13 +91,13 @@ const SubscriptionPopup = ({ showSubscriptionPopup, onClose }) => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email*"
+            placeholder="E-post*"
             required
           />
-          <button type="submit">Subscribe</button>
+          <button type="submit">Prenumerera</button>
         </form>
         <label>
-          <input type="checkbox" /> Do not show again
+          <input type="checkbox" /> Visa inte igen
         </label>
       </div>
     </div>

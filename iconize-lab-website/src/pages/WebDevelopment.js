@@ -20,41 +20,41 @@ const WebDevelopment = () => {
 
   const faqItems = [
     {
-      question: "What types of web applications can you develop?",
-      answer: "We develop a wide range of web applications, including e-commerce platforms, content management systems, progressive web apps, single-page applications, and custom enterprise solutions.",
+      question: "Vilka typer av webbapplikationer kan ni utveckla?",
+      answer: "Vi utvecklar ett brett utbud av webbapplikationer, inklusive e-handelsplattformar, innehållshanteringssystem, progressiva webbappar, single-page applications och skräddarsydda företagslösningar.",
     },
     {
-      question: "How do you ensure the security of web applications?",
-      answer: "We implement best practices for web security, including data encryption, secure authentication methods, regular security audits, and protection against common vulnerabilities like SQL injection and cross-site scripting (XSS).",
+      question: "Hur säkerställer ni säkerheten i webbapplikationer?",
+      answer: "Vi implementerar bästa praxis för webbsäkerhet, inklusive datakryptering, säkra autentiseringsmetoder, regelbundna säkerhetsgranskningar och skydd mot vanliga sårbarheter som SQL-injektion och cross-site scripting (XSS).",
     },
     {
-      question: "Can you integrate third-party services and APIs into my web application?",
-      answer: "Yes, we have extensive experience integrating various third-party services and APIs, such as payment gateways, social media platforms, analytics tools, and other external services to enhance the functionality of your web application.",
+      question: "Kan ni integrera tredjepartstjänster och API:er i min webbapplikation?",
+      answer: "Ja, vi har omfattande erfarenhet av att integrera olika tredjepartstjänster och API:er, såsom betalningslösningar, sociala medieplattformar, analysverktyg och andra externa tjänster för att förbättra funktionaliteten i din webbapplikation.",
     },
     {
-      question: "Do you provide ongoing maintenance and support for web applications?",
-      answer: "Absolutely. We offer comprehensive maintenance and support services, including bug fixes, security updates, performance optimization, and feature enhancements to keep your web application running smoothly and up-to-date.",
+      question: "Erbjuder ni löpande underhåll och support för webbapplikationer?",
+      answer: "Absolut. Vi erbjuder omfattande underhålls- och supporttjänster, inklusive buggfixar, säkerhetsuppdateringar, prestandaoptimering och funktionsförbättringar för att hålla din webbapplikation i toppskick och uppdaterad.",
     },
     {
-      question: "How do you approach responsive design and mobile optimization?",
-      answer: "We use a mobile-first approach and responsive design techniques to ensure that your web application looks and functions great on all devices, from smartphones to desktop computers. We also optimize for performance to provide a smooth user experience across all platforms.",
+      question: "Hur arbetar ni med responsiv design och mobiloptimering?",
+      answer: "Vi använder en mobile-first-approach och responsiva designtekniker för att säkerställa att din webbapplikation ser bra ut och fungerar väl på alla enheter, från smartphones till stationära datorer. Vi optimerar även för prestanda för att ge en smidig användarupplevelse på alla plattformar.",
     },
   ];
 
   return (
     <div className="web-development-page">
       <div className="breadcrumb">
-        <Link to="/">Home</Link> &gt; <Link to="/services">Tjänster</Link> &gt;{" "}
-        <span>Web Development</span>
+        <Link to="/">Hem</Link> &gt; <Link to="/services">Tjänster</Link> &gt;{" "}
+        <span>Webbutveckling</span>
       </div>
       <div className="content-wrapper">
-        <h1>Web Development</h1>
+        <h1>Webbutveckling</h1>
         <p className="intro-text">
-          We build responsive, user-friendly websites and web applications that deliver exceptional digital experiences and drive business growth.
+          Vi bygger responsiva, användarvänliga webbplatser och webbapplikationer som levererar exceptionella digitala upplevelser och driver affärstillväxt.
         </p>
 
         <section className="technologies">
-          <h2>Technologies We Use</h2>
+          <h2>Teknologier Vi Använder</h2>
           <div className="tech-grid">
             {technologies.map((tech, index) => (
               <div key={index} className="tech-item">
@@ -66,33 +66,33 @@ const WebDevelopment = () => {
         </section>
 
         <section className="web-development-process">
-          <h2>Our Web Development Process</h2>
+          <h2>Vår Webbutvecklingsprocess</h2>
           <div className="process-steps">
             <div className="step">
               <div className="step-number">1</div>
-              <h3>Requirements Analysis</h3>
-              <p>We work closely with you to understand your goals and define project requirements.</p>
+              <h3>Kravanalys</h3>
+              <p>Vi arbetar nära dig för att förstå dina mål och definiera projektkraven.</p>
             </div>
             <div className="step">
               <div className="step-number">2</div>
-              <h3>Design & Prototyping</h3>
-              <p>Our designers create intuitive and visually appealing user interfaces and experiences.</p>
+              <h3>Design & Prototyper</h3>
+              <p>Våra designers skapar intuitiva och visuellt tilltalande användargränssnitt och upplevelser.</p>
             </div>
             <div className="step">
               <div className="step-number">3</div>
-              <h3>Development & Testing</h3>
-              <p>We build your web application using modern technologies and perform thorough testing.</p>
+              <h3>Utveckling & Testning</h3>
+              <p>Vi bygger din webbapplikation med moderna teknologier och utför grundlig testning.</p>
             </div>
             <div className="step">
               <div className="step-number">4</div>
-              <h3>Deployment & Optimization</h3>
-              <p>We deploy your application and optimize it for performance and search engines.</p>
+              <h3>Driftsättning & Optimering</h3>
+              <p>Vi driftsätter din applikation och optimerar den för prestanda och sökmotorer.</p>
             </div>
           </div>
         </section>
 
         <section className="faq">
-          <h2>Frequently Asked Questions</h2>
+          <h2>Vanliga Frågor</h2>
           {faqItems.map((item, index) => (
             <div key={index} className="faq-item">
               <h3
@@ -113,4 +113,3 @@ const WebDevelopment = () => {
 };
 
 export default WebDevelopment;
-

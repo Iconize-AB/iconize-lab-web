@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './MagentoPage.scss';
 import magentoLogo from '../resources/magento.png';
@@ -6,6 +6,10 @@ import magentoLogo from '../resources/magento.png';
 const MagentoPage = () => {
   const [aktivFråga, setAktivFråga] = useState(null);
   const [aktivFunktion, setAktivFunktion] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const magentoTjänster = [
     { namn: "Magento Butiksutveckling", ikon: "🏪" },

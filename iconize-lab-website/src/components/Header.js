@@ -10,34 +10,33 @@ function Header() {
 
   const menuItems = [
     {
-      title: "About",
-      items: ["Careers", "Iconize Lab's Culture", "Iconize Lab's impact"],
+      title: "Om oss",
+      items: ["Karriär", "Iconize Lab's Kultur", "Iconize Lab's påverkan"],
     },
-    {
-      title: "Services",
-      items: [
-        { name: "Industries", path: "/industries" },
-        { name: "App Development", path: "/services/app-development" },
-        { name: "Web Development", path: "/services/web-development" },
-        { name: "Marketing", path: "/services/marketing" },
-        { name: "Magento", path: "/services/magento" },
-        { name: "WooCommerce", path: "/services/woocommerce" },
-        { name: "Integrations", path: "/services/integration" },
-      ],
-    },
+    // {
+    //   title: "Tjänster",
+    //   items: [
+    //     { name: "Industrier", path: "/industries" },
+    //     { name: "App Development", path: "/services/app-development" },
+    //     { name: "Web Development", path: "/services/web-development" },
+    //     { name: "Marketing", path: "/services/marketing" },
+    //     { name: "Magento", path: "/services/magento" },
+    //     { name: "WooCommerce", path: "/services/woocommerce" },
+    //     { name: "Integrationer", path: "/services/integration" },
+    //   ],
+    // },
     { title: "Connect" },
     {
-      title: "Areas of focus",
+      title: "Våra fokusområden",
       items: [
-        "Saleor",
-        "Shopify",
         { name: "E-commerce", path: "/services/ecommerce" },
         { name: "App Development", path: "/services/app-development" },
         { name: "Web Development", path: "/services/web-development" },
         { name: "Marketing", path: "/services/marketing" },
-        { name: "Magento", path: "/services/magento" },
-        { name: "WooCommerce", path: "/services/woocommerce" },
-        { name: "Integrations", path: "/services/integration" },
+        { name: "Magento", path: "/services/ecommerce?capability=Magento" },
+        { name: "WooCommerce", path: "/services/ecommerce?capability=WooCommerce" },
+        { name: "Adobe Commerce", path: "/services/ecommerce?capability=AdobeCommerce" },
+        { name: "Integrationer", path: "/services/integration" },
       ],
     },
   ];
@@ -87,7 +86,7 @@ function Header() {
         </ul>
       </nav>
       <div className="right-section">
-        <span className="language">English</span>
+        {/* <span className="language">English</span> */}
         <button
           className={`menu-btn ${isMenuOpen ? "open" : ""}`}
           onClick={toggleMenu}

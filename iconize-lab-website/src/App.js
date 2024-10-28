@@ -51,6 +51,7 @@ function App() {
               <Route path="/services/ecommerce/magento" element={<MagentoPage />} />
               <Route path="/services/ecommerce" element={<EcommercePage />} />
               <Route path="/services/ecommerce/woocommerce" element={<WooCommercePage />} />
+              {/* <Route path="/services/brand-building" element={<BrandBuildingPage />} /> */}
               <Route path="/services/integration" element={<IntegrationPage />} />
               <Route path="/about" element={<About />} />
               <Route path="/about/company-culture" element={<CompanyCulture />} />

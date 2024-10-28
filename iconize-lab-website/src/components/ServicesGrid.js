@@ -22,18 +22,18 @@ function ServicesGrid({ showCapabilities = true, limit = null }) {
     },
     { 
       icon: '💻', 
-      title: 'Webbutveckling', 
+      title: 'Webbutveckling',
       description: 'Vi bygger responsiva, användarvänliga webbplatser som levererar exceptionella digitala upplevelser.',
       capabilities: ['Node.js', 'Python', 'React', 'Vue.js', 'Next.js', 'Laravel', 'Squarespace', 'Wordpress', 'Shopify'],
       link: '/services/web-development'
     },
-    { 
-      icon: '🎨', 
-      title: 'Varumärke', 
-      description: 'Vi hjälper företag att förnya sin varumärkesidentitet för att förbli relevanta och slagkraftiga på föränderliga marknader.',
-      capabilities: ['Varumärkesstrategi', 'Visuell Identitet', 'Varumärkesriktlinjer'],
-      link: '/services/brand-reimagination'
-    },
+    // { 
+    //   icon: '🎨', 
+    //   title: 'Varumärke', 
+    //   description: 'Vi hjälper företag att förnya sin varumärkesidentitet för att förbli relevanta och slagkraftiga på föränderliga marknader.',
+    //   capabilities: ['Varumärkesstrategi', 'Visuell Identitet', 'Varumärkesriktlinjer'],
+    //   link: '/services/brand-reimagination'
+    // },
     { 
       icon: '📈', 
       title: 'Marknadsföring', 
