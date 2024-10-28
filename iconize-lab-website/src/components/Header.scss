@@ -2,98 +2,62 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #000000;
+  padding: 1rem 0;
+  background-color: #000000;  // Black background
   color: #ffffff;
+  width: 100%;
 
-  .logo {
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: #ffffff;
-
-    img {
-      height: 30px; // Adjust this value to match your desired logo size
-      width: auto;
+  .header-top {
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    
+    .logo {
+      img {
+        height: 30px;
+        width: auto;
+      }
     }
-  }
 
-  nav {
-    ul {
+    .nav-container {
       display: flex;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+      align-items: center;
+      gap: 2rem;
+    }
 
-      li {
-        margin-right: 1.5rem;
-        position: relative;
+    .main-nav {
+      ul {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+        align-items: center;
+        margin: 0;
+        padding: 0;
 
-        a {
-          text-decoration: none;
-          cursor: pointer;
-          color: #ffffff;
-          font-weight: 500;
-          font-size: 0.9rem;
-          transition: color 0.2s ease;
+        li {
+          a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: color 0.3s ease;
 
-          &:hover {
-            color: #FD5E53; // Assuming this is your brand's accent color
-          }
-        }
-
-        &.services-dropdown {
-          .services-menu {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #000000;
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            display: flex;
-            width: 600px;
-            padding: 1.5rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s ease, visibility 0.2s ease;
-            z-index: 1000;
-
-            .menu-category {
-              flex: 1;
-              padding: 0 1rem;
-
-              h3 {
-                font-size: 0.9rem;
-                margin-bottom: 0.75rem;
-                color: #FD5E53;
-                font-weight: 600;
-                text-transform: uppercase;
-              }
-
-              ul {
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-
-                li {
-                  font-size: 0.85rem;
-                  margin-bottom: 0.5rem;
-                  color: #ffffff;
-                  cursor: pointer;
-                  transition: color 0.2s ease;
-
-                  &:hover {
-                    color: #FD5E53;
-                  }
-                }
-              }
+            &:hover {
+              color: rgba(112, 0, 255, 0.8);
             }
-          }
 
-          &:hover {
-            .services-menu {
-              opacity: 1;
-              visibility: visible;
+            &.nav-button {
+              background: rgba(112, 0, 255, 0.8);
+              border-radius: 50px;
+              padding: 0.75rem 1.5rem;
+              color: white;
+              transition: background-color 0.3s ease;
+              
+              &:hover {
+                background: rgba(112, 0, 255, 1);
+              }
             }
           }
         }
@@ -117,7 +81,8 @@
       font-size: 1rem;
       cursor: pointer;
       margin-left: 0.5rem;
-      color: #ffffff;
+      color: #000;
+      background-color: #000;
       transition: color 0.2s ease;
 
       &:hover {
@@ -126,50 +91,28 @@
     }
   }
 
-  .menu-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1000;
-    transition: all 0.3s ease;
-
-    span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background-color: #ffffff;
-      margin: 4px 0;
-      transition: all 0.3s ease;
-    }
-
-    &.open {
-      span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-      span:nth-child(2) {
-        opacity: 0;
-      }
-      span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
-    }
-  }
-
   .full-screen-menu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(98, 0, 234, 0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #14142B 0%, #7000FF 100%);  // Dark purple gradient
+    z-index: 100;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s ease;
-    z-index: 999;
+    transition: opacity 0.3s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
 
     &.open {
       opacity: 1;
@@ -177,58 +120,85 @@
     }
 
     .menu-content {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      max-width: 1200px;
-      width: 100%;
-      padding: 40px 20px;
+      height: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      color: white;
+      position: relative; // For absolute positioning of close button
+      
+      .close-menu-btn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 32px;
+        height: 32px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
 
-      .menu-category {
-        flex: 1;
-        margin: 0 20px;
-        text-align: left;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.4s ease;
+        span {
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: white;
+          left: 0;
 
-        h3 {
-          font-size: 1.2rem;
-          margin-bottom: 20px;
-          color: rgb(253, 94, 83);
-          font-weight: 600;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-        }
+          &:first-child {
+            transform: rotate(45deg);
+          }
 
-        ul {
-          list-style-type: none;
-          padding: 0;
-
-          li {
-            margin-bottom: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 1rem;
-            color: #cccccc;
-
-            &:hover {
-              color: #ffffff;
-              transform: translateX(5px);
-            }
+          &:last-child {
+            transform: rotate(-45deg);
           }
         }
+
+        &:hover span {
+          background-color: #FD5E53;
+        }
       }
-    }
 
-    &.open .menu-content {
-      .menu-category {
-        opacity: 1;
-        transform: translateY(0);
+      .menu-left {
+        h1 {
+          font-size: 4rem;
+          margin-bottom: 2rem;
+        }
 
-        @for $i from 1 through 4 {
-          &:nth-child(#{$i}) {
-            transition-delay: #{$i * 0.1}s;
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+          max-width: 600px;
+        }
+      }
+
+      .menu-right {
+        h2 {
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .pills-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          align-content: flex-start;
+        }
+
+        .menu-pill {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 50px;
+          padding: 0.75rem 1.5rem;
+          color: white;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+          font-size: 1rem;
+          
+          &:hover {
+            background: rgba(255, 255, 255, 0.2);
           }
         }
       }
@@ -238,6 +208,40 @@
   @media (max-width: 768px) {
     .main-nav {
       display: none;
+    }
+
+    .full-screen-menu {
+      .menu-content {
+        grid-template-columns: 1fr;
+        padding: 4rem 1rem;
+        gap: 2rem;
+        overflow-y: auto;
+      }
+
+      .menu-left {
+        h1 {
+          font-size: 3rem;
+        }
+      }
+
+      .menu-right {
+        .pills-container {
+          gap: 0.75rem;
+        }
+
+        .menu-pill {
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .header {
+      .main-nav {
+        display: none;
+      }
     }
   }
 }
@@ -258,4 +262,21 @@
 body {
   background-color: #000000;
   color: #ffffff;
+}
+
+.menu-btn {
+  background-color: #000000 !important;  // Force black background
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+
+  &:hover {
+    background-color: #000000 !important;  // Keep black background on hover
+    color: rgba(112, 0, 255, 0.8);
+  }
 }

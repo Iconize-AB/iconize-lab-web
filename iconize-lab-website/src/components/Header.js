@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoClose } from "react-icons/io5";
 import "./Header.scss";
 import logo from "../resources/[i]conizeLab.png";
 
 function Header() {
-  const [showServicesMenu, setShowServicesMenu] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
+
+  const mainNavItems = [
+    { title: "Om oss", path: "/about" },
+    { title: "Tjänster", path: "/services" },
+    { title: "Connect with us", path: "/connect", isButton: true }
+  ];
 
   const menuItems = [
     {
@@ -31,18 +37,9 @@ function Header() {
     },
   ];
 
-  const mainMenuItems = menuItems.filter(item => item.title !== "Areas of focus" && item.title !== "Connect");
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
-  };
-
-  const handleMenuItemClick = (path) => {
-    if (path) {
-      navigate(path);
-      toggleMenu();
-    }
   };
 
   useEffect(() => {
@@ -59,57 +56,100 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="logo">
-        <Link to="/">
-          <img src={logo} alt="Iconize Lab Logo" />
-        </Link>
-      </div>
-      <nav className="main-nav">
-        <ul>
-          {mainMenuItems.map((item, index) => (
-            <li key={index}>
-              <Link to={item.path || '/'}>  {/* Updated to use item.path */}
-                {item.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div className="right-section">
-        {/* <span className="language">English</span> */}
+      <div className="header-top">
+        <div className="logo">
+          <Link to="/">
+            <img src={logo} alt="Iconize Lab Logo" />
+          </Link>
+        </div>
+
+        <div className="nav-container">
+          {/* Main Navigation */}
+          <nav className="main-nav">
+            <ul>
+              {mainNavItems.map((item, index) => (
+                <li key={index}>
+                  <Link 
+                    to={item.path}
+                    className={item.isButton ? 'nav-button' : ''}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          
+        </div>
         <button
-          className={`menu-btn ${isMenuOpen ? "open" : ""}`}
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+            className={`menu-btn ${isMenuOpen ? "open" : ""}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+            style={{ backgroundColor: '#000000' }}  // Add inline style
+          >
+            <RxHamburgerMenu color="white" size={24} />
+          </button>
       </div>
+
       <div className={`full-screen-menu ${isMenuOpen ? "open" : ""}`}>
         <div className="menu-content">
-          {menuItems
-            .filter((category) => category.title !== "Connect")
-            .map((category, index) => (
-              <div key={index} className="menu-category">
-                <h3>{category.title}</h3>
-                <ul>
-                  {category?.items?.map((item, itemIndex) => (
-                    <li
-                      key={itemIndex}
-                      onClick={() =>
-                        handleMenuItemClick(
-                          typeof item === "object" ? item.path : null
-                        )
-                      }
-                    >
-                      {typeof item === "object" ? item.name : item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          {/* Add close button */}
+          <button
+            className="close-menu-btn"
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
+
+          <div className="menu-left">
+            <h1>TILLSAMMANS</h1>
+            <p>Varje kund är en innovationsledare inom sin bransch - eller vill bli en.</p>
+            <p>Vi vill bidra till framsteg och göra livet bättre. Om du också vill det - då vill vi gärna jobba med dig!</p>
+          </div>
+          
+          <div className="menu-right">
+            <h2>MED VÅRA KUNDER</h2>
+            <div className="pills-container">
+              {/* Main menu items */}
+              {menuItems.map((item, index) => (
+                <Link 
+                  key={`main-${index}`}
+                  to={item.path || '#'}
+                  className="menu-pill"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.title}
+                </Link>
+              ))}
+              
+              {/* Sub-items from "Om oss" */}
+              {menuItems[0].items.map((item, index) => (
+                <Link 
+                  key={`about-${index}`}
+                  to={`/about/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="menu-pill"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item}
+                </Link>
+              ))}
+              
+              {/* Sub-items from "Våra fokusområden" */}
+              {menuItems[2].items.map((item, index) => (
+                <Link 
+                  key={`services-${index}`}
+                  to={item.path}
+                  className="menu-pill"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </header>
