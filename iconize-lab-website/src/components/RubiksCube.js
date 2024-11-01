@@ -101,7 +101,12 @@ const RubiksCube = ({ size = 200 }) => {
   };
 
   return (
-    <div className="rubiks-loader" style={{ width: size, height: size }}>
+    <div className="rubiks-loader" style={{ 
+      width: size, 
+      height: size,
+      transform: 'scale(0.6)',
+      transformOrigin: 'center center'
+    }}>
       <div className={`rubiks-cube ${isSolving ? 'solving' : ''}`}>
         <div className="face front">{renderFace(faces.front, 'front')}</div>
         <div className="face back">{renderFace(faces.back, 'back')}</div>

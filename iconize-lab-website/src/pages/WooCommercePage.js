@@ -15,7 +15,6 @@ const WooCommercePage = () => {
     { name: "WooCommerce Butiksutveckling", icon: "🏪" },
     { name: "WooCommerce Migration", icon: "🚀" },
     { name: "Anpassad Pluginutveckling", icon: "🧩" },
-    { name: "WooCommerce Optimering", icon: "⚡" },
     { name: "WooCommerce Support & Underhåll", icon: "🛠️" },
   ];
 
@@ -71,9 +70,14 @@ const WooCommercePage = () => {
           <h2>Våra WooCommerce-tjänster</h2>
           <div className="services-grid">
             {wooCommerceServices.map((service, index) => (
-              <div key={index} className="service-item">
-                <span className="service-icon">{service.icon}</span>
-                <span className="service-name">{service.name}</span>
+              <div key={index} className="service-card">
+                <div className="service-icon-wrapper">
+                  <span className="service-icon">{service.icon}</span>
+                </div>
+                <h3 className="service-name">{service.name}</h3>
+                <div className="service-overlay">
+                  <span className="learn-more">Läs mer →</span>
+                </div>
               </div>
             ))}
           </div>

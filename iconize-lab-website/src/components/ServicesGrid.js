@@ -24,7 +24,7 @@ function ServicesGrid({ showCapabilities = true, limit = null }) {
       icon: '&#128187;', // Laptop
       title: 'Webbutveckling',
       description: 'Vi bygger responsiva, användarvänliga webbplatser som levererar exceptionella digitala upplevelser.',
-      capabilities: ['Node.js', 'Python', 'React', 'Vue.js', 'Next.js', 'Laravel', 'Squarespace', 'Wordpress', 'Shopify'],
+      capabilities: ['Node.js', 'React', 'Vue.js', 'Squarespace', 'Wordpress'],
       link: '/services/web-development'
     },
     // { 
@@ -41,13 +41,13 @@ function ServicesGrid({ showCapabilities = true, limit = null }) {
       capabilities: ['Digital Marknadsföring', 'Innehållsstrategi', 'SEO/SEM'],
       link: '/services/marketing'
     },
-    { 
-      icon: '&#128279;', // Link
-      title: 'Integrationer',
-      description: 'Vi integrerar sömlöst olika system och plattformar för att optimera affärsverksamheten och effektiviteten.',
-      capabilities: ['API-utveckling', 'Mellanlösningar', 'Datamigrering'],
-      link: '/services/integrations'
-    }
+    // { 
+    //   icon: '&#128279;', // Link
+    //   title: 'Integrationer',
+    //   description: 'Vi integrerar sömlöst olika system och plattformar för att optimera affärsverksamheten och effektiviteten.',
+    //   capabilities: ['API-utveckling', 'Mellanlösningar', 'Datamigrering'],
+    //   link: '/services/integrations'
+    // }
   ];
 
   const toggleCapabilities = (index) => {

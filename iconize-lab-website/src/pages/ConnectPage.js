@@ -28,7 +28,7 @@ const ConnectPage = () => {
       });
 
       if (response.ok) {
-        toast.success('Thank you for your message! We\'ll get back to you soon.', {
+        toast.success('Tack för ditt meddelande! Vi återkommer snart.', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -38,11 +38,11 @@ const ConnectPage = () => {
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        throw new Error('Form submission failed');
+        throw new Error('Formulärinlämning misslyckades');
       }
     } catch (error) {
-      console.error('Error:', error);
-      toast.error('There was an error submitting the form. Please try again.', {
+      console.error('Fel:', error);
+      toast.error('Det uppstod ett fel när formuläret skickades. Försök igen.', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -57,11 +57,11 @@ const ConnectPage = () => {
     <section className="connect-page">
       <ToastContainer />
       <div className="form-container">
-        <h2>Let's Connect</h2>
-        <p>We're excited to hear about your project. Reach out to us, and let's create something amazing together.</p>
+        <h2>Låt oss connecta</h2>
+        <p>Vi ser fram emot att höra om ditt projekt. Kontakta oss så skapar vi något fantastiskt tillsammans.</p>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">Name*</label>
+            <label htmlFor="name">Namn*</label>
             <input
               type="text"
               id="name"
@@ -72,7 +72,7 @@ const ConnectPage = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email*</label>
+            <label htmlFor="email">E-post*</label>
             <input
               type="email"
               id="email"
@@ -83,7 +83,7 @@ const ConnectPage = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="subject">Subject*</label>
+            <label htmlFor="subject">Ämne*</label>
             <input
               type="text"
               id="subject"
@@ -94,7 +94,7 @@ const ConnectPage = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="message">Message*</label>
+            <label htmlFor="message">Meddelande*</label>
             <textarea
               id="message"
               name="message"
@@ -103,7 +103,7 @@ const ConnectPage = () => {
               required
             ></textarea>
           </div>
-          <button type="submit" className="submit-button">Send Message</button>
+          <button type="submit" className="submit-button">Skicka meddelande</button>
         </form>
       </div>
     </section>

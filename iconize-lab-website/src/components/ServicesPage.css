@@ -250,8 +250,8 @@ h1 {
 }
 
 .animated-circle {
-  stroke-dasharray: 622;  /* Approximately 2 * π * 99 (circle radius) */
-  stroke-dashoffset: 622;
+  stroke-dasharray: 720;  /* New perimeter: 2 * (180 + 180) */
+  stroke-dashoffset: 720;
   animation: fillCircle 2s ease-out forwards;
 }
 

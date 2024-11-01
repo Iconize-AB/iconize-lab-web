@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./WebDevelopment.scss";
 
 const WebDevelopment = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const technologies = [
     { name: "React", icon: "⚛️" },

@@ -41,9 +41,9 @@ function ServicesPage() {
                   <stop offset="100%" style={{stopColor:'#26E594',stopOpacity:1}} />
                 </linearGradient>
               </defs>
-              <circle className="animated-circle" cx="200" cy="100" r="99" stroke="url(#grad1)" strokeWidth="2" fill="transparent" />
-              <circle className="animated-circle" cx="100" cy="300" r="99" stroke="url(#grad3)" strokeWidth="2" fill="transparent" />
-              <circle className="animated-circle" cx="300" cy="300" r="99" stroke="url(#grad2)" strokeWidth="2" fill="transparent" />
+              <rect className="animated-circle" x="110" y="10" width="180" height="180" stroke="url(#grad1)" strokeWidth="2" fill="transparent" />
+              <rect className="animated-circle" x="10" y="210" width="180" height="180" stroke="url(#grad3)" strokeWidth="2" fill="transparent" />
+              <rect className="animated-circle" x="210" y="210" width="180" height="180" stroke="url(#grad2)" strokeWidth="2" fill="transparent" />
               <circle cx="200" cy="1" r="3" fill="#00ffff" />
               <circle cx="1" cy="300" r="3" fill="#00ffff" />
               <circle cx="399" cy="300" r="3" fill="#ff00ff" />

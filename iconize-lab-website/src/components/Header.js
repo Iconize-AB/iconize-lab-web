@@ -18,7 +18,6 @@ function Header() {
     {
       title: "Om oss",
       path: "/about",
-      items: ["Karriär", "Iconize Lab's Kultur", "Iconize Lab's påverkan"],
     },
     { title: "Connect" },
     {
@@ -122,18 +121,6 @@ function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.title}
-                </Link>
-              ))}
-              
-              {/* Sub-items from "Om oss" */}
-              {menuItems[0].items.map((item, index) => (
-                <Link 
-                  key={`about-${index}`}
-                  to={`/about/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="menu-pill"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item}
                 </Link>
               ))}
               

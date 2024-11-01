@@ -4,6 +4,14 @@
   padding: 2rem;
   min-height: 100vh;
 
+  .services-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    .services-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
   h1 {
     font-size: 3rem;
     font-weight: bold;
@@ -22,7 +30,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       margin-bottom: 2rem;
 
