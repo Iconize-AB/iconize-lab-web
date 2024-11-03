@@ -20,6 +20,7 @@ import ConnectPage from './pages/ConnectPage';
 import LoadingScreen from './components/LoadingScreen';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ArticlePage from './components/ArticlePage';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -57,6 +58,7 @@ function App() {
               <Route path="/about/company-culture" element={<CompanyCulture />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/connect" element={<ConnectPage />} />
+              <Route path="/case-studies/:slug" element={<ArticlePage />} />
             </Routes>
             <Footer />
           </>

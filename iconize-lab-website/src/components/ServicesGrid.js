@@ -60,37 +60,41 @@ function ServicesGrid({ showCapabilities = true, limit = null }) {
     <div className="services-grid">
       {servicesToShow.map((service, index) => (
         <div key={index} className="service-item">
-          <div 
-            className="service-icon" 
-            dangerouslySetInnerHTML={{ __html: service.icon }}
-          />
-          <Link to={service.link}>
+          <Link to={service.link} className="service-content">
+            <div 
+              className="service-icon" 
+              dangerouslySetInnerHTML={{ __html: service.icon }}
+            />
             <h3>{service.title} →</h3>
+            <p>{service.description}</p>
+            {showCapabilities && (
+              <>
+                <button 
+                  className="capabilities-btn" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleCapabilities(index);
+                  }}
+                >
+                  Kompetenser {activeCapabilities === index ? '▲' : '▼'}
+                </button>
+                {activeCapabilities === index && (
+                  <div className="capabilities-tags">
+                    {service.capabilities.map((capability, capIndex) => (
+                      <Link 
+                        key={capIndex} 
+                        to={`${service.link}?capability=${encodeURIComponent(capability)}`} 
+                        className="capability-tag"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {capability}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
           </Link>
-          <p>{service.description}</p>
-          {showCapabilities && (
-            <>
-              <button 
-                className="capabilities-btn" 
-                onClick={() => toggleCapabilities(index)}
-              >
-                Kompetenser {activeCapabilities === index ? '▲' : '▼'}
-              </button>
-              {activeCapabilities === index && (
-                <div className="capabilities-tags">
-                  {service.capabilities.map((capability, capIndex) => (
-                    <Link 
-                      key={capIndex} 
-                      to={`${service.link}?capability=${encodeURIComponent(capability)}`} 
-                      className="capability-tag"
-                    >
-                      {capability}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </>
-          )}
         </div>
       ))}
     </div>

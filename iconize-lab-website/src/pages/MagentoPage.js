@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './MagentoPage.scss';
-import magentoLogo from '../resources/magento.png';
+import magentoLogo from '../resources/Magento-Logo-PNG.png';
 
 const MagentoPage = () => {
   const [aktivFråga, setAktivFråga] = useState(null);
@@ -14,7 +14,6 @@ const MagentoPage = () => {
   const magentoTjänster = [
     { namn: "Magento Butiksutveckling", ikon: "🏪" },
     { namn: "Magento Migrering", ikon: "🚀" },
-    { namn: "Anpassad Modulutveckling", ikon: "🧩" },
     { namn: "Magento Optimering", ikon: "⚡" },
     { namn: "Magento Support & Underhåll", ikon: "🛠️" },
   ];
@@ -60,7 +59,6 @@ const MagentoPage = () => {
       <div className="content-wrapper">
         <div className="magento-header">
           <img src={magentoLogo} alt="Magento Logotyp" className="magento-logo" />
-          <h1>Magento-utvecklingstjänster</h1>
         </div>
         <p className="intro-text">
           Vi specialiserar oss på att skapa kraftfulla, skalbara e-handelslösningar med Magento. 
@@ -71,9 +69,11 @@ const MagentoPage = () => {
           <h2>Våra Magento-tjänster</h2>
           <div className="services-grid">
             {magentoTjänster.map((tjänst, index) => (
-              <div key={index} className="service-item">
-                <span className="service-icon">{tjänst.ikon}</span>
-                <span className="service-name">{tjänst.namn}</span>
+              <div key={index} className="service-card">
+                <div className="service-icon-wrapper">
+                  <span className="service-icon">{tjänst.ikon}</span>
+                </div>
+                <h3 className="service-name">{tjänst.namn}</h3>
               </div>
             ))}
           </div>
@@ -139,12 +139,14 @@ const MagentoPage = () => {
           ))}
         </section>
 
-        <div className="cta-section">
-          <h2>Redo att bygga din Magento e-handelsbutik?</h2>
-          <p>Låt oss diskutera hur vi kan skapa en kraftfull online-närvaro för ditt företag med Magento.</p>
-          <button className="cta-button">Kom igång</button>
-        </div>
       </div>
+      <section className="cta-section">
+          <div className="cta-content">
+            <h2>Redo att bygga din Magento e-handelsbutik?</h2>
+            <p>Låt oss diskutera hur vi kan skapa en kraftfull online-närvaro för ditt företag med Magento.</p>
+            <button className="cta-button">Kom igång</button>
+          </div>
+        </section>
     </div>
   );
 };

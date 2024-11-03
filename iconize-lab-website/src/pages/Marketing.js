@@ -13,9 +13,6 @@ const Marketing = () => {
     { name: "SEO", icon: "🔍" },
     { name: "Content Marketing", icon: "📝" },
     { name: "Social Media", icon: "📱" },
-    { name: "Email Marketing", icon: "📧" },
-    { name: "PPC Advertising", icon: "💰" },
-    { name: "Analytics", icon: "📊" },
   ];
 
   const seoServices = [
@@ -64,7 +61,7 @@ const Marketing = () => {
 
         <section className="services">
           <h2>Våra Marknadsföringstjänster</h2>
-          <div className="service-grid">
+          <div className="service-marketing-grid">
             {services.map((service, index) => (
               <div key={index} className="service-item">
                 <span className="service-icon">{service.icon}</span>

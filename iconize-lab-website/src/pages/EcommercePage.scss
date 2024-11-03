@@ -29,7 +29,7 @@
   }
 
   .breadcrumb span {
-    color: #fd5e53;
+    color: #6200ea;
   }
 
   .section-content-ecommerce {
@@ -64,7 +64,7 @@
   .ecommerce-platforms h2,
   .cta-section h2 {
     font-size: 1.5rem;
-    color: #00ff00;
+    color: #fff;
     margin-bottom: 2rem;
   }
 
@@ -215,6 +215,78 @@
 
       &:hover {
         background-color: #6200ea;
+      }
+    }
+  }
+
+  .ecommerce-case-studies {
+    background-color: white;
+    padding: 4rem 0;
+    .content-wrapper-articles {
+      background-color: white;
+    }
+
+    .cases-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .case-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      
+      &:hover .case-overlay {
+        opacity: 1;
+      }
+    }
+
+    .case-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .case-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .read-more-button {
+      background: #6e2ff5;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #5620c5;
       }
     }
   }

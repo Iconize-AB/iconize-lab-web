@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import './SubscriptionPopup.scss';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SubscriptionPopup = ({ showSubscriptionPopup, onClose }) => {
   const [isVisible, setIsVisible] = useState(showSubscriptionPopup || false);
   const [email, setEmail] = useState('');
   const [country, setCountry] = useState('');
   const [countries, setCountries] = useState([]);
+  const [dontShowAgain, setDontShowAgain] = useState(false);
 
   useEffect(() => {
     const hasSubmitted = Cookies.get('subscriptionSubmitted');
-    if (!hasSubmitted) {
-      const timer = setTimeout(() => setIsVisible(true), 5000); // Show popup after 5 seconds
+    const hasDismissed = Cookies.get('popupDismissed');
+    
+    if (!hasSubmitted && !hasDismissed) {
+      const timer = setTimeout(() => setIsVisible(true), 5000);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -35,45 +40,59 @@ const SubscriptionPopup = ({ showSubscriptionPopup, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        'https://api.buttondown.email/v1/subscribers',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Token YOUR_BUTTONDOWN_API_KEY'
-          },
-          body: JSON.stringify({
-            email: email,
-            metadata: {
-              country: country,
-            },
-          }),
-        }
-      );
+      const response = await fetch('https://formspree.io/f/mvgogrno', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          country: country,
+        })
+      });
 
       if (response.ok) {
-        console.log('Subscribed successfully');
+        toast.success('Tack för din prenumeration!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
         Cookies.set('subscriptionSubmitted', 'true', { expires: 30 });
         setIsVisible(false);
+        setEmail('');
+        setCountry('');
       } else {
-        const error = await response.json();
-        throw new Error(error.message);
+        throw new Error('Prenumerationen misslyckades');
       }
     } catch (error) {
-      console.error('Error subscribing:', error);
-      // Handle error (e.g., show error message to user)
+      console.error('Error:', error);
+      toast.error('Det uppstod ett fel vid prenumerationen. Vänligen försök igen.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 
   const handleClose = () => {
     setIsVisible(false);
+    // Save preference if "don't show again" is checked
+    if (dontShowAgain) {
+      Cookies.set('popupDismissed', 'true', { expires: 365 }); // Cookie expires in 1 year
+    }
   };
 
   if (!isVisible) return null;
 
   return (
     <div className="subscription-popup">
+      <ToastContainer />
       <div className="popup-content">
         <button className="close-btn" onClick={handleClose}>×</button>
         <h2>Gå med i vårt nyhetsbrev</h2>
@@ -97,7 +116,11 @@ const SubscriptionPopup = ({ showSubscriptionPopup, onClose }) => {
           <button type="submit">Prenumerera</button>
         </form>
         <label>
-          <input type="checkbox" /> Visa inte igen
+          <input 
+            type="checkbox"
+            checked={dontShowAgain}
+            onChange={(e) => setDontShowAgain(e.target.checked)}
+          /> Visa inte igen
         </label>
       </div>
     </div>

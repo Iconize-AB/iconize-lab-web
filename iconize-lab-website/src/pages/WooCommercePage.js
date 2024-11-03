@@ -142,13 +142,14 @@ const WooCommercePage = () => {
             </div>
           ))}
         </section>
-
-        <div className="cta-section">
+      </div>
+      <section className="cta-section">
+        <div className="cta-content">
           <h2>Redo att bygga din WooCommerce e-handelsbutik?</h2>
           <p>Låt oss diskutera hur vi kan skapa en kraftfull online-närvaro för ditt företag med WooCommerce.</p>
           <button className="cta-button">Kom igång</button>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

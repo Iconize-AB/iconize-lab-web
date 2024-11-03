@@ -2,7 +2,6 @@
   background-color: #000;
   color: #FDF0E6;
   min-height: 100vh;
-  padding: 2rem;
 
   .content-wrapper {
     max-width: 1200px;
@@ -23,7 +22,7 @@
     }
 
     span {
-      color: #FD5E53;
+      color: #6200ea;
     }
   }
 
@@ -33,7 +32,7 @@
     margin-bottom: 2rem;
 
     .magento-logo {
-      width: 100px;
+      width: 200px;
       height: auto;
       margin-right: 1rem;
     }
@@ -170,32 +169,71 @@
   }
 
   .cta-section {
-    text-align: center;
-    margin-top: 4rem;
+    background-color: white;
+    width: 100%;
+    padding: 60px 0;
+    margin-top: 60px;
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+    .cta-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+      p {
+        color: #000;
+      }
     }
 
     .cta-button {
       background-color: #FD5E53;
-      color: #000;
+      color: white;
       border: none;
-      padding: 1rem 2rem;
+      padding: 15px 30px;
       font-size: 1.1rem;
-      font-weight: bold;
       border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin-top: 20px;
 
       &:hover {
         background-color: #ff7f75;
+      }
+    }
+  }
+}
+
+.magento-services {
+  margin: 2rem 0;
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+
+    .service-card {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #333;
       }
     }
   }

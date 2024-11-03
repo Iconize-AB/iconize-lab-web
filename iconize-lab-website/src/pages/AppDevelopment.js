@@ -19,11 +19,6 @@ const AppDevelopment = () => {
 
   const faqItems = [
     {
-      question: "Hur kan jag börja utveckla en app för min verksamhet?",
-      answer:
-        "Börja med att definiera din apps syfte och målgrupp. Skissa sedan upp en grundläggande design och funktionalitet. Därefter kan du välja utvecklingsplattform och börja med en prototyp eller MVP (Minimum Viable Product).",
-    },
-    {
       question:
         "Vilken plattform ska jag välja för min app: iOS, Android, eller båda?",
       answer:

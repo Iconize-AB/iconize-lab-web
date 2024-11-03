@@ -4,12 +4,23 @@ import './EcommercePage.scss';
 import magentoLogo from '../resources/magento.png';
 import wooCommerceLogo from '../resources/woocommerce.png';
 import adobeCommerceLogo from '../resources/adobe-commerce.png';
+import { getAllArticles } from '../utils/contentfulClient';
+import IconizeLogo from '../resources/[i]conizeLab.png';
+import ArticleCard from '../components/ArticleCard/ArticleCard';
 
 function EcommercePage() {
   const [aktivFunktion, setAktivFunktion] = useState(null);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Fetch articles with ecommerce tag
+    const loadArticles = async () => {
+      const articleData = await getAllArticles('ecommerce');
+      setArticles(articleData);
+    };
+    loadArticles();
   }, []);
 
   const ehandelsFunktioner = [
@@ -79,6 +90,21 @@ function EcommercePage() {
           </div>
         </div>
       </div>
+      {articles.length > 0 && (
+        <div className="ecommerce-case-studies">
+          <div className="content-wrapper-articles">
+            <h2>E-handel Case Studies</h2>
+            <div className="cases-container">
+              {articles.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  article={article}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

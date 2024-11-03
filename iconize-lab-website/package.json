@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.0.0",
+    "@contentful/rich-text-types": "^17.0.0",
+    "@craco/craco": "^7.1.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "contentful": "^11.2.0",
+    "gray-matter": "^4.0.3",
     "js-cookie": "^3.0.5",
     "nodemailer": "^6.9.15",
     "react": "^18.3.1",
@@ -17,6 +22,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^10.0.6",
     "sass": "^1.80.2",
+    "vite-plugin-markdown": "^2.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -45,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "raw-loader": "^4.0.2",
     "sitemap": "^8.0.0"
   }
 }
