@@ -27,12 +27,13 @@
 .service-item {
   position: relative;
   width: 280px;
-  height: 280px;
+  height: 380px;
   padding: 2rem;
   border-radius: 8px;
   transition: transform 0.3s ease;
   perspective: 1000px;
   transform-style: preserve-3d;
+  min-height: 380px;
   
   &:nth-child(1) { background-color: #6200ea; color: white; } // E-commerce
   &:nth-child(2) { background-color: #EF5350; color: white; } // App development
@@ -75,6 +76,15 @@
     color: inherit;
     text-decoration: none;
   }
+
+  .service-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  
 }
 
 // ... other existing styles ...

@@ -2,7 +2,6 @@
   background-color: #000;
   color: #FDF0E6;
   min-height: 100vh;
-  padding: 2rem;
 
   .content-wrapper {
     max-width: 1200px;
@@ -236,6 +235,38 @@
         padding: 1rem;
         background-color: rgba(255, 255, 255, 0.02);
         border-radius: 0 0 4px 4px;
+      }
+    }
+  }
+  .cta-section {
+    background-color: #7f54b3;
+    width: 100%;
+    padding: 60px 0;
+    margin-top: 60px;
+
+    .cta-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+      p {
+        color: #fff;
+      }
+    }
+
+    .cta-button {
+      background-color: #FD5E53; // WooCommerce purple
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+
+      &:hover {
+        background-color: #674399; // Darker shade for hover
       }
     }
   }

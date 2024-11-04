@@ -150,13 +150,14 @@ const IntegrationsPage = () => {
             </div>
           ))}
         </section>
-
-        <div className="cta-section">
-          <h2>Redo att effektivisera din verksamhet med sömlösa integrationer?</h2>
+      </div>
+      <section className="cta-section">
+        <div className="cta-content">
+        <h2>Redo att effektivisera din verksamhet med sömlösa integrationer?</h2>
           <p>Låt oss diskutera hur vi kan hjälpa dig att integrera dina system och öka din effektivitet.</p>
           <button className="cta-button">Kom igång</button>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

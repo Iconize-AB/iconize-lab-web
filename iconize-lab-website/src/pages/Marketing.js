@@ -123,6 +123,13 @@ const Marketing = () => {
           ))}
         </section>
       </div>
+      <section className="cta-section">
+        <div className="cta-content">
+          <h2>Redo att förbättra din marknadsposition?</h2>
+          <p>Låt oss diskutera hur vi kan hjälpa dig att öka din synlighet online och driva kvalificerad trafik till din webbplats, samtidigt som vi förbättrar ditt varumärke.</p>
+          <button className="cta-button">Kom igång</button>
+        </div>
+      </section>
     </div>
   );
 };

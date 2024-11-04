@@ -19,7 +19,7 @@ function Header() {
       title: "Om oss",
       path: "/about",
     },
-    { title: "Connect" },
+    { title: "Connect", path: "/about" },
     {
       title: "Våra fokusområden",
       path: "/services",
