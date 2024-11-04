@@ -161,7 +161,7 @@ const MagentoPage = () => {
       {articles.length > 0 && (
         <div className="magento-case-studies">
           <div className="content-wrapper-articles">
-            <h2>Magento Case Studies</h2>
+            <h2>Artiklar om Magento</h2>
             <div className="cases-container">
               {articles.map((article) => (
                 <ArticleCard

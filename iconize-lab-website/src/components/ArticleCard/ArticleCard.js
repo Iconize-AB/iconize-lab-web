@@ -13,7 +13,10 @@ const ArticleCard = ({ article }) => {
       'software': 'Apputveckling',
       'app': 'App',
       'ecommerce': 'E-handel',
-      'developments': 'Utveckling'
+      'developments': 'Utveckling',
+      'woocommerce': 'WooCommerce',
+      'marketing': 'Marknadsföring',
+      'magento': 'Magento'
     };
     return tagMap[tag] || tag;
   };

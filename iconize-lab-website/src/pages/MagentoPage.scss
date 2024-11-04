@@ -2,10 +2,17 @@
   background-color: #000;
   color: #FDF0E6;
   min-height: 100vh;
+  
+  .magento-case-studies {
+    .content-wrapper-articles {
+      padding: 2rem;
+    }
+  }
 
   .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
   }
 
   .breadcrumb {
@@ -32,9 +39,13 @@
     margin-bottom: 2rem;
 
     .magento-logo {
-      width: 200px;
+      width: 150px;
       height: auto;
       margin-right: 1rem;
+
+      @media (min-width: 768px) {
+        width: 200px;
+      }
     }
 
     h1 {
@@ -45,7 +56,7 @@
 
   .intro-text {
     font-size: 1.2rem;
-    max-width: 70%;
+    max-width: 100%;
     margin-bottom: 3rem;
   }
 
@@ -61,8 +72,12 @@
 
   .services-grid, .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
   }
 
   .service-item, .feature-item {
@@ -103,14 +118,19 @@
 
   .process-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 
     .step {
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 8px;
-      padding: 1.5rem;
+      padding: 2rem 1rem 1rem;
       position: relative;
+      margin-top: 1rem;
 
       .step-number {
         position: absolute;
@@ -177,10 +197,18 @@
     .cta-content {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 1rem;
       text-align: center;
       p {
         color: #fff;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+
+        @media (min-width: 768px) {
+          font-size: 2rem;
+        }
       }
     }
 
@@ -207,14 +235,18 @@
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1rem;
     margin-top: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 
     .service-card {
       background: white;
       border-radius: 8px;
-      padding: 2rem;
+      padding: 1.5rem;
       text-align: center;
       transition: transform 0.3s ease;
       cursor: pointer;
@@ -234,6 +266,10 @@
         margin: 0;
         font-size: 1.2rem;
         color: #333;
+      }
+
+      @media (min-width: 768px) {
+        padding: 2rem;
       }
     }
   }

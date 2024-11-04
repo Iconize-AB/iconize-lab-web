@@ -116,7 +116,7 @@
     text-align: center;
 
     .content-wrapper-ecommerce {
-      background-color: #6200ea;
+      background-color: #000;
     }
 
     .platforms-grid {
@@ -173,6 +173,9 @@
 
   .cta-section-wrapper {
     width: 100%;
+    .content-wrapper-ecommerce {
+      background-color: #6200ea;
+    }
   }
 
   .cta-section {
@@ -220,10 +223,10 @@
   }
 
   .ecommerce-case-studies {
-    background-color: white;
-    padding: 4rem 0;
+    background-color: #000;
     .content-wrapper-articles {
-      background-color: white;
+      background-color: #000;
+      padding: 2rem;
     }
 
     .cases-container {

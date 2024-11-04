@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Marketing.scss";
+import { getAllArticles } from '../utils/contentfulClient';
+import ArticleCard from '../components/ArticleCard/ArticleCard';
 
 const Marketing = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Fetch articles with marketing tag
+    const loadArticles = async () => {
+      const articleData = await getAllArticles('marketing');
+      setArticles(articleData);
+    };
+    loadArticles();
   }, []);
 
   const services = [
@@ -130,6 +140,22 @@ const Marketing = () => {
           <button className="cta-button">Kom igång</button>
         </div>
       </section>
+
+      {articles.length > 0 && (
+        <div className="marketing-case-studies">
+          <div className="content-wrapper-articles">
+            <h2>Marketing Case Studies</h2>
+            <div className="cases-container">
+              {articles.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  article={article}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -216,22 +216,35 @@
         padding: 4rem 1rem;
         gap: 2rem;
         overflow-y: auto;
-      }
-
-      .menu-left {
-        h1 {
-          font-size: 3rem;
+        height: 100vh;
+        max-height: 100%;
+        
+        .menu-left {
+          h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+          }
+          
+          p {
+            font-size: 1rem;
+          }
         }
-      }
 
-      .menu-right {
-        .pills-container {
-          gap: 0.75rem;
+        .menu-right {
+          h2 {
+            font-size: 1.8rem;
+            display: none;
+          }
+
+          .pills-container {
+            gap: 0.75rem;
+            padding-bottom: 2rem;
+          }
         }
 
-        .menu-pill {
-          padding: 0.5rem 1rem;
-          font-size: 0.9rem;
+        .close-menu-btn {
+          top: 1rem;
+          right: 1rem;
         }
       }
     }
@@ -278,5 +291,133 @@ body {
   &:hover {
     background-color: #000000 !important;  // Keep black background on hover
     color: rgba(112, 0, 255, 0.8);
+  }
+}
+
+// Add these new styles for mobile menu
+@media (max-width: 768px) {
+  .full-screen-menu {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    &.open {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.full-screen-menu {
+  @media (max-width: 768px) {
+    .menu-content {
+      padding: 3rem 1rem;
+      
+      .menu-left {
+        h1 {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+        
+        p {
+          font-size: 0.9rem;
+          line-height: 1.4;
+          margin-bottom: 0.75rem;
+        }
+      }
+
+      .menu-right {
+        h2 {
+          font-size: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .pills-container {
+          gap: 0.5rem;
+        }
+
+        .menu-pill {
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+          min-width: calc(50% - 0.5rem);
+          text-align: center;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+
+// Add these styles for better mobile menu layout
+@media (max-width: 768px) {
+  .full-screen-menu {
+    .menu-content {
+      display: flex;
+      flex-direction: column;
+      
+      .pills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+      }
+    }
+  }
+}
+
+.full-screen-menu {
+  @media (max-width: 768px) {
+    .menu-content {
+      .menu-left {
+        display: none; // Hide the entire left section containing title and description
+      }
+
+      // Adjust the remaining content
+      .menu-right {
+        h2 {
+          margin-top: 2rem; // Add some space at the top since we removed the left section
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .full-screen-menu {
+    .menu-content {
+      padding: 2rem 1rem;
+      
+      .menu-right {
+        width: 100%;
+        
+        .pills-container {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem; // Reduced gap between pills
+          width: 100%;
+        }
+
+        .menu-pill {
+          width: 100%;
+          padding: 0.5rem; // Reduced padding
+          font-size: 0.85rem; // Smaller font size
+          text-align: center;
+          box-sizing: border-box;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 35px; // Reduced height
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 25px; // Slightly reduced border radius
+        }
+      }
+
+      // Hide the title
+      h2 {
+        display: none;
+      }
+    }
   }
 }

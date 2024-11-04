@@ -140,7 +140,7 @@ const AppDevelopment = () => {
       {articles.length > 0 && (
         <div className="articles-content-wrapper">
           <section className="app-development-case-studies">
-            <h2>Våra Appprojekt</h2>
+            <h2>Utvecklingsartiklar</h2>
             <div className="cases-container">
               {articles.map((article) => (
                 <ArticleCard
