@@ -2,13 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './MagentoPage.scss';
 import magentoLogo from '../resources/Magento-Logo-PNG.png';
+import { getAllArticles } from '../utils/contentfulClient';
+import ArticleCard from '../components/ArticleCard/ArticleCard';
 
 const MagentoPage = () => {
   const [aktivFråga, setAktivFråga] = useState(null);
   const [aktivFunktion, setAktivFunktion] = useState(null);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Fetch articles with magento tag
+    const loadArticles = async () => {
+      const articleData = await getAllArticles('magento');
+      setArticles(articleData);
+    };
+    loadArticles();
   }, []);
 
   const magentoTjänster = [
@@ -147,6 +157,22 @@ const MagentoPage = () => {
             <button className="cta-button">Kom igång</button>
           </div>
         </section>
+
+      {articles.length > 0 && (
+        <div className="magento-case-studies">
+          <div className="content-wrapper-articles">
+            <h2>Magento Case Studies</h2>
+            <div className="cases-container">
+              {articles.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  article={article}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

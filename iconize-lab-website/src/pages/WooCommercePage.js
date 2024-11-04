@@ -2,13 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './WooCommercePage.scss';
 import wooCommerceLogo from '../resources/woocommerce.png';
+import { getAllArticles } from '../utils/contentfulClient';
+import ArticleCard from '../components/ArticleCard/ArticleCard';
 
 const WooCommercePage = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
   const [activeFeature, setActiveFeature] = useState(null);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    const loadArticles = async () => {
+      const articleData = await getAllArticles('woocommerce');
+      setArticles(articleData);
+    };
+    loadArticles();
   }, []);
 
   const wooCommerceServices = [
@@ -150,6 +159,22 @@ const WooCommercePage = () => {
           <button className="cta-button">Kom igång</button>
         </div>
       </section>
+
+      {articles.length > 0 && (
+        <div className="articles-content-wrapper">
+          <section className="woocommerce-case-studies">
+            <h2>Våra Artiklar</h2>
+            <div className="cases-container">
+              {articles.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  article={article}
+                />
+              ))}
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 };

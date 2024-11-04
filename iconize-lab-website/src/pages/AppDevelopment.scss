@@ -192,4 +192,22 @@
       }
     }
   }
+
+  .app-development-case-studies {
+    margin: 4rem 0;
+    
+    h2 {
+      font-size: 2rem;
+      color: #26E594;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .cases-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      width: 100%;
+    }
+  }
 }

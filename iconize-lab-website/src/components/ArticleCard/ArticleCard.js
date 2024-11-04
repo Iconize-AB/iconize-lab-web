@@ -4,7 +4,19 @@ import PropTypes from 'prop-types';
 import './ArticleCard.scss';
 
 const ArticleCard = ({ article }) => {
-  const { title, description, slug, image } = article;
+  const { title, description, slug, image, tags } = article;
+  
+  // Map tag IDs to more readable display names
+  const getTagDisplay = (tag) => {
+    const tagMap = {
+      'web': 'Webbutveckling',
+      'software': 'Apputveckling',
+      'app': 'App',
+      'ecommerce': 'E-handel',
+      'developments': 'Utveckling'
+    };
+    return tagMap[tag] || tag;
+  };
   
   return (
     <div className="article-card">
@@ -18,6 +30,15 @@ const ArticleCard = ({ article }) => {
         )}
       </div>
       <div className="article-card__content">
+        {tags && tags.length > 0 && (
+          <div className="article-card__tags">
+            {tags.map((tag) => (
+              <span key={tag} className="article-card__tag">
+                {getTagDisplay(tag)}
+              </span>
+            ))}
+          </div>
+        )}
         <h3 className="article-card__title">{title}</h3>
         <p className="article-card__description">{description}</p>
         <Link 
@@ -36,7 +57,8 @@ ArticleCard.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
-    image: PropTypes.string
+    image: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.string)
   }).isRequired
 };
 

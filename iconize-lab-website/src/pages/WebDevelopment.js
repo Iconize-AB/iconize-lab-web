@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./WebDevelopment.scss";
+import { getAllArticles } from '../utils/contentfulClient';
+import ArticleCard from '../components/ArticleCard/ArticleCard';
 
 const WebDevelopment = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Fetch articles with web tag
+    const loadArticles = async () => {
+      const articleData = await getAllArticles('web');
+      setArticles(articleData);
+    };
+    loadArticles();
   }, []);
 
   const technologies = [
@@ -112,6 +122,32 @@ const WebDevelopment = () => {
           ))}
         </section>
       </div>
+
+      <div className="cta-section-wrapper">
+        <div className="content-wrapper-app">
+          <div className="cta-section">
+            <h2>Redo att Starta Ditt Webbprojekt?</h2>
+            <p>Låt oss diskutera hur vi kan hjälpa dig att skapa en modern och effektiv webbapplikation som driver din verksamhet framåt.</p>
+            <button className="cta-button">Kom Igång</button>
+          </div>
+        </div>
+      </div>
+
+      {articles.length > 0 && (
+        <div className="articles-content-wrapper">
+          <section className="web-development-case-studies">
+            <h2>Våra Webbprojekt</h2>
+            <div className="cases-container">
+              {articles.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  article={article}
+                />
+              ))}
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 };

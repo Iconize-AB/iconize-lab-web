@@ -22,7 +22,7 @@
     }
 
     span {
-      color: #FD5E53;
+      color: #7f54b3;
     }
   }
 
@@ -169,7 +169,7 @@
   }
 
   .cta-section {
-    background-color: white;
+    background-color: #7f54b3;
     width: 100%;
     padding: 60px 0;
     margin-top: 60px;
@@ -180,12 +180,12 @@
       padding: 0 20px;
       text-align: center;
       p {
-        color: #000;
+        color: #fff;
       }
     }
 
     .cta-button {
-      background-color: #7f54b3; // WooCommerce purple
+      background-color: #FD5E53; // WooCommerce purple
       color: white;
       border: none;
       padding: 15px 30px;
@@ -279,6 +279,22 @@
         grid-template-columns: 1fr;
         gap: 1.5rem;
       }
+    }
+  }
+
+  .woocommerce-case-studies {
+    margin: 4rem 0;
+    
+    h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .cases-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      width: 100%;
     }
   }
 }

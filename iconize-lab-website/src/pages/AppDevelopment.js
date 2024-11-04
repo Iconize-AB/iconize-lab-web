@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./AppDevelopment.scss";
+import { getAllArticles } from '../utils/contentfulClient';
+import ArticleCard from '../components/ArticleCard/ArticleCard';
 
 const AppDevelopment = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Fetch articles with software tag
+    const loadArticles = async () => {
+      const articleData = await getAllArticles('software');
+      setArticles(articleData);
+    };
+    loadArticles();
   }, []);
 
   const technologies = [
@@ -126,6 +136,22 @@ const AppDevelopment = () => {
           </div>
         </div>
       </div>
+
+      {articles.length > 0 && (
+        <div className="articles-content-wrapper">
+          <section className="app-development-case-studies">
+            <h2>Våra Appprojekt</h2>
+            <div className="cases-container">
+              {articles.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  article={article}
+                />
+              ))}
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 };
