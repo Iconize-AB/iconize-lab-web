@@ -82,10 +82,9 @@ const SubscriptionPopup = ({ showSubscriptionPopup, onClose }) => {
 
   const handleClose = () => {
     setIsVisible(false);
-    // Save preference if "don't show again" is checked
-    if (dontShowAgain) {
-      Cookies.set('popupDismissed', 'true', { expires: 365 }); // Cookie expires in 1 year
-    }
+    // Always save dismissal to cookies, regardless of checkbox
+    Cookies.set('popupDismissed', 'true', { expires: 365 });
+    if (onClose) onClose();
   };
 
   if (!isVisible) return null;
