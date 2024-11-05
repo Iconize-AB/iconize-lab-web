@@ -9,6 +9,12 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  .service-content-wrap {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 // Add media query for tablet/mobile

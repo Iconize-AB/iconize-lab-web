@@ -550,7 +550,7 @@ html {
     align-items: center;
     justify-content: center;
     padding: 0;
-    transform: translateY(-70px);
+    transform: translateY(-75px);
   }
 
   .kreativitet {
@@ -561,8 +561,9 @@ html {
 
   .konsulting {
     .service-content {
+      transform: translateY(-110px);
       .service-name {
-        right: 20px;
+        right: 15px;
         position: relative;
       }
     }
@@ -570,8 +571,9 @@ html {
 
   .kompetens {
     .service-content {
+      transform: translateY(-110px);
       .service-name {
-        left: 25px;
+        left: 15px;
         position: relative;
       }
     }

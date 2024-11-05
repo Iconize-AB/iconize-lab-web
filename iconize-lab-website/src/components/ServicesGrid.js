@@ -60,7 +60,7 @@ function ServicesGrid({ showCapabilities = true, limit = null }) {
     <div className="services-grid">
       {servicesToShow.map((service, index) => (
         <div key={index} className="service-item">
-          <Link to={service.link} className="service-content">
+          <Link to={service.link} className="service-content-wrap">
             <div 
               className="service-icon" 
               dangerouslySetInnerHTML={{ __html: service.icon }}
