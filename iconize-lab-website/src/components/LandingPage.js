@@ -125,7 +125,7 @@ function LandingPage() {
             </div>
             
             <div className={`testimonial-card coral ${isTestimonialVisible ? 'visible' : ''}`}>
-              <p className="quote">"Iconize Lab hjälpte oss med vår digitala resa. De var professionella, flexibla och hjälpsamma. De var till stor hjälp med vårt skifte av affärssystem och e-handel, samt integrationen mellan systemen. Vi rekommenderar starkt Iconize Lab!"</p>
+              <p className="quote">"Iconize Lab hjälper oss med vår digitala resa kring e-handel. De är professionella, flexibla och hjälpsamma. Vi rekommenderar starkt Iconize Lab!"</p>
             </div>
             
             <div className={`testimonial-card purple ${isTestimonialVisible ? 'visible' : ''}`}>
