@@ -35,7 +35,7 @@ function EcommercePage() {
   const plattformar = [
     { namn: 'Magento', logo: magentoLogo },
     { namn: 'WooCommerce', logo: wooCommerceLogo },
-    { namn: 'Adobe Commerce', logo: adobeCommerceLogo },
+    { namn: 'Adobe-Commerce', logo: adobeCommerceLogo },
   ];
 
   return (
@@ -93,7 +93,7 @@ function EcommercePage() {
       {articles.length > 0 && (
         <div className="ecommerce-case-studies">
           <div className="content-wrapper-articles">
-            <h2>E-handel Case Studies</h2>
+            <h2>E-handel artiklar</h2>
             <div className="cases-container">
               {articles.map((article) => (
                 <ArticleCard

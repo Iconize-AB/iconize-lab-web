@@ -51,7 +51,7 @@ const AdobeCommercePage = () => {
     },
     {
       fråga: "Erbjuder ni Adobe Commerce-hostingtjänster?",
-      svar: "Även om vi inte tillhandahåller hosting direkt, kan vi rekommendera och hjälpa till att sätta upp optimala hostinglösningar för din Adobe Commerce-butik. Vi samarbetar med pålitliga hostingpartners som specialiserar sig på Adobe Commerce-hosting för att säkerställa bästa prestanda för din webbplats."
+      svar: "Adobe Commerce är en molnbaserad e-handelsplattform som drivs på Adobe Cloud Infrastructure. Detta ger dig en skalbar, säker och högpresterande hosting-lösning direkt från Adobe. Vi hjälper dig att konfigurera och optimera din Adobe Commerce-miljö för bästa möjliga prestanda."
     },
     {
       fråga: "Kan ni integrera Adobe Commerce med mina befintliga system?",
