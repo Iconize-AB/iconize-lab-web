@@ -11,7 +11,7 @@ function Header() {
   const mainNavItems = [
     { title: "Om oss", path: "/about" },
     { title: "Tjänster", path: "/services" },
-    { title: "Connect with us", path: "/connect", isButton: true }
+    { title: "Kontakta oss", path: "/connect", isButton: true }
   ];
 
   const menuItems = [
@@ -25,7 +25,7 @@ function Header() {
       path: "/services",
       items: [
         { name: "E-commerce", path: "/services/ecommerce" },
-        { name: "App Development", path: "/services/app-development" },
+        { name: "Appliktionsutveckling", path: "/services/app-development" },
         { name: "Web Development", path: "/services/web-development" },
         { name: "Marketing", path: "/services/marketing" },
         { name: "Magento", path: "/services/ecommerce/magento" },

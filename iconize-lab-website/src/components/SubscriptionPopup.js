@@ -96,7 +96,7 @@ const SubscriptionPopup = ({ showSubscriptionPopup, onClose }) => {
       <div className="popup-content">
         <button className="close-btn" onClick={handleClose}>×</button>
         <h2>Gå med i vårt nyhetsbrev</h2>
-        <p>Registrera dig och ta del av våra senaste tankar, insikter och strategier för att hjälpa ditt företag att växa bättre.</p>
+        <p>Registrera dig och ta del av våra senaste tankar, insikter och strategier för att hjälpa ditt företag att växa.</p>
         <form onSubmit={handleSubmit}>
           <select value={country} onChange={(e) => setCountry(e.target.value)} required>
             <option value="">Land*</option>

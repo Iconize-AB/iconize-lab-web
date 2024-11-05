@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './LandingPage.scss';
 import InteractiveFormSection from './InteractiveFormSection';
 import ServicesGrid from './ServicesGrid';
-import Bostrom from '../resources/bostrom.png';
 import { Link } from 'react-router-dom';
 import RubiksCube from './RubiksCube';
-import IconizeLogo from '../resources/[i]conizeLab.png';
+import Promo from '../resources/promo.png';
 import { getAllArticles } from '../utils/contentfulClient';
 
 function LandingPage() {
@@ -99,7 +98,7 @@ function LandingPage() {
             <a href="#learn-more" className="learn-more-link">LÄS MER</a>
           </div>
           <div className="case-study-image">
-            <img src={Bostrom} alt="JetBlue-flygplan på landningsbanan" loading="lazy" />
+            <img src={Promo} alt="Digitala lösningar och varumärkesstrategi" loading="lazy" />
           </div>
         </div>
       </section>

@@ -64,7 +64,7 @@ const Marketing = () => {
         <span>Marketing</span>
       </div>
       <div className="content-wrapper">
-        <h1>Marketing & SEO</h1>
+        <h1>Marknadsföring & SEO</h1>
         <p className="intro-text">
           Vi hjälper företag att öka sin synlighet online, driva kvalificerad trafik och förbättra konverteringar genom skräddarsydda digitala marknadsföringsstrategier.
         </p>

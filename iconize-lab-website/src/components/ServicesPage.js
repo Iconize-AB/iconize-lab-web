@@ -11,9 +11,9 @@ function ServicesPage() {
   }, []);
 
   const circleServices = [
-    { name: 'Kreativitet', description: 'Identifying growth opportunities, defining critical' },
-    { name: 'Kompetens', description: 'Anticipating needs, solving pain points, and creating' },
-    { name: 'Konsulting', description: 'Crafting compelling narratives and visual identities' }
+    { name: 'Kreativitet', description: 'Nya utmaningar kräver kreativa lösningar. Det är vi bra på.' },
+    { name: 'Kompetens', description: 'Vi delar vår kunskap med dig, så att du inte ska behöva oss en längre period.' },
+    { name: 'Konsulting', description: 'Hjälpen du behöver. När du behöver den. ' }
   ];
 
 
@@ -65,7 +65,7 @@ function ServicesPage() {
         </div>
         <div id="detailed-services" className="detailed-services">
           <h2>Tjänster</h2>
-          <p>Iconize Lab brings an integrated portfolio of consulting, experience and creative expertise to every client engagement.</p>
+          <p>[i]conize lab erbjuder en bred portfolio av tjänster som hjälper dig nå dina mål</p>
           <ServicesGrid showCapabilities={true} />
         </div>
 

@@ -56,10 +56,10 @@ const AppDevelopment = () => {
     <div className="app-development-page">
       <div className="breadcrumb">
         <Link to="/">Home</Link> &gt; <Link to="/services">Tjänster</Link> &gt;{" "}
-        <span>App Development</span>
+        <span>Applikationsutveckling</span>
       </div>
       <div className="content-wrapper">
-        <h1>App Development</h1>
+        <h1>Applikationsutveckling</h1>
         <p className="intro-text">
           Vi skapar innovativa mobilapplikationer som engagerar användare och driver affärstillväxt.
         </p>
