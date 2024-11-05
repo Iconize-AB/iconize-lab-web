@@ -6,6 +6,7 @@
   .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
   }
 
   .breadcrumb {
@@ -30,18 +31,36 @@
     font-size: 3.5rem;
     font-weight: 300;
     margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
   }
 
   .intro-text {
     font-size: 1.2rem;
     max-width: 70%;
     margin-bottom: 3rem;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      text-align: center;
+      font-size: 1.1rem;
+    }
   }
 
   h2 {
     font-size: 2rem;
     color: #26E594;
     margin-bottom: 1.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
   }
 
   .technologies {
@@ -51,6 +70,10 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 1.5rem;
+
+      @media (max-width: 576px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .tech-item {
@@ -83,6 +106,12 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        margin-top: 3rem;
+        gap: 2.5rem;
+      }
     }
 
     .step {
@@ -104,6 +133,11 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
+
+        @media (max-width: 768px) {
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
 
       h3 {
@@ -114,6 +148,10 @@
       p {
         font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.8);
+      }
+
+      @media (max-width: 768px) {
+        text-align: center;
       }
     }
   }
@@ -137,6 +175,11 @@
         &.active {
           background-color: #26E594;
           color: #000;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+          padding: 0.8rem;
         }
       }
 
@@ -165,11 +208,20 @@
       h2 {
         font-size: 2rem;
         margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+          font-size: 1.75rem;
+        }
       }
 
       p {
         font-size: 1.1rem;
         margin-bottom: 30px;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+          padding: 0 1rem;
+        }
       }
 
       .cta-button {
@@ -202,6 +254,11 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       width: 100%;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
     }
   }
 }

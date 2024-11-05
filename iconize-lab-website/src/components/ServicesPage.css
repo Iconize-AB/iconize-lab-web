@@ -468,6 +468,10 @@ html {
     padding: 0;
   }
 
+  .services-grid {
+    margin-bottom: 20px;
+  }
+
   .services-diagram {
     width: 100%;
     max-width: 100%;
