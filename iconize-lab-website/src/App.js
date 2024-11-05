@@ -21,6 +21,7 @@ import LoadingScreen from './components/LoadingScreen';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ArticlePage from './components/ArticlePage';
+import AdobeCommercePage from './pages/AdobeCommercePage';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -50,6 +51,7 @@ function App() {
               <Route path="/services/web-development" element={<WebDevelopment />} />
               <Route path="/services/marketing" element={<Marketing />} />
               <Route path="/services/ecommerce/magento" element={<MagentoPage />} />
+              <Route path="/services/ecommerce/adobe-commerce" element={<AdobeCommercePage />} />
               <Route path="/services/ecommerce" element={<EcommercePage />} />
               <Route path="/services/ecommerce/woocommerce" element={<WooCommercePage />} />
               {/* <Route path="/services/brand-building" element={<BrandBuildingPage />} /> */}
