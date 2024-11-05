@@ -119,14 +119,14 @@ function LandingPage() {
           </div>
           
           <div className={`testimonials-grid ${isTestimonialVisible ? 'visible' : ''}`}>
-            {/* <div className={`testimonial-card green ${isTestimonialVisible ? 'visible' : ''}`}>
+            <div className={`testimonial-card green ${isTestimonialVisible ? 'visible' : ''}`}>
               <h3>Daisy Ma, CT Food AB</h3>
               <p className="role">General Manager</p>
             </div>
             
             <div className={`testimonial-card coral ${isTestimonialVisible ? 'visible' : ''}`}>
-              <p className="quote">"Iconize Lab hjälper oss med vår digitala resa kring e-handel. De är professionella, flexibla och hjälpsamma!"</p>
-            </div> */}
+              <p className="quote">"Iconize Lab har från dag ett fått oss att känna oss sedda och trygga i vår e-handelsresa. Vi uppskattar deras genuina förståelse för våra behov och mål samt deras kreativa och flexibla helhetslösningar!"</p>
+            </div>
             
             <div className={`testimonial-card purple ${isTestimonialVisible ? 'visible' : ''}`}>
               <h3>Anna</h3>
