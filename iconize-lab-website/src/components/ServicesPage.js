@@ -68,23 +68,13 @@ function ServicesPage() {
           <p>[i]conize lab erbjuder en bred portfolio av tjänster som hjälper dig nå dina mål</p>
           <ServicesGrid showCapabilities={true} />
         </div>
+      </div>
 
-        <div id="industries" className="industries-section">
-          <div className="industries-content">
-            <h2>Industries</h2>
-            <p>
-            [i]conize lab erbjuder en bred portfolio av kompetenser som hjälper er nå dit ni vill.
-            </p>
-            <Link to="/industries" className="industries-link">INDUSTRIES WE SERVE →</Link>
-          </div>
-          <div className="industries-illustration">
-            <svg viewBox="0 0 200 100" width="200" height="100">
-              <rect x="0" y="60" width="40" height="40" fill="#1E3A8A" />
-              <rect x="50" y="40" width="40" height="60" fill="#1E3A8A" />
-              <rect x="100" y="20" width="40" height="80" fill="#1E3A8A" />
-              <circle cx="180" cy="50" r="20" fill="#1E3A8A" />
-            </svg>
-          </div>
+      <div id="industries" className="industries-section">
+        <div className="industries-content">
+          <h2>Industries</h2>
+          <p>[i]conize lab erbjuder en bred portfolio av kompetenser som hjälper er nå dit ni vill.</p>
+          <Link to="/industries" className="industries-link">INDUSTRIES WE SERVE →</Link>
         </div>
       </div>
     </div>
