@@ -60,7 +60,6 @@ function Footer() {
         </div>
 
         <div className="connect">
-          <h3>ANSLUT</h3>
           <div className="connect-columns">
             <div className="newsletter">
               <h4>Nyhetsbrev</h4>
