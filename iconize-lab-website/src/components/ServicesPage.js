@@ -70,13 +70,13 @@ function ServicesPage() {
         </div>
       </div>
 
-      <div id="industries" className="industries-section">
+      {/* <div id="industries" className="industries-section">
         <div className="industries-content">
           <h2>Industries</h2>
           <p>[i]conize lab erbjuder en bred portfolio av kompetenser som hjälper er nå dit ni vill.</p>
           <Link to="/industries" className="industries-link">INDUSTRIES WE SERVE →</Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
