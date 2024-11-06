@@ -1,66 +1,121 @@
-.prophet-different {
+.iconize-lab-different {
   background-color: #000;
   color: #fff;
   padding: 4rem 2rem;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
   }
 
-  .items {
-    flex: 1;
-    margin-right: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    .item {
-      position: relative;
-      cursor: pointer;
+  .tab-container {
+    width: 100%;
+    
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       
-      
-      &:hover, &.active {
-        color: #FD5E53;
-      }
-
-      .arrow {
-        position: absolute;
-        right: -20px;  // Adjust this value to position the arrow
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 24px;  // Adjust size as needed
-        font-weight: bold;
-      }
-
-      &.active .arrow {
-        opacity: 1;
+      .tab {
+        flex: 1;
+        padding: 1rem;
+        border: none;
+        background: none;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+        
+        .mobile-text {
+          display: none;
+        }
+        
+        &:hover {
+          color: #FD5E53;
+        }
+        
+        &.active {
+          border-bottom: 2px solid #FD5E53;
+          color: #FD5E53;
+          font-weight: bold;
+        }
       }
     }
-  }
-
-  .description {
-    flex: 1;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    
+    .tab-content {
+      padding: 1rem 0;
+      
+      p {
+        margin: 0;
+        line-height: 1.6;
+        color: #fff;
+      }
+    }
   }
 }
 
 @media (max-width: 768px) {
-  .prophet-different {
-    .content {
-      flex-direction: column;
+  .iconize-lab-different {
+    padding: 2rem 1rem;
+    
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
-    .items {
-      margin-right: 0;
-      margin-bottom: 2rem;
+    .tab-container {
+      .tabs {
+        margin-bottom: 1.5rem;
+        
+        .tab {
+          padding: 0.75rem 0.5rem;
+          font-size: 0.9rem;
+          text-align: center;
+          
+          .desktop-text {
+            display: none;
+          }
+          
+          .mobile-text {
+            display: block;
+          }
+        }
+      }
+      
+      .tab-content {
+        padding: 0.75rem 0;
+        
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .iconize-lab-different {
+    padding: 1.5rem 0.75rem;
+    
+    .tab-container {
+      .tabs {
+        .tab {
+          padding: 0.5rem 0.25rem;
+          font-size: 0.8rem;
+        }
+      }
     }
   }
 }

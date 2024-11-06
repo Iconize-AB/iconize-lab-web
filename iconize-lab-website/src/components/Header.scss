@@ -31,6 +31,7 @@
     .main-nav {
       ul {
         display: flex;
+        cursor: pointer;
         list-style: none;
         gap: 2.5rem;
         align-items: center;
@@ -38,10 +39,12 @@
         padding: 0;
 
         li {
+          cursor: pointer;
           a {
             text-decoration: none;
             color: #ffffff;
             font-weight: 500;
+            cursor: pointer;
             transition: color 0.3s ease;
 
             &:hover {
@@ -196,6 +199,7 @@
           text-decoration: none;
           transition: background-color 0.3s ease;
           font-size: 1rem;
+          cursor: pointer;
           
           &:hover {
             background: rgba(255, 255, 255, 0.2);
@@ -420,4 +424,32 @@ body {
       }
     }
   }
+}
+
+// Base styles for menu-pill
+.menu-right {
+  .menu-pill {
+    cursor: pointer !important;
+    // ... existing styles ...
+  }
+}
+
+// Mobile styles
+@media (max-width: 768px) {
+  .full-screen-menu {
+    .menu-content {
+      .menu-right {
+        .menu-pill {
+          cursor: pointer !important;
+          // ... existing styles ...
+        }
+      }
+    }
+  }
+}
+
+// Add to Link element styles
+a.menu-pill {
+  cursor: pointer !important;
+  // ... existing styles ...
 }

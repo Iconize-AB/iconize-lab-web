@@ -18,24 +18,33 @@ const IconizeDifferentSection = () => {
     'Vi är MED dig hela vägen': "Vi arbetar tätt tillsammans med våra kunder och blir en naturlig förlängning av ert team. Genom detta nära samarbete säkerställer vi ett effektivt kunskapsutbyte och en smidig överlämning, vilket gör att ni enkelt kan fortsätta på egen hand när vårt uppdrag är slutfört. Självklart finns vi alltid här för att stötta er vidare, om ni skulle vilja behålla oss som en långsiktig partner."
   };
 
+  // Split the items into shorter display names for mobile
+  const itemDisplayNames = {
+    'Kreativa eldsjälar': 'Kreativa',
+    'Ett bolag, Allt du behöver': 'Ett bolag',
+    'Framgång från dag 1': 'Framgång',
+    'Vi är MED dig hela vägen': 'Med dig'
+  };
+
   return (
-    <section className="prophet-different">
-      <h2>Vi bygger det du behöver - och ditt varumärke</h2>
+    <section className="iconize-lab-different">
       <div className="content">
-        <div className="items">
-          {items.map((item, index) => (
-            <div 
-              key={index} 
-              className={`item ${activeItem === item ? 'active' : ''}`}
-              onClick={() => setActiveItem(item)}
-            >
-              {item}
-              {activeItem === item && <span className="arrow">›</span>}
-            </div>
-          ))}
-        </div>
-        <div className="description">
-          <p>{descriptions[activeItem]}</p>
+        <div className="tab-container">
+          <div className="tabs">
+            {items.map((item, index) => (
+              <button 
+                key={index} 
+                className={`tab ${activeItem === item ? 'active' : ''}`}
+                onClick={() => setActiveItem(item)}
+              >
+                <span className="desktop-text">{item}</span>
+                <span className="mobile-text">{itemDisplayNames[item]}</span>
+              </button>
+            ))}
+          </div>
+          <div className="tab-content">
+            <p>{descriptions[activeItem]}</p>
+          </div>
         </div>
       </div>
     </section>
