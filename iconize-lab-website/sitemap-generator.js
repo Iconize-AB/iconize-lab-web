@@ -20,7 +20,7 @@ const routes = [
 ];
 
 // Create a stream to write to
-const stream = new SitemapStream({ hostname: 'https://iconize-lab-web.vercel.app/' });
+const stream = new SitemapStream({ hostname: 'https://iconizelab.com/' });
 
 // Return a promise that resolves with your XML string
 const sitemap = streamToPromise(Readable.from(routes).pipe(stream)).then((data) =>
