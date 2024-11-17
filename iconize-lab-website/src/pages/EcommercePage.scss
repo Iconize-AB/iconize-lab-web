@@ -6,14 +6,14 @@
   .content-wrapper-ecommerce {
     background-color: #000;
     margin: 0 auto;
-    padding: 6rem;
+    padding: 2rem;
 
     @media (max-width: 768px) {
       padding: 1rem;
     }
   }
 
-  .breadcrumb {
+  .breadcrumb-ecommerce {
     font-size: 0.9rem;
     margin-bottom: 2rem;
 
@@ -23,12 +23,12 @@
     }
   }
 
-  .breadcrumb a {
+  .breadcrumb-ecommerce a {
     color: #fdf0e6;
     text-decoration: none;
   }
 
-  .breadcrumb span {
+  .breadcrumb-ecommerce span {
     color: #6200ea;
   }
 

@@ -41,7 +41,7 @@ function EcommercePage() {
   return (
     <div className="ecommerce-page">
       <div className="content-wrapper-ecommerce">
-        <div className="breadcrumb">
+        <div className="breadcrumb-ecommerce">
           <Link to="/">Hem</Link> &gt; <Link to="/services">Tjänster</Link> &gt; <span>E-handel</span>
         </div>
         <div className="section-content-ecommerce">

@@ -85,16 +85,17 @@ function Footer() {
         <div className="footer-links">
           <div className="link-column">
             <Link to="/services">Tjänster</Link>
-            <Link to="/work">Arbete</Link>
+            <Link to="/services">Arbete</Link>
             <Link to="/thinking">Tänkande</Link>
           </div>
           <div className="link-column">
             <Link to="/about">Om oss</Link>
           </div>
           <div className="link-column">
-            <Link to="/privacy-policy">Integritetspolicy</Link>
-            <Link to="/terms-of-use">Användarvillkor</Link>
-            <a href="#" id="open_preferences_center">Uppdatera cookieinställningar</a>
+            <a href="#" onClick={(e) => {
+              e.preventDefault();
+              window.cookieconsent.openPreferencesCenter();
+            }}>Uppdatera cookieinställningar</a>
           </div>
         </div>
       </div>
