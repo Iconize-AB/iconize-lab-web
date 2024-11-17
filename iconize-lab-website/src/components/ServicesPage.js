@@ -24,7 +24,7 @@ function ServicesPage() {
           <Link to="/">Home</Link> &gt; <span>Tjänster</span>
         </div>
         <div className="section-content">
-          <h1>Vi hjälper ledare gå från osäkerhet till säker framgång</h1>
+          <h1 className="services-title">Vi hjälper ledare gå från osäkerhet till säker framgång</h1>
           <div className="services-diagram">
             <svg viewBox="0 0 400 400" width="400" height="400">
               <defs>
